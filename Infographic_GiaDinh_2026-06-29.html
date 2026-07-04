@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographic – Phường Gia Định – TP. Hồ Chí Minh (2026-06-29)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+    background: #ECF0F1;
+    color: #2C3E50;
+    line-height: 1.6;
+  }
+
+  .container {
+    width: 900px;
+    margin: 30px auto;
+    padding-bottom: 40px;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: linear-gradient(135deg, #C0392B 0%, #922B21 50%, #7B241C 100%);
+    border-radius: 16px;
+    padding: 40px 36px;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.35);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .header-badge {
+    display: inline-block;
+    background: #F39C12;
+    color: #2C3E50;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+  .header h1 {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .header .subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 28px;
+  }
+  .stat-cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    padding: 16px 20px;
+    flex: 1;
+    text-align: center;
+  }
+  .stat-card .icon { font-size: 24px; margin-bottom: 6px; }
+  .stat-card .value {
+    font-size: 26px;
+    font-weight: 800;
+    color: #F9E79F;
+    line-height: 1;
+  }
+  .stat-card .label {
+    font-size: 12px;
+    opacity: 0.85;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .header-date {
+    position: absolute;
+    top: 20px; right: 24px;
+    font-size: 12px;
+    opacity: 0.7;
+    font-weight: 500;
+  }
+
+  /* ===== SECTIONS ===== */
+  section {
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon {
+    font-size: 24px;
+  }
+
+  /* ===== SECTION 2: ĐỊA LÝ ===== */
+  .geography {
+    background: #EBF5FB;
+    border-left: 5px solid #2980B9;
+  }
+  .geography .section-title { color: #1A5276; }
+
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .geo-box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .geo-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2980B9;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .direction-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .direction-arrow {
+    background: #2980B9;
+    color: white;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    min-width: 36px;
+    text-align: center;
+    margin-top: 1px;
+  }
+  .geo-feature {
+    background: #EBF5FB;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    font-size: 13.5px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  /* ===== SECTION 3: TIMELINE ===== */
+  .timeline-section {
+    background: white;
+  }
+  .timeline-section .section-title { color: #C0392B; }
+
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 16px; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #C0392B, #F39C12, #27AE60);
+    border-radius: 2px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+    padding: 18px 20px;
+    background: #F8F9FA;
+    border-radius: 10px;
+    border-left: 3px solid #C0392B;
+  }
+  .timeline-item.highlight {
+    background: linear-gradient(135deg, #FEF9E7 0%, #FDEBD0 100%);
+    border-left: 4px solid #F39C12;
+    box-shadow: 0 4px 12px rgba(243,156,18,0.2);
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -49px;
+    top: 20px;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: #C0392B;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #C0392B;
+  }
+  .timeline-item.highlight::before {
+    background: #F39C12;
+    box-shadow: 0 0 0 2px #F39C12;
+    width: 20px; height: 20px;
+    left: -51px; top: 18px;
+  }
+  .timeline-year {
+    font-size: 22px;
+    font-weight: 800;
+    color: #C0392B;
+    line-height: 1;
+  }
+  .timeline-item.highlight .timeline-year { color: #E67E22; }
+  .timeline-event {
+    font-size: 14.5px;
+    color: #2C3E50;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .timeline-detail {
+    font-size: 13px;
+    color: #7F8C8D;
+    margin-top: 4px;
+  }
+
+  /* ===== SECTION 4: NGUỒN GỐC ĐỊA DANH ===== */
+  .etymology {
+    background: linear-gradient(135deg, #FEF9E7 0%, #FDEBD0 100%);
+    border-left: 5px solid #F39C12;
+  }
+  .etymology .section-title { color: #A04000; }
+
+  .etymology-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .etym-card {
+    background: white;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+    border-top: 4px solid #F39C12;
+  }
+  .etym-card .han {
+    font-size: 40px;
+    color: #E67E22;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .etym-card .viet {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2C3E50;
+  }
+  .etym-card .meaning {
+    font-size: 13px;
+    color: #7F8C8D;
+    margin-top: 6px;
+  }
+  .name-compare {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .name-compare h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #A04000;
+    margin-bottom: 14px;
+  }
+  .compare-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 13.5px;
+  }
+  .old-name {
+    background: #FDEBD0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #A04000;
+    flex: 1;
+    text-align: center;
+  }
+  .arrow-merge { font-size: 18px; color: #F39C12; font-weight: 700; }
+  .new-name {
+    background: #C0392B;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    flex: 1;
+    text-align: center;
+  }
+
+  /* ===== SECTION 5: DI SẢN VĂN HÓA ===== */
+  .heritage {
+    background: #1A5276;
+    color: white;
+  }
+  .heritage .section-title { color: #AED6F1; }
+
+  .heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .heritage-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .heritage-card .h-icon { font-size: 28px; margin-bottom: 8px; }
+  .heritage-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #F9E79F;
+    margin-bottom: 6px;
+  }
+  .heritage-card p {
+    font-size: 13px;
+    opacity: 0.85;
+    line-height: 1.5;
+  }
+  .heritage-card .badge {
+    display: inline-block;
+    background: #F39C12;
+    color: #2C3E50;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 8px;
+  }
+  .festival-box {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 16px;
+  }
+  .festival-box h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #F9E79F;
+    margin-bottom: 12px;
+  }
+  .festival-items {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .festival-item {
+    background: rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ===== SECTION 6: KINH TẾ ===== */
+  .economy {
+    background: #F2F3F4;
+  }
+  .economy .section-title { color: #1A5276; }
+
+  .econ-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .econ-bars {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .econ-bars h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1A5276;
+    margin-bottom: 16px;
+  }
+  .bar-item {
+    margin-bottom: 12px;
+  }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2C3E50;
+  }
+  .bar-track {
+    background: #ECF0F1;
+    border-radius: 4px;
+    height: 12px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1s ease;
+  }
+  .projects-box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .projects-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1A5276;
+    margin-bottom: 14px;
+  }
+  .project-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ECF0F1;
+  }
+  .project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .project-icon {
+    font-size: 22px;
+    min-width: 28px;
+  }
+  .project-item h5 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 2px;
+  }
+  .project-item p {
+    font-size: 12px;
+    color: #7F8C8D;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: #2C3E50;
+    border-radius: 14px;
+    padding: 28px 32px;
+    color: white;
+  }
+  .footer h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #F39C12;
+    margin-bottom: 14px;
+  }
+  .sources-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .sources-list li {
+    font-size: 12px;
+    opacity: 0.75;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  .sources-list li::before { content: '→'; color: #F39C12; }
+  .footer-note {
+    margin-top: 16px;
+    font-size: 12px;
+    opacity: 0.55;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 12px;
+  }
+
+  @media print {
+    body { background: white; }
+    .container { margin: 0 auto; }
+    section, .header, .footer { box-shadow: none; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="header-date">📅 29/06/2026</div>
+    <div class="header-badge">🏛️ ĐƠN VỊ MỚI 2025 · NGHỊ QUYẾT 1685/NQ-UBTVQH15</div>
+    <h1>Phường Gia Định</h1>
+    <div class="subtitle">Quận Bình Thạnh · Thành phố Hồ Chí Minh</div>
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="icon">📐</div>
+        <div class="value">2,76</div>
+        <div class="label">Diện tích (km²)</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">👥</div>
+        <div class="value">125.946</div>
+        <div class="label">Dân số (người)</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">🏘️</div>
+        <div class="value">62</div>
+        <div class="label">Khu phố</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">📊</div>
+        <div class="value">45.632</div>
+        <div class="label">Người/km²</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 2: VỊ TRÍ & ĐỊA LÝ ===== -->
+  <section class="geography">
+    <div class="section-title">
+      <span class="icon">🗺️</span>
+      VỊ TRÍ &amp; ĐỊA LÝ
+    </div>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h4>🧭 Địa giới hành chính</h4>
+        <div class="direction-item">
+          <div class="direction-arrow">BẮC</div>
+          <div>Phường Bình Lợi Trung và phường Bình Thạnh</div>
+        </div>
+        <div class="direction-item">
+          <div class="direction-arrow">ĐÔNG</div>
+          <div>Phường Thạnh Mỹ Tây</div>
+        </div>
+        <div class="direction-item">
+          <div class="direction-arrow">NAM</div>
+          <div>Phường Sài Gòn và phường Tân Định (qua kênh Nhiêu Lộc – Thị Nghè)</div>
+        </div>
+        <div class="direction-item">
+          <div class="direction-arrow">TÂY</div>
+          <div>Phường Cầu Kiệu và phường Đức Nhuận</div>
+        </div>
+      </div>
+      <div class="geo-box">
+        <h4>🏙️ Đặc điểm địa lý đô thị</h4>
+        <div class="geo-feature">🌊 Kênh Nhiêu Lộc – Thị Nghè chạy dọc phía Nam, tạo ranh giới tự nhiên và cảnh quan đô thị</div>
+        <div class="geo-feature">🏪 Trung tâm thương mại Bà Chiểu – một trong những khu chợ lớn nhất TP.HCM, sầm uất từ thế kỷ 19</div>
+        <div class="geo-feature">🏛️ Lăng Ông Bà Chiểu – khu di tích 18.501 m² ngay tại trung tâm phường</div>
+        <div class="geo-feature">🛣️ Các trục đường lớn: Đinh Tiên Hoàng, Phan Đăng Lưu, Lê Văn Duyệt, Đinh Bộ Lĩnh</div>
+        <div class="geo-feature">📍 Mật độ dân số cực cao: 45.632 người/km² – thuộc nhóm cao nhất TP.HCM</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: TIMELINE LỊCH SỬ ===== -->
+  <section class="timeline-section">
+    <div class="section-title">
+      <span class="icon">⏳</span>
+      HÀNH TRÌNH LỊCH SỬ
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-year">Thế kỷ XVII</div>
+        <div class="timeline-event">🌾 Vùng đất Gia Định – Bà Chiểu: bình nguyên trù phú, người Việt bắt đầu khai khẩn</div>
+        <div class="timeline-detail">Lưu dân người Việt và người Hoa di cư, hình thành các làng mạc dọc sông Sài Gòn và kênh rạch</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1698</div>
+        <div class="timeline-event">🏛️ Lập phủ Gia Định – Mốc khai sinh lịch sử</div>
+        <div class="timeline-detail">Nguyễn Hữu Cảnh vâng lệnh chúa Nguyễn Phúc Chu vào Nam kinh lý, chính thức lập phủ Gia Định, chia làm 2 huyện Phước Long và Tân Bình</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1790</div>
+        <div class="timeline-event">🏯 Nguyễn Ánh xây thành Bát Quái (Thành Gia Định)</div>
+        <div class="timeline-detail">Kiến trúc sư người Pháp Olivier de Puymanel thiết kế theo kiểu Vauban. Thành là trung tâm chính trị - quân sự toàn Nam Kỳ</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1820–1832</div>
+        <div class="timeline-event">⚔️ Thời kỳ Tả quân Lê Văn Duyệt trấn thủ Gia Định</div>
+        <div class="timeline-detail">Lê Văn Duyệt (1764–1832) trị vì Gia Định, mở mang thương mại, bảo hộ cộng đồng người Hoa, đình chiến với người Khmer, để lại di sản bền vững</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1848</div>
+        <div class="timeline-event">🕌 Xây dựng Lăng Tả Quân Lê Văn Duyệt tại Bà Chiểu</div>
+        <div class="timeline-detail">Quần thể lăng mộ và đền thờ tại địa danh "Bà Chiểu" – nơi có ao nước cổ xưa, trở thành trung tâm tâm linh của vùng Gia Định</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1859</div>
+        <div class="timeline-event">💥 Pháp tấn công và chiếm thành Gia Định</div>
+        <div class="timeline-detail">Ngày 17/2/1859, quân Pháp phá hủy Thành Gia Định. Năm 1862, Việt Nam nhượng 3 tỉnh miền Đông Nam Kỳ. Bà Chiểu trở thành tỉnh lỵ tỉnh Gia Định thuộc Pháp</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1914</div>
+        <div class="timeline-event">🎭 Hội Thượng Công Quý Tế thành lập, tổ chức lễ cúng tế định kỳ tại Lăng Ông</div>
+        <div class="timeline-detail">Lễ hội được duy trì đều đặn, hát bội và các nghi thức truyền thống được gìn giữ đến ngày nay</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1942</div>
+        <div class="timeline-event">🛒 Chợ Bà Chiểu được xây dựng khang trang</div>
+        <div class="timeline-detail">Ông Trần Văn Chơi (Tư Chơi) cho xây cất chợ với diện tích 8.465 m², trở thành trung tâm thương mại sầm uất nhất vùng Gia Định</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1976</div>
+        <div class="timeline-event">🏙️ Thành lập quận Bình Thạnh từ xã Bình Hòa và Thạnh Mỹ Tây</div>
+        <div class="timeline-detail">Tên "Bình Thạnh" ghép từ Bình Hòa + Thạnh Mỹ Tây. Địa danh "Gia Định" dần vắng bóng trên bản đồ hành chính</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1988 &amp; 1993</div>
+        <div class="timeline-event">🏅 Công nhận di tích quốc gia: Lăng Ông Bà Chiểu &amp; Đình Bình Hòa</div>
+        <div class="timeline-detail">Lăng Ông xếp hạng quốc gia (1988). Đình Bình Hòa xếp hạng Di tích kiến trúc nghệ thuật cấp quốc gia (1993)</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-event">🎊 Lễ hội Khai hạ – Cầu an được đưa vào Di sản văn hóa phi vật thể quốc gia</div>
+        <div class="timeline-detail">Ghi nhận giá trị tâm linh và truyền thống dân gian sâu sắc của cộng đồng gắn với Lăng Tả Quân Lê Văn Duyệt</div>
+      </div>
+
+      <div class="timeline-item highlight">
+        <div class="timeline-year">01/07/2025 🌟</div>
+        <div class="timeline-event">🔀 Phường Gia Định chính thức ra đời – Tên lịch sử "sống dậy" sau 50 năm!</div>
+        <div class="timeline-detail">Theo Nghị quyết 1685/NQ-UBTVQH15, các phường 1, 2, 7, 17 (quận Bình Thạnh) sáp nhập thành phường Gia Định. Tên Gia Định lịch sử trở lại sau gần nửa thế kỷ vắng bóng</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: NGUỒN GỐC ĐỊA DANH ===== -->
+  <section class="etymology">
+    <div class="section-title">
+      <span class="icon">📖</span>
+      NGUỒN GỐC ĐỊA DANH
+    </div>
+    <div class="etymology-grid">
+      <div class="etym-card">
+        <div class="han">家</div>
+        <div class="viet">GIA</div>
+        <div class="meaning">Nhà, chốn định cư, nơi người dân sinh sống và lập nghiệp</div>
+      </div>
+      <div class="etym-card">
+        <div class="han">定</div>
+        <div class="viet">ĐỊNH</div>
+        <div class="meaning">Bình định, ổn định, vững chắc – vùng đất đã được bình định và quy thuộc</div>
+      </div>
+    </div>
+    <div class="name-compare">
+      <h4>🔀 Hành trình tên gọi: Từ phường cũ → Phường Gia Định mới</h4>
+      <div class="compare-row">
+        <div class="old-name">Phường 1 (Bình Thạnh)</div>
+        <div class="arrow-merge">+</div>
+        <div class="old-name">Phường 2 (Bình Thạnh)</div>
+      </div>
+      <div class="compare-row">
+        <div class="old-name">Phường 7 (Bình Thạnh)</div>
+        <div class="arrow-merge">+</div>
+        <div class="old-name">Phường 17 (Bình Thạnh)</div>
+        <div class="arrow-merge">⟹</div>
+        <div class="new-name">🏛️ PHƯỜNG GIA ĐỊNH</div>
+      </div>
+      <div style="margin-top: 16px; padding: 14px; background: #FEF9E7; border-radius: 8px; font-size: 13.5px; color: #7D6608;">
+        💡 <strong>Ý nghĩa đặc biệt:</strong> "Gia Định" xuất hiện từ năm 1698 khi Nguyễn Hữu Cảnh lập phủ Gia Định – vùng đất được "bình định", quy thuộc vào lãnh thổ Đại Việt. Đây là một trong những địa danh lịch sử quan trọng nhất miền Nam, gắn với hơn 300 năm hình thành và phát triển của Sài Gòn. Sau khi tên "Gia Định" biến mất khỏi bản đồ hành chính năm 1976, phải đến 2025 tên gọi lịch sử này mới chính thức "sống dậy".
+      </div>
+      <div style="margin-top: 12px; padding: 12px 14px; background: #FDEBD0; border-radius: 8px; font-size: 13px; color: #7E5109;">
+        🏞️ <strong>"Bà Chiểu"</strong> – địa danh cổ gắn với phường Gia Định: "chiểu" nghĩa là ao nước tự nhiên; "Bà Chiểu" là vị nữ thần được thờ bên ao thiên nhiên từ thời vua Tự Đức (1847–1883). Tên này gắn với Lăng Ông Bà Chiểu và Chợ Bà Chiểu nổi tiếng.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5: DI SẢN VĂN HÓA ===== -->
+  <section class="heritage">
+    <div class="section-title">
+      <span class="icon">🏺</span>
+      DI SẢN VĂN HÓA &amp; DANH THẮNG
+    </div>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="h-icon">🕌</div>
+        <h4>Lăng Ông Bà Chiểu</h4>
+        <p>Lăng mộ và đền thờ Tả Quân Lê Văn Duyệt (1764–1832). Khuôn viên 18.501 m², tọa lạc trên đường Vũ Tùng – Phan Đăng Lưu. Hàng năm đón hàng trăm nghìn lượt khách.</p>
+        <div class="badge">🏅 Di tích Quốc gia 1988</div>
+      </div>
+      <div class="heritage-card">
+        <div class="h-icon">⛩️</div>
+        <h4>Đình Bình Hòa</h4>
+        <p>Đình làng cổ xây dựng đầu thế kỷ 19, tọa lạc tại đường Chu Văn An. Kiến trúc gỗ chạm khắc tinh xảo, nơi lưu giữ văn hóa làng xã Nam Bộ truyền thống.</p>
+        <div class="badge">🏅 Di tích Kiến trúc Nghệ thuật Quốc gia 1993</div>
+      </div>
+      <div class="heritage-card">
+        <div class="h-icon">🛒</div>
+        <h4>Chợ Bà Chiểu</h4>
+        <p>Một trong những chợ lâu đời nhất TP.HCM, từng là trung tâm tỉnh lỵ Gia Định. Xây dựng khang trang năm 1942, diện tích 8.465 m², thiên đường ẩm thực và mua sắm đồ si.</p>
+        <div class="badge">🌟 Di sản thương mại – văn hóa trăm tuổi</div>
+      </div>
+      <div class="heritage-card">
+        <div class="h-icon">⛪</div>
+        <h4>Giáo xứ Gia Định</h4>
+        <p>Ngôi thánh đường Công giáo cổ kính giữa lòng khu Bà Chiểu – Gia Định. Kiến trúc Gothic Pháp, gắn với lịch sử hơn 150 năm truyền giáo tại vùng đất Gia Định.</p>
+        <div class="badge">🏛️ Công trình kiến trúc Pháp thuộc</div>
+      </div>
+    </div>
+
+    <div class="festival-box">
+      <h4>🎊 Lễ hội &amp; Sinh hoạt văn hóa truyền thống</h4>
+      <div class="festival-items">
+        <div class="festival-item">🎆 Lễ Khai hạ – Cầu an (mùng 7 tháng Giêng) – Di sản phi vật thể Quốc gia</div>
+        <div class="festival-item">🎭 Hát bội tại Lăng Ông – vở Ngọc Quỳnh lâm tế, San Hậu</div>
+        <div class="festival-item">🕯️ Nghi thức Dựng nêu, Khai ấn, Thượng kỳ đầu năm</div>
+        <div class="festival-item">🥁 Lễ Kỳ yên tại Đình Bình Hòa (10–11/9 âm lịch)</div>
+        <div class="festival-item">🌊 Đua thuyền trên kênh Nhiêu Lộc dịp lễ lớn</div>
+        <div class="festival-item">🍜 Văn hóa ẩm thực Bà Chiểu: bún bò, bánh mì, đồ ăn Nam Bộ</div>
+      </div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.08); border-radius: 10px; padding: 16px 18px;">
+      <h4 style="color: #F9E79F; font-size: 14px; font-weight: 700; margin-bottom: 10px;">🌟 Danh nhân gắn với phường Gia Định</h4>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div style="font-size: 13px; opacity: 0.9;">
+          <strong style="color: #F9E79F;">Lê Văn Duyệt (1764–1832)</strong><br>
+          Tả Quân, Tổng trấn Gia Định thành. Khai thông thương mại, bảo hộ cộng đồng Hoa kiều, xây dựng kênh đào, giữ vững bờ cõi phương Nam.
+        </div>
+        <div style="font-size: 13px; opacity: 0.9;">
+          <strong style="color: #F9E79F;">Nguyễn Hữu Cảnh (1650–1700)</strong><br>
+          Khai phá đất Gia Định năm 1698. Lập phủ Gia Định, đặt nền móng cho sự hình thành và phát triển của đô thị Sài Gòn – TP.HCM.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 6: KINH TẾ & ĐÔ THỊ ===== -->
+  <section class="economy">
+    <div class="section-title">
+      <span class="icon">📈</span>
+      KINH TẾ &amp; ĐÔ THỊ HÓA
+    </div>
+    <div class="econ-grid">
+      <div class="econ-bars">
+        <h4>📊 Cơ cấu kinh tế phường Gia Định</h4>
+        <div class="bar-item">
+          <div class="bar-label"><span>🛒 Thương mại – dịch vụ</span><span>55%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:55%; background: #C0392B;"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>🏨 Ẩm thực – du lịch văn hóa</span><span>22%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:22%; background: #F39C12;"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>🏭 Sản xuất – tiểu thủ công nghiệp</span><span>12%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:12%; background: #27AE60;"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>🏢 Văn phòng – tài chính</span><span>11%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:11%; background: #2980B9;"></div></div>
+        </div>
+        <div style="margin-top: 16px; padding: 12px; background: #EBF5FB; border-radius: 8px; font-size: 12.5px; color: #1A5276;">
+          💡 Phường Gia Định là một trong những trung tâm thương mại – văn hóa quan trọng nhất của quận Bình Thạnh và khu vực cửa ngõ TP.HCM.
+        </div>
+      </div>
+      <div class="projects-box">
+        <h4>🚧 Dự án hạ tầng &amp; Định hướng sau sáp nhập</h4>
+        <div class="project-item">
+          <div class="project-icon">🌊</div>
+          <div>
+            <h5>Cải tạo rạch Xuyên Tâm</h5>
+            <p>Nạo vét, chỉnh trang môi trường, xây dựng hạ tầng kênh rạch lớn nhất khu vực – dự án trọng điểm đô thị TPHCM đang triển khai 2025–2026</p>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-icon">🏃</div>
+          <div>
+            <h5>Công viên dọc kênh Nhiêu Lộc</h5>
+            <p>Quy hoạch dải công viên, đường chạy bộ và khu sinh hoạt cộng đồng hiện đại dọc kênh Nhiêu Lộc – Thị Nghè phía Nam phường</p>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-icon">🏛️</div>
+          <div>
+            <h5>Khu kinh tế văn hóa Bà Chiểu</h5>
+            <p>Chỉnh trang cảnh quan quanh Lăng Ông và chợ Bà Chiểu, xây dựng phố đi bộ kết hợp ẩm thực và mua sắm – biến thành điểm đến du lịch văn hóa hàng đầu</p>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-icon">🏢</div>
+          <div>
+            <h5>Trụ sở UBND phường Gia Định</h5>
+            <p>Trụ sở tạm tại 134 Lê Văn Duyệt; kế hoạch xây mới trong năm 2026 để phục vụ hành chính phường có quy mô lớn</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <h4>📚 Nguồn tham khảo</h4>
+    <ul class="sources-list">
+      <li>Nghị quyết 1685/NQ-UBTVQH15 – Ủy ban Thường vụ Quốc hội (2025)</li>
+      <li>tphcm.chinhphu.vn – Danh sách 168 phường xã TPHCM sau sắp xếp</li>
+      <li>vi.wikipedia.org – Lăng Ông (Bà Chiểu), Gia Định, Lê Văn Duyệt</li>
+      <li>eviland.vn – Phường Gia Định sau sáp nhập: ranh giới, dân số</li>
+      <li>tcdulichtphcm.vn – Lăng Ông Bà Chiểu: biểu tượng lịch sử Sài Gòn</li>
+      <li>nhacxua.vn – Nguồn gốc tên gọi chợ Bà Chiểu và tỉnh Gia Định xưa</li>
+      <li>saigoneer.com – Dấu ấn Sài Gòn–Gia Định qua di tích lăng miếu Lê Văn Duyệt</li>
+      <li>fptshop.com.vn – Phường Gia Định: diện mạo và tiềm năng sau sáp nhập</li>
+      <li>thanhnien.vn – Tên phường Gia Định "sống dậy" sau 50 năm</li>
+      <li>Bộ VH-TT-DL – Quyết định xếp hạng Di tích quốc gia (1988, 1993, 2022)</li>
+    </ul>
+    <div class="footer-note">
+      📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

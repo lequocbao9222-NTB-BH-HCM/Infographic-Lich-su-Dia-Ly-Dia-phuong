@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographic: Phường Bàn Cờ – TP. Hồ Chí Minh</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Be Vietnam Pro', 'Segoe UI', Arial, sans-serif;
+    background: #ECF0F1;
+    color: #2C3E50;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* ===== SECTION BASE ===== */
+  .section {
+    border-radius: 16px;
+    margin-bottom: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  }
+
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* ===== HEADER ===== */
+  #header {
+    background: linear-gradient(135deg, #C0392B 0%, #922B21 60%, #7B241C 100%);
+    color: #fff;
+    text-align: center;
+    padding: 40px 32px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  #header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  #header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 250px; height: 250px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #F39C12;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  .header-district {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.85;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+
+  .header-name {
+    font-size: 3.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  }
+
+  .header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .stat-cards {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    padding: 16px 24px;
+    text-align: center;
+    min-width: 160px;
+    backdrop-filter: blur(4px);
+  }
+
+  .stat-icon { font-size: 1.6rem; margin-bottom: 4px; }
+  .stat-value { font-size: 1.7rem; font-weight: 800; color: #F39C12; }
+  .stat-label { font-size: 0.75rem; opacity: 0.85; font-weight: 500; letter-spacing: 0.5px; }
+
+  .pub-date {
+    margin-top: 20px;
+    font-size: 0.78rem;
+    opacity: 0.65;
+    font-style: italic;
+  }
+
+  /* ===== VỊ TRÍ & ĐỊA LÝ ===== */
+  #geography {
+    background: #EBF5FB;
+    border-left: 5px solid #2980B9;
+  }
+  #geography .section-title { color: #1A5276; }
+
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .geo-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .geo-box h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2980B9;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .direction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .dir-item {
+    background: #EBF5FB;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .dir-arrow { font-size: 1.1rem; flex-shrink: 0; }
+
+  .feature-list { list-style: none; }
+  .feature-list li {
+    padding: 7px 0;
+    border-bottom: 1px solid #EBF5FB;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .feature-list li:last-child { border-bottom: none; }
+
+  /* ===== TIMELINE ===== */
+  #timeline {
+    background: #fff;
+    border-left: 5px solid #C0392B;
+  }
+  #timeline .section-title { color: #922B21; }
+
+  .timeline-wrap {
+    position: relative;
+    padding-left: 30px;
+  }
+  .timeline-wrap::before {
+    content: '';
+    position: absolute;
+    left: 10px; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #C0392B, #F39C12, #27AE60);
+    border-radius: 3px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 22px;
+    padding: 14px 18px;
+    background: #F9FAFB;
+    border-radius: 10px;
+    border: 1px solid #ECF0F1;
+    transition: transform 0.2s;
+  }
+
+  .timeline-item:last-child { margin-bottom: 0; }
+
+  .timeline-item.highlight {
+    background: linear-gradient(135deg, #FEF9E7, #FDEBD0);
+    border: 2px solid #F39C12;
+    box-shadow: 0 4px 16px rgba(243,156,18,0.2);
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px; top: 18px;
+    width: 14px; height: 14px;
+    background: #C0392B;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #C0392B;
+  }
+
+  .timeline-item.highlight::before {
+    background: #F39C12;
+    box-shadow: 0 0 0 2px #F39C12;
+    width: 16px; height: 16px;
+    left: -27px; top: 17px;
+  }
+
+  .tl-year {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #C0392B;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .timeline-item.highlight .tl-year { color: #D68910; }
+
+  .tl-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 4px;
+  }
+
+  .tl-desc {
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .tl-badge {
+    display: inline-block;
+    background: #F39C12;
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ===== NGUỒN GỐC ĐỊA DANH ===== */
+  #danh-goc {
+    background: #FFFDE7;
+    border-left: 5px solid #F39C12;
+  }
+  #danh-goc .section-title { color: #B7770D; }
+
+  .name-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .name-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #F9E79F;
+  }
+
+  .name-card h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #B7770D;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .big-name {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #C0392B;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .name-desc {
+    font-size: 0.83rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .arrow-transform {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .old-unit {
+    background: #FADBD8;
+    color: #C0392B;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  .arrow-icon { font-size: 1.2rem; color: #F39C12; }
+
+  .new-unit {
+    background: #D5F5E3;
+    color: #1E8449;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  /* ===== DI SẢN VĂN HÓA ===== */
+  #culture {
+    background: #1A5276;
+    color: #fff;
+  }
+  #culture .section-title { color: #AED6F1; }
+
+  .heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .heritage-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+  }
+
+  .heritage-icon { font-size: 2rem; margin-bottom: 8px; }
+  .heritage-name { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: #F0F3F4; }
+  .heritage-desc { font-size: 0.75rem; color: #AED6F1; line-height: 1.5; }
+
+  .festival-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 4px;
+  }
+
+  .festival-box {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .festival-box h4 {
+    font-size: 0.8rem;
+    color: #F39C12;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .festival-list { list-style: none; }
+  .festival-list li {
+    font-size: 0.82rem;
+    color: #D6EAF8;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .festival-list li:last-child { border-bottom: none; }
+
+  /* ===== KINH TẾ & ĐÔ THỊ HÓA ===== */
+  #economy {
+    background: #F4F6F7;
+    border-left: 5px solid #27AE60;
+  }
+  #economy .section-title { color: #1E8449; }
+
+  .econ-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .econ-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .econ-box h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1E8449;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+  }
+
+  .bar-item { margin-bottom: 14px; }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #444;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .bar-track {
+    height: 10px;
+    background: #ECF0F1;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+  }
+  .bar-fill.green { background: linear-gradient(to right, #27AE60, #2ECC71); }
+  .bar-fill.blue { background: linear-gradient(to right, #2980B9, #3498DB); }
+  .bar-fill.orange { background: linear-gradient(to right, #E67E22, #F39C12); }
+  .bar-fill.red { background: linear-gradient(to right, #C0392B, #E74C3C); }
+
+  .project-list { list-style: none; }
+  .project-list li {
+    padding: 9px 0;
+    border-bottom: 1px solid #F0F3F4;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #444;
+  }
+  .project-list li:last-child { border-bottom: none; }
+  .proj-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #27AE60;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  /* ===== FOOTER ===== */
+  #footer {
+    background: #2C3E50;
+    color: #BDC3C7;
+    padding: 28px 32px;
+    border-radius: 16px;
+  }
+
+  #footer h4 {
+    color: #ECF0F1;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  .source-list { list-style: none; }
+  .source-list li {
+    font-size: 0.75rem;
+    padding: 4px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #95A5A6;
+  }
+  .source-list a {
+    color: #5DADE2;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .source-list a:hover { color: #AED6F1; text-decoration: underline; }
+
+  .footer-note {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.73rem;
+    color: #717D7E;
+    font-style: italic;
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: #fff; }
+    .section { box-shadow: 0 0 0 1px #ddd; break-inside: avoid; }
+    #header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    #culture { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    #footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .stat-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 640px) {
+    .stat-cards { gap: 10px; }
+    .stat-card { min-width: 120px; padding: 12px 14px; }
+    .header-name { font-size: 2.2rem; }
+    .geo-grid, .name-cards, .econ-grid, .festival-row, .heritage-grid { grid-template-columns: 1fr; }
+    .direction-grid { grid-template-columns: 1fr 1fr; }
+    .heritage-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== SECTION 1: HEADER ===== -->
+  <div class="section" id="header" style="padding:40px 32px 36px;">
+    <div class="badge">⭐ Đơn Vị Hành Chính Mới 2025</div>
+    <div class="header-district">Quận 3 · TP. Hồ Chí Minh</div>
+    <div class="header-name">PHƯỜNG BÀN CỜ</div>
+    <div class="header-sub">Căn cứ lõm anh hùng – Hồn phố cổ Sài Gòn</div>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-icon">📐</div>
+        <div class="stat-value">0,99 km²</div>
+        <div class="stat-label">Diện Tích</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">👥</div>
+        <div class="stat-value">67.616</div>
+        <div class="stat-label">Dân Số (2025)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏘️</div>
+        <div class="stat-value">52 hẻm</div>
+        <div class="stat-label">Hệ Thống Ngõ Hẻm</div>
+      </div>
+    </div>
+
+    <div class="pub-date">📅 Ngày xuất bản: 01/07/2026 · Dữ liệu: Nghị quyết 1685/NQ-UBTVQH15 (16/06/2025)</div>
+  </div>
+
+  <!-- ===== SECTION 2: VỊ TRÍ & ĐỊA LÝ ===== -->
+  <div class="section" id="geography">
+    <div class="section-title">🗺️ Vị Trí &amp; Địa Lý</div>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h4>📍 Địa Giới Hành Chính (4 Phía)</h4>
+        <div class="direction-grid">
+          <div class="dir-item"><span class="dir-arrow">⬆️</span><div><strong>Phía Bắc:</strong> Phường Nhiêu Lộc (Quận 3), qua đường Điện Biên Phủ – Bà Huyện Thanh Quan</div></div>
+          <div class="dir-item"><span class="dir-arrow">⬇️</span><div><strong>Phía Nam:</strong> Phường Sài Gòn &amp; Phường Bến Thành (Quận 1), qua rạch Bến Nghé</div></div>
+          <div class="dir-item"><span class="dir-arrow">⬅️</span><div><strong>Phía Tây:</strong> Phường Xuân Hòa (Quận 3), qua đường Lý Chính Thắng &amp; Trương Định</div></div>
+          <div class="dir-item"><span class="dir-arrow">➡️</span><div><strong>Phía Đông:</strong> Phường Tân Định (Quận 1), qua đường Hai Bà Trưng &amp; Nguyễn Thượng Hiền</div></div>
+        </div>
+      </div>
+      <div class="geo-box">
+        <h4>🌆 Đặc Điểm Địa Lý Đô Thị</h4>
+        <ul class="feature-list">
+          <li>📊 <span>Mật độ dân số <strong>68.299 người/km²</strong> – thuộc nhóm cao nhất TP.HCM</span></li>
+          <li>🛣️ <span>Các trục đường chính: Cao Thắng, Nguyễn Thiện Thuật, Nguyễn Đình Chiểu, Võ Văn Tần</span></li>
+          <li>🏛️ <span>Trụ sở UBND: 296-298 Nguyễn Thiện Thuật (vận hành từ 01/07/2025)</span></li>
+          <li>🌳 <span>Gần Công viên Lê Văn Tám – không gian xanh trung tâm</span></li>
+          <li>🏗️ <span>Khu dân cư mật độ cao với 52 hẻm ngang dọc trên diện tích ~15 ha lịch sử</span></li>
+          <li>🏥 <span>Bệnh viện Quận 3 và nhiều cơ sở y tế, giáo dục đa cấp</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3: TIMELINE LỊCH SỬ ===== -->
+  <div class="section" id="timeline">
+    <div class="section-title">📜 Dòng Thời Gian Lịch Sử</div>
+    <div class="timeline-wrap">
+
+      <div class="timeline-item">
+        <div class="tl-year">Thế kỷ XVIII</div>
+        <div class="tl-title">🏡 Vùng Đất Gia Định Xưa</div>
+        <div class="tl-desc">Khu vực nằm trong vùng Gia Định cổ xưa, thuộc tổng Bình Chánh Thượng. Đây là vùng đất được khai khẩn sớm gắn với công cuộc mở cõi của các chúa Nguyễn về phương Nam.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-year">1836</div>
+        <div class="tl-title">📋 Triều Nguyễn Lập Địa Bàn Thôn Xã</div>
+        <div class="tl-desc">Dưới triều Minh Mạng, các thôn làng trong vùng được phân định địa bàn hành chính, gắn với tổng Bình Chánh Thượng thuộc hạt Gia Định.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-year">1880</div>
+        <div class="tl-title">✏️ Đổi Tên Thôn Dưới Thời Pháp</div>
+        <div class="tl-desc">Người Pháp tổ chức lại địa giới hành chính. Một số thôn xã cũ bị điều chỉnh, vùng đất quanh Nguyễn Thiện Thuật dần hình thành theo quy hoạch mới của chính quyền thực dân.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-year">1910</div>
+        <div class="tl-title">♟️ Hình Thành "Xóm Bàn Cờ"</div>
+        <div class="tl-desc">Thực dân Pháp quy hoạch khu đất phía trong đường Nguyễn Thiện Thuật, xẻ đường ngang dọc vuông vức như bàn cờ tướng để dân chúng xây nhà. Cái tên "Bàn Cờ" ra đời từ đây với <strong>52 hẻm ngang dọc</strong> trên 15 ha. Chưa có tên chính thức, dân gian quen gọi là "khu Bàn Cờ".</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-year">1945–1954</div>
+        <div class="tl-title">⚔️ Kháng Chiến Chống Pháp – Mầm Cách Mạng</div>
+        <div class="tl-desc">Bàn Cờ là khu dân nghèo lao động, nhà cửa san sát. Địa hình hẻm hóc, mật độ cao trở thành nơi trú ẩn lý tưởng cho cán bộ cách mạng. Bà con Bàn Cờ bắt đầu nuôi giấu, bảo vệ chiến sĩ hoạt động bí mật trong lòng địch.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-year">1954–1957</div>
+        <div class="tl-title">🏛️ Cơ Sở Ban Tuyên Huấn Xứ Ủy Nam Bộ</div>
+        <div class="tl-desc">Địa chỉ <strong>51/10/14 đường Cao Thắng</strong> là nơi đặt cơ sở Ban Tuyên huấn Xứ ủy Nam bộ – đón nhiều lãnh đạo cấp cao về hoạt động. Hàng chục cuộc họp quan trọng chỉ đạo phong trào đấu tranh nội thành được tổ chức bí mật tại đây.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-year">1968</div>
+        <div class="tl-title">🔥 Tết Mậu Thân – Bàn Cờ Vào Sử Sách</div>
+        <div class="tl-desc">Trong cuộc Tổng tiến công Tết Mậu Thân, Tam Tông Miếu và nhiều ngôi nhà ở Bàn Cờ trở thành trạm chỉ huy, tiếp tế, cứu thương. Bà Trần Thị Ngọc Sương – "Người Mẹ Bàn Cờ" – cùng hàng trăm phụ nữ gan dạ nuôi giấu cán bộ, che giấu vũ khí ngay trong nhà mình.</div>
+      </div>
+
+      <div class="timeline-item highlight">
+        <div class="tl-year">30/04/1975 <span class="tl-badge">⭐ LỊCH SỬ</span></div>
+        <div class="tl-title">🚩 Ngày Giải Phóng – Địa Chỉ 115 Bàn Cờ</div>
+        <div class="tl-desc">Địa chỉ <strong>115 đường Bàn Cờ</strong> – sở chỉ huy của Thành Đoàn – điều hành trực tiếp khu vực Ngã Bảy – Bàn Cờ – Vườn Chuối trong sáng 30/4/1975. Đây là nơi tiếp quản đầu tiên, thu gom vũ khí, xóa cờ ngụy, may cờ Mặt trận Giải phóng, giữ gìn an ninh trật tự trong đêm lịch sử.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-year">1988</div>
+        <div class="tl-title">🏅 Di Tích Lịch Sử Quốc Gia</div>
+        <div class="tl-desc">Cơ sở Ban Tuyên huấn Xứ ủy Nam bộ tại 51/10/14 Cao Thắng được Nhà nước công nhận là <strong>Di tích lịch sử cấp quốc gia</strong> – ghi nhận vai trò đặc biệt của vùng Bàn Cờ trong hai cuộc kháng chiến.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-year">2015</div>
+        <div class="tl-title">🌟 Danh Hiệu Anh Hùng LLVTND</div>
+        <div class="tl-desc">Nhân dân và lực lượng vũ trang Quận 3 – Vùng lõm chính trị Bàn Cờ được Nhà nước tặng danh hiệu <strong>Anh hùng Lực lượng vũ trang nhân dân</strong>, vinh danh những đóng góp xuất sắc cho sự nghiệp giải phóng và thống nhất đất nước.</div>
+      </div>
+
+      <div class="timeline-item highlight">
+        <div class="tl-year">01/07/2025 <span class="tl-badge">🆕 MỚI</span></div>
+        <div class="tl-title">🏙️ Phường Bàn Cờ Chính Thức Thành Lập</div>
+        <div class="tl-desc">Theo Nghị quyết 1685/NQ-UBTVQH15 ngày 16/6/2025, phường Bàn Cờ mới được thành lập trên cơ sở hợp nhất toàn bộ Phường 1, 2, 3, 5 và một phần Phường 4 (Quận 3). Bộ máy hành chính mới vận hành từ 01/07/2025 tại 296-298 Nguyễn Thiện Thuật.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4: NGUỒN GỐC ĐỊA DANH ===== -->
+  <div class="section" id="danh-goc">
+    <div class="section-title">🔤 Nguồn Gốc Địa Danh</div>
+    <div class="name-cards">
+      <div class="name-card">
+        <h4>📖 Ý Nghĩa Tên Gọi</h4>
+        <div class="big-name">♟ Bàn Cờ</div>
+        <div class="name-desc">
+          Tên gọi bắt nguồn từ năm <strong>1910</strong> khi thực dân Pháp quy hoạch khu đất phía trong đường Nguyễn Thiện Thuật thành hệ thống đường cắt nhau vuông vức, tạo thành <strong>52 con hẻm ngang dọc</strong> trên diện tích ~15 ha – trông giống y như một bàn cờ tướng.<br><br>
+          Không có tên chính thức, người dân quen gọi <em>"khu Bàn Cờ"</em>. Đặc điểm mê cung hẻm hóc này vô tình trở thành lợi thế chiến lược: căn cứ lõm hoàn hảo cho cách mạng.
+        </div>
+      </div>
+      <div class="name-card">
+        <h4>🔀 Hợp Nhất Từ Các Đơn Vị Cũ</h4>
+        <div class="arrow-transform" style="margin-bottom:14px;">
+          <span class="old-unit">Phường 1 (Q.3)</span>
+          <span class="old-unit">Phường 2 (Q.3)</span>
+          <span class="old-unit">Phường 3 (Q.3)</span>
+          <span class="old-unit">Phường 5 (Q.3)</span>
+          <span class="old-unit">Phường 4* (Q.3)</span>
+          <span class="arrow-icon">→</span>
+          <span class="new-unit">🆕 Phường Bàn Cờ</span>
+        </div>
+        <div class="name-desc" style="font-size:0.75rem;color:#777;">* Một phần diện tích Phường 4, phần còn lại nhập vào phường Xuân Hòa</div>
+        <hr style="margin:12px 0; border:none; border-top:1px solid #F9E79F;">
+        <div class="name-desc">
+          <strong>Diện tích:</strong> ~0,99 km² &nbsp;|&nbsp; <strong>Dân số:</strong> 67.616 người<br>
+          <strong>Mật độ:</strong> 68.299 người/km²<br>
+          <strong>Hiệu lực:</strong> 01/07/2025 – Nghị quyết 1685/NQ-UBTVQH15
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5: DI SẢN VĂN HÓA ===== -->
+  <div class="section" id="culture">
+    <div class="section-title">🏛️ Di Sản Văn Hóa &amp; Điểm Nhấn</div>
+
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="heritage-icon">🏛️</div>
+        <div class="heritage-name">Tam Tông Miếu</div>
+        <div class="heritage-desc">Đường Cao Thắng. Ngôi miếu linh thiêng, từng là trạm chỉ huy và cứu thương trong Tết Mậu Thân 1968</div>
+      </div>
+      <div class="heritage-card">
+        <div class="heritage-icon">🛕</div>
+        <div class="heritage-name">Kỳ Viên Tự</div>
+        <div class="heritage-desc">Đường Nguyễn Đình Chiểu. Ngôi chùa Phật giáo lâu đời, điểm tâm linh nổi bật giữa lòng phố thị</div>
+      </div>
+      <div class="heritage-card">
+        <div class="heritage-icon">📍</div>
+        <div class="heritage-name">Di Tích QG: 51/10/14 Cao Thắng</div>
+        <div class="heritage-desc">Cơ sở Ban Tuyên huấn Xứ ủy Nam bộ – Di tích lịch sử Quốc gia (1988). Nơi họp bí mật của lãnh đạo cách mạng</div>
+      </div>
+      <div class="heritage-card">
+        <div class="heritage-icon">🚩</div>
+        <div class="heritage-name">Địa Chỉ Đỏ 115 Bàn Cờ</div>
+        <div class="heritage-desc">Sở chỉ huy Thành Đoàn ngày 30/4/1975 – nơi tiếp quản lịch sử khu vực Ngã Bảy – Bàn Cờ – Vườn Chuối</div>
+      </div>
+      <div class="heritage-card">
+        <div class="heritage-icon">🛍️</div>
+        <div class="heritage-name">Chợ Bàn Cờ</div>
+        <div class="heritage-desc">Chợ "lạc đường" nổi tiếng, thiên đường đồ si đa và hàng hóa truyền thống. Hoạt động nhộn nhịp trên đường Nguyễn Thiện Thuật &amp; Cao Thắng</div>
+      </div>
+      <div class="heritage-card">
+        <div class="heritage-icon">🌳</div>
+        <div class="heritage-name">Công Viên Lê Văn Tám</div>
+        <div class="heritage-desc">Công viên lịch sử tiếp giáp phường – lá phổi xanh, không gian giải trí cộng đồng quan trọng của khu vực trung tâm</div>
+      </div>
+    </div>
+
+    <div class="festival-row">
+      <div class="festival-box">
+        <h4>🎎 Lễ Hội &amp; Văn Hóa Truyền Thống</h4>
+        <ul class="festival-list">
+          <li>🏮 <span>Lễ hội chùa Kỳ Viên Tự – lễ Phật đản, Vu lan</span></li>
+          <li>🕯️ <span>Lễ cúng miếu Tam Tông – tín ngưỡng dân gian Nam bộ</span></li>
+          <li>🎆 <span>Ngày giỗ trận 30/4 – tưởng niệm liệt sĩ Bàn Cờ</span></li>
+          <li>🛒 <span>Chợ Tết truyền thống tại Chợ Bàn Cờ – ẩm thực đặc sắc</span></li>
+          <li>📸 <span>Phong trào "Ký ức Người Mẹ Bàn Cờ" – tri ân thường niên</span></li>
+        </ul>
+      </div>
+      <div class="festival-box">
+        <h4>🍜 Đặc Sản &amp; Ẩm Thực</h4>
+        <ul class="festival-list">
+          <li>🍲 <span>Hẻm ăn đêm Nguyễn Thiện Thuật – bún bò, hủ tiếu, bánh mì Sài Gòn</span></li>
+          <li>☕ <span>Cà phê vợt truyền thống – di sản ẩm thực Sài Gòn xưa</span></li>
+          <li>🥗 <span>Cơm tấm sườn bì chả – đặc trưng ẩm thực Nam bộ</span></li>
+          <li>🛍️ <span>Chợ đồ si đa Bàn Cờ – thiên đường thời trang vintage</span></li>
+          <li>🍡 <span>Bánh mì que, chè sâm bổ lượng – gốc Hoa trong lòng phố</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6: KINH TẾ & ĐÔ THỊ HÓA ===== -->
+  <div class="section" id="economy">
+    <div class="section-title">📈 Kinh Tế &amp; Đô Thị Hóa</div>
+    <div class="econ-grid">
+      <div class="econ-box">
+        <h4>📊 Cơ Cấu Kinh Tế Khu Vực</h4>
+        <div class="bar-item">
+          <div class="bar-label"><span>Thương mại – Dịch vụ</span><span>65%</span></div>
+          <div class="bar-track"><div class="bar-fill green" style="width:65%"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Văn phòng – Tài chính</span><span>20%</span></div>
+          <div class="bar-track"><div class="bar-fill blue" style="width:20%"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Giáo dục – Y tế</span><span>10%</span></div>
+          <div class="bar-track"><div class="bar-fill orange" style="width:10%"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Tiểu thủ công nghiệp</span><span>5%</span></div>
+          <div class="bar-track"><div class="bar-fill red" style="width:5%"></div></div>
+        </div>
+        <div style="margin-top:14px;font-size:0.78rem;color:#777;font-style:italic;">
+          Khu vực tập trung mật độ thương mại dày đặc với các tuyến phố mua sắm, cà phê, ẩm thực, văn phòng cho thuê dọc Cao Thắng, Nguyễn Đình Chiểu, Võ Văn Tần.
+        </div>
+      </div>
+      <div class="econ-box">
+        <h4>🏗️ Hạ Tầng &amp; Định Hướng Phát Triển</h4>
+        <ul class="project-list">
+          <li><span class="proj-dot"></span><span><strong>Nâng cấp hệ thống hẻm:</strong> Chỉnh trang 52 hẻm lịch sử, cải thiện thoát nước và chiếu sáng</span></li>
+          <li><span class="proj-dot"></span><span><strong>Metro Tuyến 2:</strong> Nhà ga gần khu vực Bàn Cờ – kết nối trung tâm Thủ Thiêm</span></li>
+          <li><span class="proj-dot"></span><span><strong>Số hóa hành chính:</strong> UBND phường triển khai dịch vụ công trực tuyến từ 07/2025</span></li>
+          <li><span class="proj-dot"></span><span><strong>Du lịch lịch sử:</strong> Quy hoạch tuyến "Con đường Di sản Bàn Cờ" kết nối các địa chỉ đỏ</span></li>
+          <li><span class="proj-dot"></span><span><strong>Cải tạo Chợ Bàn Cờ:</strong> Nâng cấp hạ tầng chợ truyền thống, giữ gìn bản sắc văn hóa</span></li>
+          <li><span class="proj-dot"></span><span><strong>Hợp nhất sau sáp nhập:</strong> Tối ưu bộ máy hành chính 5 phường → 1 phường, tiết kiệm nguồn lực</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 7: FOOTER ===== -->
+  <div id="footer">
+    <h4>📚 Nguồn Tham Khảo</h4>
+    <ul class="source-list">
+      <li>📌 <a href="https://xaydungchinhsach.chinhphu.vn/sap-xep-dvhc-danh-sach-168-xa-phuong-dac-khu-cua-thanh-pho-ho-chi-minh-119250623085031865.htm" target="_blank">Danh sách 168 xã, phường, đặc khu TP.HCM sau sắp xếp – Báo Điện tử Chính phủ (2025)</a></li>
+      <li>📌 <a href="https://thanhnien.vn/ten-phuong-moi-xuan-hoa-ban-co-nhieu-loc-o-quan-3-co-y-nghia-gi-185250418173120226.htm" target="_blank">Tên phường mới Xuân Hòa, Bàn Cờ, Nhiêu Lộc ở Quận 3 có ý nghĩa gì? – Báo Thanh Niên (2025)</a></li>
+      <li>📌 <a href="https://www.sggp.org.vn/vung-lom-chinh-tri-ban-co-post273269.html" target="_blank">Vùng lõm chính trị Bàn Cờ – Báo SGGP</a></li>
+      <li>📌 <a href="https://truyenhinhdulich.vn/van-hoa/ban-co-can-cu-dia-cua-long-dan-sai-gon-19155.html" target="_blank">Bàn Cờ – Căn cứ địa của lòng dân Sài Gòn – VOV Du lịch</a></li>
+      <li>📌 <a href="https://thanhnien.vn/ten-phuong-xa-moi-sap-nhap-o-tphcm-phuong-ban-co-co-cho-lac-duong-185250602120119776.htm" target="_blank">Phường Bàn Cờ có chợ 'lạc đường' – Báo Thanh Niên (2025)</a></li>
+      <li>📌 <a href="https://baomoi.com/ky-uc-nguoi-me-ban-co-phu-nu-quan-3-tri-an-va-tiep-noi-truyen-thong-c51997378.epi" target="_blank">Ký ức Người mẹ Bàn Cờ – Phụ nữ Quận 3 tri ân – Báo mới</a></li>
+      <li>📌 <a href="https://nhadatvn.com.vn/blog/phuong-ban-co/" target="_blank">Phường Bàn Cờ sau sáp nhập: Bản đồ, địa giới &amp; tiềm năng 2026 – NhaDatVN</a></li>
+    </ul>
+    <div class="footer-note">
+      📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

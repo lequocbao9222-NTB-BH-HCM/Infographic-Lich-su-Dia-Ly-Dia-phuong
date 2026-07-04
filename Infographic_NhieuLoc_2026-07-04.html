@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographic – Phường Nhiêu Lộc | TP. Hồ Chí Minh</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Be Vietnam Pro', 'Segoe UI', Arial, sans-serif;
+    background: #f0f4f8;
+    color: #2C3E50;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px 40px;
+  }
+
+  /* ======================== HEADER ======================== */
+  .header {
+    background: linear-gradient(135deg, #C0392B 0%, #922b21 50%, #7b241c 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 40px 36px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.35);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header-badge {
+    display: inline-block;
+    background: #F39C12;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .header h1 span {
+    color: #F39C12;
+  }
+  .header-sub {
+    font-size: 16px;
+    opacity: 0.88;
+    margin-bottom: 24px;
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 12px;
+    padding: 16px 14px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+  }
+  .stat-card .icon { font-size: 26px; margin-bottom: 6px; }
+  .stat-card .value {
+    font-size: 24px;
+    font-weight: 900;
+    color: #F39C12;
+    display: block;
+  }
+  .stat-card .label {
+    font-size: 12px;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .publish-date {
+    margin-top: 18px;
+    font-size: 13px;
+    opacity: 0.7;
+    text-align: right;
+  }
+
+  /* ======================== SECTION BASE ======================== */
+  .section {
+    border-radius: 14px;
+    padding: 30px 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 18px rgba(44,62,80,0.09);
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon { font-size: 24px; }
+
+  /* ======================== SECTION 2: VỊ TRÍ ======================== */
+  .geo-section {
+    background: #e8f4fd;
+  }
+  .geo-section .section-title { color: #1a5276; }
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .geo-box h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #2980B9;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #2980B9;
+    padding-bottom: 6px;
+  }
+  .direction-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .direction-item .dir-icon {
+    width: 32px; height: 32px;
+    background: #2980B9;
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .feature-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    align-items: flex-start;
+  }
+  .feature-item .fi { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .info-highlight {
+    background: #2980B9;
+    color: #fff;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: 16px;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .info-highlight .ihi { }
+  .info-highlight .ihi strong { display: block; font-size: 18px; color: #F39C12; }
+
+  /* ======================== SECTION 3: TIMELINE ======================== */
+  .timeline-section { background: #fff; }
+  .timeline-section .section-title { color: #C0392B; }
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #C0392B, #F39C12, #2980B9, #27AE60);
+    border-radius: 3px;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 22px;
+    padding-left: 20px;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -26px; top: 6px;
+    width: 14px; height: 14px;
+    background: #C0392B;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #C0392B;
+  }
+  .tl-item.highlight::before {
+    background: #F39C12;
+    box-shadow: 0 0 0 3px #F39C12;
+    width: 18px; height: 18px;
+    left: -28px; top: 4px;
+  }
+  .tl-year {
+    font-size: 13px;
+    font-weight: 800;
+    color: #C0392B;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tl-item.highlight .tl-year { color: #F39C12; }
+  .tl-item.highlight {
+    background: linear-gradient(135deg, #fef9e7, #fdf2d0);
+    border-left: 4px solid #F39C12;
+    border-radius: 0 10px 10px 0;
+    padding: 12px 16px 12px 16px;
+    margin-left: -4px;
+  }
+  .tl-content {
+    font-size: 14px;
+    color: #2C3E50;
+    margin-top: 3px;
+  }
+
+  /* ======================== SECTION 4: NGUỒN GỐC ======================== */
+  .origin-section { background: #fef9e7; }
+  .origin-section .section-title { color: #9b5a00; }
+  .name-comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .name-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+    border: 2px solid #F39C12;
+    text-align: center;
+  }
+  .name-box.new { border-color: #C0392B; }
+  .name-box .label-sm { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .name-box .name { font-size: 16px; font-weight: 800; color: #2C3E50; }
+  .name-arrow { font-size: 28px; color: #F39C12; text-align: center; }
+  .etymology-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .etymology-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+    border-left: 4px solid #F39C12;
+  }
+  .etymology-card h4 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #9b5a00;
+    margin-bottom: 8px;
+  }
+  .etymology-card p { font-size: 13.5px; color: #555; line-height: 1.65; }
+  .etymology-card .han { font-size: 28px; color: #C0392B; font-weight: 900; float: right; margin-left: 10px; }
+
+  /* ======================== SECTION 5: DI SẢN ======================== */
+  .heritage-section {
+    background: #1A5276;
+    color: #fff;
+  }
+  .heritage-section .section-title { color: #F39C12; }
+  .heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .heritage-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 16px;
+    transition: background 0.2s;
+  }
+  .heritage-card:hover { background: rgba(255,255,255,0.12); }
+  .heritage-card .hc-icon { font-size: 30px; margin-bottom: 8px; }
+  .heritage-card h4 { font-size: 15px; font-weight: 700; color: #F39C12; margin-bottom: 6px; }
+  .heritage-card p { font-size: 13px; opacity: 0.88; line-height: 1.55; }
+  .festival-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .festival-tag {
+    background: rgba(243,156,18,0.25);
+    border: 1px solid rgba(243,156,18,0.5);
+    color: #F39C12;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .canal-highlight {
+    background: rgba(41,128,185,0.3);
+    border: 1px solid rgba(41,128,185,0.5);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 14px;
+    font-size: 14px;
+  }
+  .canal-highlight strong { color: #F39C12; }
+
+  /* ======================== SECTION 6: KINH TẾ ======================== */
+  .economy-section { background: #f8f9fa; }
+  .economy-section .section-title { color: #2C3E50; }
+  .eco-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .bar-item { margin-bottom: 14px; }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2C3E50;
+  }
+  .bar-track {
+    background: #dee2e6;
+    border-radius: 20px;
+    height: 10px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.4s;
+  }
+  .infra-cards { }
+  .infra-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    border-left: 4px solid #2980B9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .infra-item .ii-icon { font-size: 22px; flex-shrink: 0; }
+  .infra-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+  .infra-item p { font-size: 13px; color: #666; }
+  .future-box {
+    background: linear-gradient(135deg, #C0392B, #922b21);
+    color: #fff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-top: 16px;
+  }
+  .future-box h4 { font-size: 15px; font-weight: 700; color: #F39C12; margin-bottom: 10px; }
+  .future-box ul { list-style: none; padding: 0; }
+  .future-box li { font-size: 13px; padding: 4px 0; padding-left: 18px; position: relative; }
+  .future-box li::before { content: '→'; position: absolute; left: 0; color: #F39C12; }
+
+  /* ======================== FOOTER ======================== */
+  .footer {
+    background: #2C3E50;
+    color: #fff;
+    border-radius: 14px;
+    padding: 26px 32px;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .footer h4 { color: #F39C12; font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+  .footer p { opacity: 0.75; margin-bottom: 4px; }
+  .source-list { list-style: none; padding: 0; margin-top: 10px; }
+  .source-list li { padding: 3px 0; padding-left: 16px; position: relative; opacity: 0.7; }
+  .source-list li::before { content: '🔗'; position: absolute; left: 0; font-size: 11px; }
+  .source-list a { color: #2980B9; text-decoration: none; }
+  .source-list a:hover { text-decoration: underline; }
+  .footer-meta {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    opacity: 0.55;
+    font-size: 12px;
+  }
+
+  /* ======================== DIVIDER ======================== */
+  .divider {
+    height: 4px;
+    background: linear-gradient(to right, #C0392B, #F39C12, #2980B9, #27AE60);
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  /* ======================== PRINT ======================== */
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; }
+    .section, .header, .footer {
+      box-shadow: none;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ======================== SECTION 1: HEADER ======================== -->
+  <div class="header">
+    <div class="header-badge">🏙️ Đơn vị mới 2025 · Quận 3 · TP. Hồ Chí Minh</div>
+    <h1>Phường <span>Nhiêu Lộc</span></h1>
+    <div class="header-sub">Hợp nhất từ Phường 9, 11, 12, 14 (Quận 3) · Hiệu lực từ 01/07/2025 · Nghị quyết 1685/NQ-UBTVQH15</div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="icon">🗺️</div>
+        <span class="value">1,71 km²</span>
+        <span class="label">Diện tích tự nhiên</span>
+      </div>
+      <div class="stat-card">
+        <div class="icon">👥</div>
+        <span class="value">88.090</span>
+        <span class="label">Dân số (người)</span>
+      </div>
+      <div class="stat-card">
+        <div class="icon">🏘️</div>
+        <span class="value">51.514</span>
+        <span class="label">Mật độ (người/km²)</span>
+      </div>
+    </div>
+    <div class="publish-date">📅 Phát hành: 04/07/2026 · Dữ liệu tổng hợp theo Nghị quyết 1685/NQ-UBTVQH15</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ======================== SECTION 2: VỊ TRÍ & ĐỊA LÝ ======================== -->
+  <div class="section geo-section">
+    <div class="section-title">
+      <span class="icon">📍</span>
+      Vị Trí & Địa Lý Đô Thị
+    </div>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>Địa Giới Hành Chính</h3>
+        <div class="direction-item">
+          <div class="dir-icon">B</div>
+          <div><strong>Phía Bắc:</strong> Giáp phường Phú Nhuận — ranh giới là kênh Nhiêu Lộc – Thị Nghè huyền thoại</div>
+        </div>
+        <div class="direction-item">
+          <div class="dir-icon">Đ</div>
+          <div><strong>Phía Đông:</strong> Giáp phường Xuân Hòa — qua trục Nam Kỳ Khởi Nghĩa, Lý Chính Thắng</div>
+        </div>
+        <div class="direction-item">
+          <div class="dir-icon">N</div>
+          <div><strong>Phía Nam:</strong> Giáp phường Hòa Hưng (Q.10) — ranh giới đường Cách Mạng Tháng Tám</div>
+        </div>
+        <div class="direction-item">
+          <div class="dir-icon">T</div>
+          <div><strong>Phía Tây:</strong> Giáp phường Tân Sơn Nhất (Q.Tân Bình) — kết nối qua Nguyễn Văn Trỗi</div>
+        </div>
+      </div>
+      <div class="geo-box">
+        <h3>Đặc Điểm Địa Lý Đô Thị</h3>
+        <div class="feature-item">
+          <span class="fi">🌊</span>
+          <div><strong>Sông – Kênh:</strong> Kênh Nhiêu Lộc – Thị Nghè chạy dọc phía Bắc phường, đã được cải tạo thành công viên ven kênh hiện đại</div>
+        </div>
+        <div class="feature-item">
+          <span class="fi">🛣️</span>
+          <div><strong>Trục đường chính:</strong> Trường Sa, Hoàng Sa (ven kênh), Cách Mạng Tháng Tám, Nguyễn Thông, Lê Văn Sỹ, Kỳ Đồng</div>
+        </div>
+        <div class="feature-item">
+          <span class="fi">🌳</span>
+          <div><strong>Không gian xanh:</strong> Công viên bờ kè kênh Nhiêu Lộc – Thị Nghè dài hàng km, nơi sinh hoạt cộng đồng sầm uất</div>
+        </div>
+        <div class="feature-item">
+          <span class="fi">🏙️</span>
+          <div><strong>Mật độ:</strong> Một trong những phường đông dân nhất Quận 3, trung tâm thương mại – dịch vụ, nhiều văn phòng hạng B/C</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-highlight">
+      <div class="ihi">
+        <strong>82 Bà Huyện Thanh Quan</strong>
+        Trụ sở UBND phường Nhiêu Lộc
+      </div>
+      <div class="ihi">
+        <strong>276 Cách Mạng Tháng Tám</strong>
+        Trụ sở Đảng ủy phường Nhiêu Lộc
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== SECTION 3: TIMELINE LỊCH SỬ ======================== -->
+  <div class="section timeline-section">
+    <div class="section-title">
+      <span class="icon">📜</span>
+      Timeline Lịch Sử
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-year">Thế kỷ XVII</div>
+        <div class="tl-content">Lưu dân người Việt đến khai khẩn vùng Gia Định. Con gái quan Nguyễn Cửu Vân lấy chồng họ Nghè → dân gọi là "Bà Nghè" → kênh mang tên "Thị Nghè" từ đó. Ông Đặng Lộc chức Nhiêu học bỏ tiền tu sửa kênh → gọi là "Nhiêu Lộc".</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">1698</div>
+        <div class="tl-content">Chúa Nguyễn Phúc Chu cho lập Gia Định phủ. Kênh Nhiêu Lộc – Thị Nghè trở thành trục giao thông thủy quan trọng nối trung tâm Sài Gòn với các vùng lân cận.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">1859</div>
+        <div class="tl-content">Quân Pháp chiếm Gia Định. Tàu chiến Avalanche theo kênh Thị Nghè tiến vào (16/2/1859) → Pháp gọi kênh là "Arroyo de l'Avalanche". Khu vực bắt đầu phát triển đô thị theo quy hoạch thuộc địa.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">1928</div>
+        <div class="tl-content">Chùa Pháp Hoa được xây dựng tại 870 đường Trường Sa bởi Hòa thượng Thích Tuệ Hải, ban đầu mái tranh vách ván — sau trở thành Di tích Lịch sử cấp thành phố (2015).</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">1954</div>
+        <div class="tl-content">Dòng di dân từ Bắc vào Nam sau Hiệp định Genève. Dân số khu vực tăng mạnh, nhiều cộng đồng Công giáo và Phật giáo định cư dọc kênh Nhiêu Lộc.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">1964–1971</div>
+        <div class="tl-content">Hai vị Hòa thượng Thích Tâm Giác và Thích Thanh Kiểm xây dựng Chùa Vĩnh Nghiêm tại 339 Nam Kỳ Khởi Nghĩa — biểu tượng Phật giáo lớn nhất miền Nam, phỏng theo nguyên mẫu chùa Vĩnh Nghiêm ở Bắc Giang.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">1975–1990</div>
+        <div class="tl-content">Sau giải phóng, nhà dân lấn chiếm hai bờ kênh. Kênh Nhiêu Lộc – Thị Nghè ô nhiễm nặng, nước đen đặc, trở thành một trong những điểm ô nhiễm nghiêm trọng nhất thành phố.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">1993–2002</div>
+        <div class="tl-content">Giai đoạn 1993–1998: giải tỏa hàng nghìn căn nhà lụp xụp ven kênh. Năm 2002: dự án vệ sinh môi trường lưu vực Nhiêu Lộc – Thị Nghè khởi động với tổng vốn 8.600 tỷ đồng — nạo vét bùn, lắp 70 km cống thoát nước.</div>
+      </div>
+
+      <div class="tl-item highlight">
+        <div class="tl-year">⭐ 01/07/2025 — SÁP NHẬP</div>
+        <div class="tl-content"><strong>Phường Nhiêu Lộc chính thức thành lập</strong> theo Nghị quyết 1685/NQ-UBTVQH15 — hợp nhất Phường 9, 11, 12, 14 (Quận 3) thành đơn vị hành chính mới, diện tích 1,71 km², dân số 88.090 người. Kênh Nhiêu Lộc – Thị Nghè đã hồi sinh trở thành công viên xanh biểu tượng của thành phố.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== SECTION 4: NGUỒN GỐC ĐỊA DANH ======================== -->
+  <div class="section origin-section">
+    <div class="section-title">
+      <span class="icon">🔤</span>
+      Nguồn Gốc Địa Danh
+    </div>
+    <div class="name-comparison">
+      <div class="name-box">
+        <div class="label-sm">Các phường cũ (trước 01/07/2025)</div>
+        <div class="name">Phường 9, 11, 12, 14<br><small style="color:#888;font-size:12px;">Quận 3, TP. Hồ Chí Minh</small></div>
+      </div>
+      <div class="name-arrow">⟹</div>
+      <div class="name-box new">
+        <div class="label-sm">Phường mới (từ 01/07/2025)</div>
+        <div class="name" style="color:#C0392B;">Phường Nhiêu Lộc<br><small style="color:#888;font-size:12px;">Quận 3, TP. Hồ Chí Minh</small></div>
+      </div>
+    </div>
+
+    <div class="etymology-grid">
+      <div class="etymology-card">
+        <span class="han">濡</span>
+        <h4>🌿 "Nhiêu Lộc" — Ý nghĩa</h4>
+        <p><strong>"Nhiêu"</strong> (濡) có nghĩa là giàu có, phong phú, thịnh vượng.<br>
+        <strong>"Lộc"</strong> (祿) là lộc trời, may mắn, phúc lộc.<br>
+        Kết hợp lại: <em>vùng đất phong phú, nhiều lộc phúc</em> — phản ánh ước vọng của cư dân ngày xưa.</p>
+      </div>
+      <div class="etymology-card">
+        <span class="han" style="color:#2980B9;">鄭</span>
+        <h4>📖 Sự Tích Ông Đặng Lộc</h4>
+        <p>Theo dân gian, ông <strong>Đặng Lộc</strong> giữ chức <strong>Nhiêu học</strong> (官職 — chức quan nhỏ thời Nguyễn) đã tự bỏ tiền tu sửa và nạo vét dòng kênh để phục vụ việc đi lại của dân. Dân kính nhớ ông, gọi kênh là <em>"Nhiêu Lộc"</em> theo chức danh và tên ông.</p>
+      </div>
+      <div class="etymology-card">
+        <span class="han" style="color:#27AE60;">市</span>
+        <h4>👩 Sự Tích "Thị Nghè"</h4>
+        <p>Con gái quan <strong>Nguyễn Cửu Vân</strong> (vị tướng khai phá Gia Định) tên <strong>Nguyễn Thị Khánh</strong> lấy chồng họ Nghè. Dân gọi bà là <em>"Bà Nghè"</em> rồi chuyển sang <em>"Thị Nghè"</em>. Cây cầu và dòng kênh mang tên bà từ đó.</p>
+      </div>
+      <div class="etymology-card">
+        <span class="han" style="color:#e67e22;">法</span>
+        <h4>🇫🇷 Tên Thời Pháp Thuộc</h4>
+        <p>Khi chiến hạm <strong>Avalanche</strong> của Pháp theo kênh Thị Nghè tiến vào Gia Định (16/2/1859), người Pháp đổi tên kênh thành <strong>"Arroyo de l'Avalanche"</strong>. Sau 1975, tên Việt được phục hồi: <em>Kênh Nhiêu Lộc – Thị Nghè</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== SECTION 5: DI SẢN VĂN HÓA ======================== -->
+  <div class="section heritage-section">
+    <div class="section-title">
+      <span class="icon">🏛️</span>
+      Di Sản Văn Hóa & Tâm Linh
+    </div>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="hc-icon">🏯</div>
+        <h4>Chùa Vĩnh Nghiêm</h4>
+        <p>339 Nam Kỳ Khởi Nghĩa, P.14 (cũ). Xây dựng 1964–1971, diện tích &gt;6.000 m². Phỏng theo chùa Vĩnh Nghiêm (Bắc Giang) — biểu tượng Phật giáo lớn nhất miền Nam, truyền bá Thiền phái Trúc Lâm.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="hc-icon">⛩️</div>
+        <h4>Chùa Pháp Hoa</h4>
+        <p>870 Trường Sa, P.14 (cũ). Xây từ 1928, hệ phái Bắc Tông. Nổi tiếng với tháp Đa Bảo và bộ sưu tập &gt;10.000 bình gốm (kỷ lục Việt Nam). Được công nhận Di tích Lịch sử năm 2015.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="hc-icon">🕌</div>
+        <h4>Chùa Chantarangsay</h4>
+        <p>164/235 Trần Quốc Thảo, P.14 (cũ). Chùa Khmer (Nam Tông) độc đáo tại trung tâm Sài Gòn. Kiến trúc đặc trưng văn hóa Khmer — mái uốn, tháp nhọn, màu sắc rực rỡ. Di tích kiến trúc nghệ thuật.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="hc-icon">⛪</div>
+        <h4>Nhà thờ Dòng Chúa Cứu Thế</h4>
+        <p>38 Kỳ Đồng, P.9 (cũ). Một trong những nhà thờ Công giáo lớn tại TP.HCM, xây dựng từ thời Pháp thuộc. Nơi diễn ra nhiều sự kiện lịch sử của cộng đồng Công giáo Sài Gòn.</p>
+      </div>
+    </div>
+
+    <div style="margin-bottom:14px;">
+      <div style="font-size:14px;font-weight:700;color:#F39C12;margin-bottom:10px;">🎉 Lễ Hội & Sinh Hoạt Văn Hóa</div>
+      <div class="festival-row">
+        <span class="festival-tag">🏮 Lễ Vu Lan (rằm tháng 7)</span>
+        <span class="festival-tag">🌸 Lễ Phật Đản (15/4 âm lịch)</span>
+        <span class="festival-tag">🎊 Tết Nguyên Đán</span>
+        <span class="festival-tag">🕯️ Lễ Giáng Sinh</span>
+        <span class="festival-tag">🏃 Chạy bộ ven kênh Nhiêu Lộc</span>
+        <span class="festival-tag">🎏 Hội chợ Tết Q.3</span>
+      </div>
+    </div>
+
+    <div class="canal-highlight">
+      <strong>🌊 Kênh Nhiêu Lộc – Thị Nghè:</strong> Từ dòng kênh "chết" đầy ô nhiễm thập niên 1980–90, sau dự án cải tạo 8.600 tỷ đồng (2002–2010), kênh đã hồi sinh trở thành <strong>biểu tượng xanh</strong> của TP.HCM. Hai bờ kênh Trường Sa – Hoàng Sa nay là công viên ven kênh dài hơn 9 km, điểm hẹn hò và tập thể dục yêu thích của hàng triệu người dân.
+    </div>
+  </div>
+
+  <!-- ======================== SECTION 6: KINH TẾ & ĐÔ THỊ ======================== -->
+  <div class="section economy-section">
+    <div class="section-title">
+      <span class="icon">📊</span>
+      Kinh Tế & Đô Thị Hóa
+    </div>
+    <div class="eco-grid">
+      <div>
+        <h3 style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#2980B9;margin-bottom:16px;border-bottom:2px solid #2980B9;padding-bottom:6px;">Cơ Cấu Kinh Tế</h3>
+        <div class="bar-item">
+          <div class="bar-label"><span>🏢 Thương mại – Dịch vụ</span><span>52%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:52%;background:linear-gradient(to right,#C0392B,#e74c3c);"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>🖥️ Văn phòng – Coworking</span><span>28%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:28%;background:linear-gradient(to right,#2980B9,#3498db);"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>🍜 F&amp;B – Ẩm thực</span><span>13%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:13%;background:linear-gradient(to right,#F39C12,#f1c40f);"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>🏗️ Bất động sản</span><span>7%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:7%;background:linear-gradient(to right,#27AE60,#2ecc71);"></div></div>
+        </div>
+
+        <div class="future-box">
+          <h4>🚀 Định Hướng Sau Sáp Nhập 2025</h4>
+          <ul>
+            <li>Phát triển tuyến công viên ven kênh Nhiêu Lộc thành điểm du lịch đô thị</li>
+            <li>Nâng cấp hệ thống thoát nước, giảm ngập úng theo Dự án chống ngập 10.000 tỷ</li>
+            <li>Thu hút đầu tư văn phòng hạng A/B dọc trục Cách Mạng Tháng Tám</li>
+            <li>Chỉnh trang đô thị, cải tạo hẻm sâu khu dân cư mật độ cao</li>
+            <li>Tinh gọn bộ máy hành chính, số hóa dịch vụ công cấp phường</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="infra-cards">
+        <h3 style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#2980B9;margin-bottom:16px;border-bottom:2px solid #2980B9;padding-bottom:6px;">Hạ Tầng & Tiện Ích</h3>
+        <div class="infra-item">
+          <span class="ii-icon">🏫</span>
+          <div>
+            <h4>Giáo dục</h4>
+            <p>THPT Lê Quý Đôn, THPT Nguyễn Thượng Hiền; nhiều trường tiểu học, THCS trên Cách Mạng Tháng Tám và Trần Quốc Thảo</p>
+          </div>
+        </div>
+        <div class="infra-item">
+          <span class="ii-icon">🏥</span>
+          <div>
+            <h4>Y tế</h4>
+            <p>Gần Bệnh viện Da Liễu TP.HCM, Bệnh viện Tai Mũi Họng; nhiều phòng khám chuyên khoa trên Nguyễn Thông</p>
+          </div>
+        </div>
+        <div class="infra-item">
+          <span class="ii-icon">🛤️</span>
+          <div>
+            <h4>Giao thông</h4>
+            <p>Kết nối Quận 1 qua cầu Kiệu, Hai Bà Trưng; ra sân bay qua Nguyễn Văn Trỗi (15 phút); nằm trên trục Bus BRT số 1</p>
+          </div>
+        </div>
+        <div class="infra-item">
+          <span class="ii-icon">🌳</span>
+          <div>
+            <h4>Công viên ven kênh</h4>
+            <p>Đường Trường Sa – Hoàng Sa: công viên tuyến tính dọc kênh, không gian xanh, chạy bộ, cafe outdoor phổ biến</p>
+          </div>
+        </div>
+        <div class="infra-item">
+          <span class="ii-icon">🏢</span>
+          <div>
+            <h4>Văn phòng</h4>
+            <p>Mật độ cao tòa nhà hạng B/C trên Cách Mạng Tháng Tám, Nam Kỳ Khởi Nghĩa; giá thuê 12–25 USD/m²/tháng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== FOOTER ======================== -->
+  <div class="footer">
+    <h4>📚 Nguồn Tham Khảo</h4>
+    <ul class="source-list">
+      <li><a href="https://xaydungchinhsach.chinhphu.vn/sap-xep-dvhc-danh-sach-168-xa-phuong-dac-khu-cua-thanh-pho-ho-chi-minh-119250623085031865.htm" target="_blank">Chinhphu.vn – Danh sách 168 xã, phường, đặc khu TP. Hồ Chí Minh (Nghị quyết 1685/NQ-UBTVQH15)</a></li>
+      <li><a href="https://www.arental.vn/phuong-nhieu-loc-tphcm/" target="_blank">Arental Vietnam – Phường Nhiêu Lộc: Thông tin hành chính, ranh giới mới và bản đồ</a></li>
+      <li><a href="https://vi.wikipedia.org/wiki/K%C3%AAnh_Nhi%C3%AAu_L%E1%BB%99c_%E2%80%93_Th%E1%BB%8B_Ngh%C3%A8" target="_blank">Wikipedia – Kênh Nhiêu Lộc – Thị Nghè</a></li>
+      <li><a href="https://trithucvn2.net/van-hoa/lich-su-va-ten-goi-kenh-nhieu-loc-thi-nghe.html" target="_blank">TriThucVN – Lịch sử và tên gọi kênh Nhiêu Lộc – Thị Nghè</a></li>
+      <li><a href="https://vnexpress.net/kenh-nhieu-loc-thi-nghe-sau-10-nam-cai-tao-4269716.html" target="_blank">VnExpress – Kênh Nhiêu Lộc – Thị Nghè sau 10 năm cải tạo</a></li>
+      <li><a href="https://vi.wikipedia.org/wiki/Ch%C3%B9a_V%C4%A9nh_Nghi%C3%AAm_(Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh)" target="_blank">Wikipedia – Chùa Vĩnh Nghiêm TP. Hồ Chí Minh</a></li>
+      <li><a href="https://nhacxua.vn/nguon-goc-ten-goi-dia-danh-o-sai-gon-thi-nghe-nam-xua/" target="_blank">NhacXua.vn – Nguồn gốc tên gọi địa danh Thị Nghè năm xưa</a></li>
+    </ul>
+    <div class="footer-meta">
+      📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

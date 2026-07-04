@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographic: Phường Tân Định – Lịch sử & Địa lý TP.HCM 2025</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Be Vietnam Pro', 'Segoe UI', Arial, sans-serif;
+    background: #1a1a2e;
+    padding: 20px 10px 40px;
+    color: #333;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ============ SECTION 1: HEADER ============ */
+  .header {
+    background: linear-gradient(135deg, #C0392B 0%, #922B21 50%, #7B241C 100%);
+    border-radius: 16px;
+    padding: 36px 40px 32px;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 220px; height: 220px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -20px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .badge-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: #F39C12;
+    color: #2C3E50;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .badge-district {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+  .header h1 {
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .header .subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.88;
+    margin-bottom: 28px;
+  }
+  .stat-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.13);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .stat-card .icon { font-size: 22px; margin-bottom: 6px; }
+  .stat-card .value {
+    font-size: 26px;
+    font-weight: 800;
+    color: #F39C12;
+    line-height: 1;
+  }
+  .stat-card .label {
+    font-size: 12px;
+    opacity: 0.82;
+    font-weight: 500;
+    margin-top: 4px;
+  }
+  .pub-date {
+    margin-top: 18px;
+    font-size: 12px;
+    opacity: 0.65;
+    font-style: italic;
+  }
+
+  /* ============ SECTION 2: VỊ TRÍ & ĐỊA LÝ ============ */
+  .section {
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+  .section-header {
+    padding: 16px 28px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-header .section-icon { font-size: 24px; }
+  .section-header h2 {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .section-body { padding: 22px 28px 26px; }
+
+  .geography { background: #EBF5FB; }
+  .geography .section-header { background: #2980B9; color: white; }
+
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .geo-box h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1A5276;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #AED6F1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .border-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 11px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .direction-badge {
+    background: #2980B9;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    min-width: 42px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 11px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .feature-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ============ SECTION 3: TIMELINE ============ */
+  .timeline-section { background: #FDFEFE; }
+  .timeline-section .section-header { background: #C0392B; color: white; }
+
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #C0392B, #E74C3C, #F39C12);
+    border-radius: 3px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 22px;
+    padding-left: 26px;
+  }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-dot {
+    position: absolute;
+    left: -22px;
+    top: 4px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #C0392B;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #C0392B;
+  }
+  .timeline-item.highlight .timeline-dot {
+    background: #F39C12;
+    box-shadow: 0 0 0 2px #F39C12, 0 0 12px rgba(243,156,18,0.5);
+    width: 18px; height: 18px;
+    left: -24px;
+    top: 2px;
+  }
+  .timeline-item.highlight {
+    background: linear-gradient(135deg, #FEF9E7, #FDEBD0);
+    border-radius: 10px;
+    padding: 14px 16px 14px 30px;
+    border-left: 4px solid #F39C12;
+    margin-left: -6px;
+  }
+  .timeline-year {
+    font-size: 13px;
+    font-weight: 800;
+    color: #C0392B;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .timeline-item.highlight .timeline-year { color: #D35400; font-size: 14px; }
+  .timeline-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 3px;
+  }
+  .timeline-desc {
+    font-size: 13px;
+    color: #566573;
+    line-height: 1.55;
+  }
+
+  /* ============ SECTION 4: NGUỒN GỐC ĐỊA DANH ============ */
+  .etymology-section { background: #FFFDE7; }
+  .etymology-section .section-header { background: #F39C12; color: #2C3E50; }
+
+  .etym-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .etym-card {
+    background: white;
+    border-radius: 10px;
+    padding: 18px 20px;
+    border: 2px solid #F9E79F;
+  }
+  .etym-card h3 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #D35400;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .etym-card p { font-size: 13.5px; line-height: 1.65; color: #444; }
+  .etym-card .han-nom {
+    font-size: 28px;
+    font-weight: 700;
+    color: #C0392B;
+    text-align: center;
+    margin: 10px 0;
+    font-family: serif;
+  }
+  .name-change {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .name-old {
+    background: #EAEDED;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #566573;
+    text-align: center;
+  }
+  .name-arrow { font-size: 20px; color: #F39C12; font-weight: 700; }
+  .name-new {
+    background: linear-gradient(135deg, #C0392B, #E74C3C);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+  }
+
+  /* ============ SECTION 5: DI SẢN VĂN HÓA ============ */
+  .heritage-section { background: #1A5276; color: white; }
+  .heritage-section .section-header { background: #154360; color: white; }
+
+  .heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .heritage-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px 16px;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: background 0.2s;
+  }
+  .heritage-card .h-icon { font-size: 28px; margin-bottom: 10px; }
+  .heritage-card h4 { font-size: 13.5px; font-weight: 700; margin-bottom: 6px; color: #F39C12; }
+  .heritage-card p { font-size: 12.5px; line-height: 1.6; opacity: 0.88; }
+
+  .festival-row {
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .festival-row h3 { font-size: 14px; font-weight: 700; color: #F9E79F; margin-bottom: 12px; }
+  .festival-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .festival-tag {
+    background: rgba(243,156,18,0.2);
+    border: 1px solid rgba(243,156,18,0.4);
+    color: #F9E79F;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+
+  /* ============ SECTION 6: KINH TẾ & ĐÔ THỊ ============ */
+  .economy-section { background: #F4F6F7; }
+  .economy-section .section-header { background: #2C3E50; color: white; }
+
+  .eco-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .eco-col h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .bar-item { margin-bottom: 14px; }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2C3E50;
+    margin-bottom: 5px;
+  }
+  .bar-track {
+    background: #D5DBDB;
+    border-radius: 6px;
+    height: 10px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 1s ease;
+  }
+
+  .project-card {
+    background: white;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    border-left: 4px solid #2980B9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .project-card h4 { font-size: 13.5px; font-weight: 700; color: #1A5276; margin-bottom: 5px; }
+  .project-card p { font-size: 12.5px; color: #566573; line-height: 1.5; }
+  .project-card.highlight-card { border-left-color: #F39C12; }
+  .project-card.highlight-card h4 { color: #D35400; }
+
+  /* ============ FOOTER ============ */
+  .footer {
+    background: #2C3E50;
+    border-radius: 12px;
+    padding: 24px 28px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  .footer h3 { color: #F39C12; font-size: 13px; font-weight: 700; margin-bottom: 12px; }
+  .footer .sources { display: flex; flex-direction: column; gap: 5px; }
+  .footer a { color: #85C1E9; text-decoration: none; }
+  .footer a:hover { color: #AED6F1; text-decoration: underline; }
+  .footer-note {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-style: italic;
+    opacity: 0.6;
+    font-size: 11px;
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    body { background: white; padding: 0; }
+    .header, .section-header, .heritage-section, .footer, .economy-section .section-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section { box-shadow: none; border: 1px solid #eee; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== SECTION 1: HEADER ===== -->
+  <div class="header">
+    <div class="badge-row">
+      <span class="badge">⭐ Đơn vị mới 2025</span>
+      <span class="badge-district">🏙️ TP. Hồ Chí Minh · Quận trung tâm</span>
+    </div>
+    <h1>Phường Tân Định</h1>
+    <p class="subtitle">Hợp nhất từ: Phường Tân Định (Quận 1) + phần Phường Đa Kao &nbsp;·&nbsp; Hiệu lực từ 01/07/2025</p>
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="icon">📐</div>
+        <div class="value">1,23</div>
+        <div class="label">km² Diện tích</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">👥</div>
+        <div class="value">48.524</div>
+        <div class="label">Người (2024)</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">🏘️</div>
+        <div class="value">39.450</div>
+        <div class="label">Người/km² (mật độ)</div>
+      </div>
+    </div>
+    <div class="pub-date">📅 Phát hành: 30/06/2026 · Nguồn: Nghị quyết 1685/NQ-UBTVQH15 (16/06/2025)</div>
+  </div>
+
+  <!-- ===== SECTION 2: VỊ TRÍ & ĐỊA LÝ ===== -->
+  <div class="section geography">
+    <div class="section-header">
+      <span class="section-icon">🗺️</span>
+      <h2>Vị trí & Địa lý Đô thị</h2>
+    </div>
+    <div class="section-body">
+      <div class="geo-grid">
+        <div class="geo-box">
+          <h3>📍 Địa Giới Hành Chính</h3>
+          <div class="border-item">
+            <span class="direction-badge">⬆ BẮC</span>
+            <span>Phường Gia Định & Phường Cầu Kiệu – ranh giới: Kênh Nhiêu Lộc – Thị Nghè</span>
+          </div>
+          <div class="border-item">
+            <span class="direction-badge">➡ ĐÔNG</span>
+            <span>Phường Sài Gòn – ranh giới: Đường Nguyễn Đình Chiểu</span>
+          </div>
+          <div class="border-item">
+            <span class="direction-badge">⬇ NAM</span>
+            <span>Phường Xuân Hòa (Quận 3) – ranh giới: Đường Hai Bà Trưng</span>
+          </div>
+          <div class="border-item">
+            <span class="direction-badge">⬅ TÂY</span>
+            <span>Phường Cầu Kiệu (Phú Nhuận) – qua Kênh Nhiêu Lộc</span>
+          </div>
+          <div class="border-item" style="margin-top:10px;">
+            <span class="direction-badge" style="background:#27AE60;">🏛 TRỤ SỞ</span>
+            <span>58B Nguyễn Đình Chiểu (UBND phường mới)</span>
+          </div>
+        </div>
+        <div class="geo-box">
+          <h3>🌆 Đặc Điểm Địa Lý & Đô Thị</h3>
+          <div class="feature-item">
+            <span class="feature-icon">🌊</span>
+            <span>Phía Bắc tiếp giáp <strong>Kênh Nhiêu Lộc – Thị Nghè</strong> – tuyến kênh đô thị huyền thoại Sài Gòn, đã được cải tạo thành công viên xanh</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🏙️</span>
+            <span>Nằm trong <strong>lõi đô thị lịch sử</strong> Quận 1 – khu vực có mật độ dân số và mật độ thương mại cao bậc nhất TP.HCM</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🛣️</span>
+            <span>Trục đường chính: <strong>Hai Bà Trưng, Đinh Tiên Hoàng, Nguyễn Đình Chiểu</strong> – các tuyến phố sầm uất, nhộn nhịp</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🌳</span>
+            <span>Gần <strong>Công viên Lê Văn Tám</strong> (hơn 5 ha) – lá phổi xanh giữa trung tâm, tiền thân là nghĩa trang Mạc Đỉnh Chi</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📏</span>
+            <span>Chỉ cách <strong>Hồ Con Rùa và Nhà thờ Đức Bà</strong> hơn 1 km – vị trí đắc địa bậc nhất Sài Gòn</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3: TIMELINE LỊCH SỬ ===== -->
+  <div class="section timeline-section">
+    <div class="section-header">
+      <span class="section-icon">⏳</span>
+      <h2>Dòng Thời Gian Lịch Sử</h2>
+    </div>
+    <div class="section-body">
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">Trước 1815 – Thời Gia Định</div>
+          <div class="timeline-title">Thôn Tân Định ra đời trên đất Gia Định</div>
+          <div class="timeline-desc">Tân Định là thôn thuộc tổng Bình Trị, huyện Bình Dương, phủ Tân Bình, trấn Phiên An. Bản đồ Gia Định do Trần Văn Học vẽ năm 1815 ghi nhận rõ địa danh "Gò Tân Định" – một gò đất cao nổi tiếng trong vùng.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1859 – Pháp đánh Gia Định</div>
+          <div class="timeline-title">Tân Định giữa lửa đạn & làn sóng di cư</div>
+          <div class="timeline-desc">Khi quân Pháp đánh chiếm thành Gia Định, khu Tân Định nằm gần thành trở thành chiến địa. Người dân buộc phải tản cư, cảnh quan và đời sống xã hội biến đổi hoàn toàn sau cuộc chiếm đóng.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1870 – 1876 · Kiến trúc</div>
+          <div class="timeline-title">Xây dựng Nhà thờ Thánh Tâm Chúa Giêsu Tân Định</div>
+          <div class="timeline-desc">Nhà thờ Tân Định được khởi công năm 1870 và khánh thành ngày 16/12/1876. Đây là một trong hai nhà thờ cổ quy mô lớn nhất Sài Gòn (cùng với Nhà thờ Đức Bà), mang phong cách kiến trúc Gothic phương Tây đặc sắc.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1888 – Sáp nhập vào Sài Gòn</div>
+          <div class="timeline-title">Tân Định chính thức vào lòng thành phố Sài Gòn</div>
+          <div class="timeline-desc">Các làng Tân Định, Phú Hòa và Nam Chơn được sáp nhập vào địa giới thành phố Sài Gòn, được chia thành các "hộ". Năm 1906, hộ Tân Định chính thức hình thành trong 6 hộ của thành phố Sài Gòn.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1926 – 1927 · Thương mại</div>
+          <div class="timeline-title">Chợ Tân Định – "Chợ nhà giàu" khánh thành</div>
+          <div class="timeline-desc">Hội đồng thành phố Sài Gòn tiến hành xây mới chợ Tân Định (tiền thân là chợ Phú Hòa), khánh thành năm 1927. Chợ nhanh chóng nổi tiếng với hàng hóa cao cấp, thực phẩm tươi ngon và ẩm thực Sài Gòn đặc sắc.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1957 – Biểu tượng màu hồng</div>
+          <div class="timeline-title">Nhà thờ Tân Định khoác áo hồng phấn huyền thoại</div>
+          <div class="timeline-desc">Nhà thờ được sơn màu hồng phấn cả bên ngoài lẫn bên trong, tạo nên biệt danh "Nhà thờ Hồng" nổi tiếng khắp Sài Gòn – trở thành biểu tượng nhiếp ảnh độc đáo không thể nhầm lẫn.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2003 – Công nhận di tích</div>
+          <div class="timeline-title">Chợ Tân Định được xếp hạng Di tích cấp Thành phố</div>
+          <div class="timeline-desc">Chợ Tân Định chính thức được UBND TP.HCM công nhận là Di tích Kiến trúc Nghệ thuật cấp Thành phố, khẳng định giá trị lịch sử và văn hóa sau hơn 75 năm tồn tại trong lòng Sài Gòn.</div>
+        </div>
+
+        <div class="timeline-item highlight">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">🌟 01/07/2025 – SÁP NHẬP MỚI</div>
+          <div class="timeline-title">Phường Tân Định mới ra đời theo Nghị quyết 1685/NQ-UBTVQH15</div>
+          <div class="timeline-desc">Theo Nghị quyết của Ủy ban Thường vụ Quốc hội, Phường Tân Định (Quận 1) và phần phường Đa Kao được hợp nhất thành <strong>Phường Tân Định mới</strong>, diện tích 1,23 km², dân số 48.524 người. Quận 1 nay chỉ còn 4 phường: Sài Gòn, Tân Định, Bến Thành, Cầu Ông Lãnh.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4: NGUỒN GỐC ĐỊA DANH ===== -->
+  <div class="section etymology-section">
+    <div class="section-header">
+      <span class="section-icon">📜</span>
+      <h2>Nguồn Gốc Địa Danh</h2>
+    </div>
+    <div class="section-body">
+      <div class="etym-grid">
+        <div class="etym-card">
+          <h3>🏮 Tân Định</h3>
+          <div class="han-nom">新定</div>
+          <p><strong>Tân (新)</strong> = Mới &nbsp;·&nbsp; <strong>Định (定)</strong> = Yên định, định cư</p>
+          <br>
+          <p>Tên gọi "Tân Định" mang ý nghĩa <em>"vùng đất mới định cư, yên ổn"</em> – phản ánh lịch sử một thôn làng được khai khẩn trong thời kỳ mở đất Nam Bộ dưới triều chúa Nguyễn. Tên xuất hiện trong các văn bản hành chính từ thế kỷ 18 và được ghi trên bản đồ Gia Định năm 1815.</p>
+        </div>
+        <div class="etym-card">
+          <h3>🔤 Đa Kao (Dakao)</h3>
+          <div class="han-nom" style="font-size:22px;">Đất Hộ</div>
+          <p>Tên gốc là <strong>"Đất Hộ"</strong> – chỉ vùng đất từng có <em>hộ thành</em> (tường bảo vệ thành Gia Định – Quy Thành thời Nguyễn Ánh).</p>
+          <br>
+          <p>Người Pháp phiên âm: <em>"Đất"</em> → <strong>Dak</strong>, <em>"Hộ"</em> → <strong>ao</strong> (chữ H câm trong tiếng Pháp). Hình thành tên <strong>Dak-ao → Dakao → Đa Kao</strong>. Tên gọi phổ biến từ cuối thế kỷ 19.</p>
+        </div>
+      </div>
+      <div class="name-change" style="margin-top:20px;">
+        <div class="name-old">Phường Tân Định<br><small>(Quận 1 cũ)</small></div>
+        <div class="name-arrow">+</div>
+        <div class="name-old">Phần Phường Đa Kao<br><small>(Quận 1 cũ)</small></div>
+        <div class="name-arrow">→</div>
+        <div class="name-new">🏛️ Phường Tân Định<br><small>(Mới – từ 01/07/2025)</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5: DI SẢN VĂN HÓA ===== -->
+  <div class="section heritage-section">
+    <div class="section-header">
+      <span class="section-icon">🏛️</span>
+      <h2 style="color:white;">Di Sản Văn Hóa & Điểm Đến</h2>
+    </div>
+    <div class="section-body">
+      <div class="heritage-grid">
+        <div class="heritage-card">
+          <div class="h-icon">💒</div>
+          <h4>Nhà thờ Tân Định</h4>
+          <p>Xây 1870–1876, kiến trúc Gothic Pháp. Sơn màu hồng phấn từ 1957 – "Nhà thờ Hồng" biểu tượng Sài Gòn, một trong hai nhà thờ cổ lớn nhất thành phố (289 Hai Bà Trưng).</p>
+        </div>
+        <div class="heritage-card">
+          <div class="h-icon">🛒</div>
+          <h4>Chợ Tân Định</h4>
+          <p>Thành lập 1926–1927, tiền thân là chợ Phú Hòa. Di tích Kiến trúc Nghệ thuật cấp TP từ 2003. Nổi tiếng là "chợ nhà giàu" – ẩm thực phong phú, hoa tươi, hàng cao cấp (336 Hai Bà Trưng).</p>
+        </div>
+        <div class="heritage-card">
+          <div class="h-icon">🌳</div>
+          <h4>Công viên Lê Văn Tám</h4>
+          <p>Hơn 5 ha không gian xanh giữa lòng đô thị. Tiền thân là nghĩa trang Mạc Đỉnh Chi nổi tiếng – nơi chôn cất nhiều danh nhân Sài Gòn. Được cải tạo thành công viên từ sau 1975.</p>
+        </div>
+        <div class="heritage-card">
+          <div class="h-icon">🏛️</div>
+          <h4>Hộ Tân Định lịch sử</h4>
+          <p>Năm 1906, khi Sài Gòn chia 6 hộ, "Hộ Tân Định" là một trong những đơn vị đầu tiên, gồm 3 làng cổ: Tân Định, Phú Hòa và Nam Chơn – nền tảng cộng đồng dân cư lâu đời.</p>
+        </div>
+        <div class="heritage-card">
+          <div class="h-icon">🏠</div>
+          <h4>Kiến trúc thuộc địa Pháp</h4>
+          <p>Khu vực Đa Kao từng là ngoại ô sầm uất thời Pháp thuộc với nhiều biệt thự, nhà vườn Pháp-Việt. Nhiều công trình kiến trúc thực dân còn sót lại trên các phố Nguyễn Văn Thủ, Đinh Tiên Hoàng.</p>
+        </div>
+        <div class="heritage-card">
+          <div class="h-icon">🎭</div>
+          <h4>Phố Ẩm Thực Hai Bà Trưng</h4>
+          <p>Tuyến phố ẩm thực sầm uất bậc nhất Sài Gòn – từ hủ tiếu Nam Vang, bánh mì đặc sản đến nhà hàng cao cấp. Cũng là trung tâm hoa tươi nổi tiếng nhất TP.HCM mỗi dịp lễ Tết.</p>
+        </div>
+      </div>
+      <div class="festival-row">
+        <h3>🎊 Lễ Hội & Sinh Hoạt Văn Hóa Truyền Thống</h3>
+        <div class="festival-tags">
+          <span class="festival-tag">🕯️ Lễ Giáng Sinh tại Nhà thờ Tân Định</span>
+          <span class="festival-tag">🌸 Hội hoa Xuân Tết Nguyên Đán</span>
+          <span class="festival-tag">🏮 Tết Trung Thu phố đèn lồng</span>
+          <span class="festival-tag">🎵 Lễ hội âm nhạc đường phố</span>
+          <span class="festival-tag">🌺 Chợ hoa Hai Bà Trưng mỗi dịp Tết</span>
+          <span class="festival-tag">📿 Lễ cúng đình, lễ giỗ làng truyền thống</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6: KINH TẾ & ĐÔ THỊ HÓA ===== -->
+  <div class="section economy-section">
+    <div class="section-header">
+      <span class="section-icon">📊</span>
+      <h2>Kinh Tế & Đô Thị Hóa</h2>
+    </div>
+    <div class="section-body">
+      <div class="eco-grid">
+        <div class="eco-col">
+          <h3>⚙️ Cơ Cấu Kinh Tế (Ước tính)</h3>
+          <div class="bar-item">
+            <div class="bar-label"><span>🏪 Thương mại – Dịch vụ</span><span>60%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:60%;background:linear-gradient(90deg,#C0392B,#E74C3C);"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>🏨 Du lịch – Khách sạn – F&B</span><span>22%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:22%;background:linear-gradient(90deg,#2980B9,#3498DB);"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>🏢 Văn phòng – Bất động sản</span><span>12%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:12%;background:linear-gradient(90deg,#27AE60,#2ECC71);"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>🎓 Giáo dục – Y tế – Khác</span><span>6%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:6%;background:linear-gradient(90deg,#F39C12,#F1C40F);"></div></div>
+          </div>
+          <br>
+          <div style="background:#EBF5FB;border-radius:8px;padding:14px 16px;font-size:13px;line-height:1.65;color:#1A5276;">
+            <strong>🏆 Đặc trưng kinh tế:</strong> Phường Tân Định là một trong những trung tâm thương mại và ẩm thực cao cấp hàng đầu TP.HCM. Phố Hai Bà Trưng – trục xương sống – tập trung hàng trăm nhà hàng, quán cà phê, boutique và showroom thời trang sang trọng.
+          </div>
+        </div>
+        <div class="eco-col">
+          <h3>🏗️ Hạ Tầng & Quy Hoạch Sau Sáp Nhập</h3>
+          <div class="project-card highlight-card">
+            <h4>🚇 Metro Số 1 – Ga Bến Thành kết nối</h4>
+            <p>Tuyến Metro Bến Thành – Suối Tiên đi vào hoạt động, ga trung tâm gần phường Tân Định tạo bước đột phá giao thông đô thị, giảm ùn tắc và tăng sức hút thương mại toàn khu vực.</p>
+          </div>
+          <div class="project-card">
+            <h4>🌊 Dự án Cải tạo Kênh Nhiêu Lộc – Thị Nghè</h4>
+            <p>Tuyến kênh phía Bắc phường đã được hồi sinh thành không gian xanh ven sông, đường dạo bộ, nâng cao chất lượng sống cư dân và giá trị bất động sản ven kênh.</p>
+          </div>
+          <div class="project-card">
+            <h4>🏛️ Tái cơ cấu bộ máy hành chính</h4>
+            <p>Sáp nhập đơn vị hành chính theo NQ 1685 giúp tinh gọn bộ máy, tăng hiệu quả quản lý đô thị mật độ cao. Trụ sở mới tại 58B Nguyễn Đình Chiểu phục vụ toàn bộ 48.524 dân.</p>
+          </div>
+          <div class="project-card">
+            <h4>📈 Định hướng 2025–2030</h4>
+            <p>Phát triển Tân Định thành trung tâm kinh tế đêm (night economy), văn hóa sáng tạo và du lịch đô thị – kết hợp bảo tồn di tích lịch sử Nhà thờ Hồng và Chợ Tân Định.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <h3>📚 Nguồn Tham Khảo</h3>
+    <div class="sources">
+      <div>🔗 <a href="https://xaydungchinhsach.chinhphu.vn/sap-xep-dvhc-danh-sach-168-xa-phuong-dac-khu-cua-thanh-pho-ho-chi-minh-119250623085031865.htm" target="_blank">Danh sách 168 đơn vị hành chính TP.HCM sau sáp nhập – Báo Điện tử Chính phủ</a></div>
+      <div>🔗 <a href="https://vi.wikipedia.org/wiki/T%C3%A2n_%C4%90%E1%BB%8Bnh,_Qu%E1%BA%ADn_1" target="_blank">Tân Định, Quận 1 – Wikipedia tiếng Việt</a></div>
+      <div>🔗 <a href="https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_T%C3%A2n_%C4%90%E1%BB%8Bnh" target="_blank">Nhà thờ Tân Định – Wikipedia tiếng Việt</a></div>
+      <div>🔗 <a href="https://thanhnien.vn/ten-phuong-xa-moi-sap-nhap-o-tphcm-phuong-tan-dinh-noi-tieng-cho-nha-giau-185250722113756506.htm" target="_blank">Phường Tân Định nổi tiếng "chợ nhà giàu" – Báo Thanh Niên</a></div>
+      <div>🔗 <a href="https://nhacxua.vn/nguon-goc-ten-goi-dia-danh-o-sai-gon-bi-an-ten-goi-dakao/" target="_blank">Bí ẩn tên gọi Dakao – Nguồn gốc địa danh Sài Gòn</a></div>
+      <div>🔗 <a href="https://iwater.vn/thong-tin-dia-danh/lich-su-hinh-thanh-va-phat-trien-phuong-tan-dinh-quan-1-38478.html" target="_blank">Lịch sử hình thành phường Tân Định, Quận 1 – iWater</a></div>
+      <div>🔗 <a href="https://toptphochiminhaz.com/cho-tan-dinh/" target="_blank">Chợ Tân Định: Hơn 150 năm nét văn hóa Sài Gòn xưa</a></div>
+      <div>🔗 <a href="https://ghtk.vn/blog/phuong-tan-dinh-quan-1-sau-sap-nhap/" target="_blank">Phường Tân Định Quận 1: Thông tin sáp nhập 2025 – GHTK</a></div>
+    </div>
+    <div class="footer-note">
+      📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

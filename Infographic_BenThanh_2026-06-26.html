@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographic – Phường Bến Thành | TP. Hồ Chí Minh</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700;800;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Be Vietnam Pro', 'Segoe UI', Arial, sans-serif;
+    background: #ECF0F1;
+    color: #2C3E50;
+    line-height: 1.6;
+  }
+
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+  }
+
+  /* ========== HEADER ========== */
+  .header {
+    background: linear-gradient(135deg, #C0392B 0%, #922B21 50%, #7B241C 100%);
+    border-radius: 16px;
+    padding: 40px 32px 32px;
+    color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.35);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .header-badge {
+    display: inline-block;
+    background: #F39C12;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .header-location {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .header-title {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  }
+  .header-subtitle {
+    font-size: 15px;
+    opacity: 0.88;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+  .header-subtitle strong { font-weight: 600; }
+  .stat-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+  }
+  .stat-icon { font-size: 24px; margin-bottom: 6px; }
+  .stat-value { font-size: 26px; font-weight: 800; }
+  .stat-label { font-size: 11px; opacity: 0.82; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+  .header-date {
+    font-size: 12px;
+    opacity: 0.7;
+    text-align: right;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 16px;
+    margin-top: 8px;
+  }
+
+  /* ========== SECTION BASE ========== */
+  .section {
+    border-radius: 14px;
+    padding: 28px 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    opacity: 0.65;
+  }
+  .section-heading {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .section-heading::after {
+    content: '';
+    display: block;
+    width: 40px; height: 3px;
+    background: currentColor;
+    margin-top: 8px;
+    border-radius: 2px;
+    opacity: 0.4;
+  }
+
+  /* ========== SECTION 2: VỊ TRÍ & ĐỊA LÝ ========== */
+  .geo-section {
+    background: #EBF5FB;
+  }
+  .geo-section .section-title { color: #2980B9; }
+  .geo-section .section-heading { color: #1A5276; }
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .geo-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .geo-box h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2980B9;
+    margin-bottom: 14px;
+  }
+  .border-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #EBF5FB;
+    font-size: 13.5px;
+  }
+  .border-item:last-child { border-bottom: none; }
+  .border-icon { font-size: 20px; width: 28px; text-align: center; }
+  .border-dir { font-weight: 700; color: #2980B9; min-width: 40px; }
+  .geo-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #EBF5FB;
+    font-size: 13.5px;
+  }
+  .geo-feature:last-child { border-bottom: none; }
+  .geo-feat-icon { font-size: 18px; margin-top: 1px; }
+
+  /* ========== SECTION 3: TIMELINE ========== */
+  .timeline-section {
+    background: #fff;
+  }
+  .timeline-section .section-title { color: #C0392B; }
+  .timeline-section .section-heading { color: #2C3E50; }
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #C0392B, #F39C12);
+    border-radius: 2px;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot {
+    position: absolute;
+    left: -27px;
+    top: 4px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #C0392B;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #C0392B;
+  }
+  .tl-item.highlight .tl-dot {
+    background: #F39C12;
+    box-shadow: 0 0 0 2px #F39C12;
+    width: 18px; height: 18px;
+    left: -29px;
+    top: 2px;
+  }
+  .tl-year {
+    font-size: 12px;
+    font-weight: 800;
+    color: #C0392B;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+  }
+  .tl-item.highlight .tl-year { color: #F39C12; }
+  .tl-item.highlight {
+    background: #FEF9E7;
+    border: 2px solid #F39C12;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-left: -4px;
+  }
+  .tl-content h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 4px;
+  }
+  .tl-item.highlight .tl-content h4 { color: #B7770D; }
+  .tl-content p {
+    font-size: 13px;
+    color: #5D6D7E;
+    line-height: 1.55;
+  }
+
+  /* ========== SECTION 4: NGUỒN GỐC ĐỊA DANH ========== */
+  .name-section {
+    background: #FEF9E7;
+    border: 2px solid #F9E4B7;
+  }
+  .name-section .section-title { color: #D68910; }
+  .name-section .section-heading { color: #7D6608; }
+  .name-etymology {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .etym-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #F0D070;
+  }
+  .etym-box .etym-icon { font-size: 32px; margin-bottom: 8px; }
+  .etym-box h4 { font-size: 14px; font-weight: 700; color: #7D6608; margin-bottom: 6px; }
+  .etym-box p { font-size: 13px; color: #5D6D7E; }
+  .etym-box .han-nom {
+    font-size: 28px;
+    font-weight: 700;
+    color: #C0392B;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .name-evolution {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+    border: 1px solid #F0D070;
+  }
+  .name-evolution h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #D68910;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .evo-flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .evo-tag {
+    background: #FEF9E7;
+    border: 1px solid #F39C12;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #7D6608;
+  }
+  .evo-tag.new {
+    background: #C0392B;
+    border-color: #C0392B;
+    color: #fff;
+  }
+  .evo-arrow { font-size: 18px; color: #F39C12; }
+
+  /* ========== SECTION 5: DI SẢN ========== */
+  .heritage-section {
+    background: #1A5276;
+    color: #fff;
+  }
+  .heritage-section .section-title { color: #AED6F1; }
+  .heritage-section .section-heading { color: #fff; }
+  .heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .heritage-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .heritage-card:hover { background: rgba(255,255,255,0.15); }
+  .heritage-card .hc-icon { font-size: 30px; margin-bottom: 8px; }
+  .heritage-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 5px; color: #AED6F1; }
+  .heritage-card p { font-size: 12px; opacity: 0.8; line-height: 1.5; }
+  .festival-row {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .festival-row h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #F39C12;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .festival-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .festival-tag {
+    background: rgba(243,156,18,0.2);
+    border: 1px solid rgba(243,156,18,0.4);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #FAD7A0;
+  }
+  .special-note {
+    background: rgba(192,57,43,0.3);
+    border-left: 4px solid #C0392B;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    font-size: 13px;
+    opacity: 0.92;
+  }
+  .special-note strong { color: #FAD7A0; }
+
+  /* ========== SECTION 6: KINH TẾ ========== */
+  .economy-section {
+    background: #F4F6F7;
+  }
+  .economy-section .section-title { color: #27AE60; }
+  .economy-section .section-heading { color: #1A5226; }
+  .econ-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .econ-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .econ-box h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #27AE60;
+    margin-bottom: 14px;
+  }
+  .bar-item {
+    margin-bottom: 12px;
+  }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .bar-track {
+    height: 8px;
+    background: #ECF0F1;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #27AE60, #2ECC71);
+  }
+  .bar-fill.blue { background: linear-gradient(90deg, #2980B9, #5DADE2); }
+  .bar-fill.red { background: linear-gradient(90deg, #C0392B, #E74C3C); }
+  .bar-fill.orange { background: linear-gradient(90deg, #D68910, #F39C12); }
+  .project-list { list-style: none; }
+  .project-list li {
+    padding: 9px 0;
+    border-bottom: 1px solid #F4F6F7;
+    font-size: 13px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .project-list li:last-child { border-bottom: none; }
+  .project-list li::before {
+    content: '▶';
+    color: #27AE60;
+    font-size: 10px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .econ-highlight {
+    background: #EAFAF1;
+    border: 2px solid #27AE60;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    margin-top: 16px;
+  }
+  .econ-highlight .big-num { font-size: 28px; font-weight: 900; color: #1A5226; }
+  .econ-highlight .big-label { font-size: 12px; color: #5D6D7E; }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    background: #2C3E50;
+    color: #BDC3C7;
+    border-radius: 14px;
+    padding: 24px 28px;
+  }
+  .footer h4 {
+    color: #ECF0F1;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .source-list { list-style: none; }
+  .source-list li {
+    font-size: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .source-list li:last-child { border-bottom: none; }
+  .source-list a { color: #85C1E9; text-decoration: none; }
+  .source-list a:hover { color: #AED6F1; text-decoration: underline; }
+  .footer-note {
+    margin-top: 16px;
+    font-size: 11px;
+    opacity: 0.55;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 14px;
+    text-align: center;
+  }
+
+  /* ========== DIVIDER ========== */
+  .divider {
+    height: 4px;
+    background: linear-gradient(90deg, #C0392B, #F39C12, #27AE60, #2980B9);
+    border-radius: 2px;
+    margin: 24px 0;
+    opacity: 0.5;
+  }
+
+  /* ========== PRINT ========== */
+  @media print {
+    body { background: #fff; }
+    .wrapper { padding: 0; }
+    .section, .header, .footer { box-shadow: none; break-inside: avoid; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .heritage-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .bar-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 600px) {
+    .stat-cards { grid-template-columns: 1fr; }
+    .geo-grid, .name-etymology, .econ-grid, .heritage-grid { grid-template-columns: 1fr; }
+    .header-title { font-size: 32px; }
+    .heritage-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="header-badge">⚡ Đơn vị hành chính mới 2025</div>
+    <div class="header-location">📍 Quận 1 · Thành phố Hồ Chí Minh</div>
+    <h1 class="header-title">Phường Bến Thành</h1>
+    <p class="header-subtitle">
+      Hợp nhất từ: <strong>Phường Bến Thành (cũ)</strong> · <strong>Phường Phạm Ngũ Lão</strong><br>
+      + một phần <strong>Cầu Ông Lãnh</strong> &amp; <strong>Nguyễn Thái Bình</strong>
+    </p>
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-icon">🗺️</div>
+        <div class="stat-value">1,85</div>
+        <div class="stat-label">km² Diện tích</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">👥</div>
+        <div class="stat-value">71.785</div>
+        <div class="stat-label">Dân số (2025)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏙️</div>
+        <div class="stat-value">38.803</div>
+        <div class="stat-label">Người/km²</div>
+      </div>
+    </div>
+    <div class="header-date">📅 Infographic xuất bản: 26/06/2026 &nbsp;|&nbsp; Hiệu lực từ: 01/07/2025</div>
+  </div>
+
+  <!-- ===== SECTION 2: VỊ TRÍ & ĐỊA LÝ ===== -->
+  <div class="section geo-section">
+    <div class="section-title">📌 Phần 2</div>
+    <div class="section-heading">Vị trí &amp; Địa lý đô thị</div>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h4>🧭 Địa giới hành chính</h4>
+        <div class="border-item">
+          <span class="border-icon">⬆️</span>
+          <span class="border-dir">Bắc</span>
+          <span>Phường Tân Định (Quận 1)</span>
+        </div>
+        <div class="border-item">
+          <span class="border-icon">⬇️</span>
+          <span class="border-dir">Nam</span>
+          <span>Phường Cầu Ông Lãnh &amp; Kênh Bến Nghé</span>
+        </div>
+        <div class="border-item">
+          <span class="border-icon">➡️</span>
+          <span class="border-dir">Đông</span>
+          <span>Phường Sài Gòn (Quận 1)</span>
+        </div>
+        <div class="border-item">
+          <span class="border-icon">⬅️</span>
+          <span class="border-dir">Tây</span>
+          <span>Phường Nguyễn Cư Trinh (Quận 1)</span>
+        </div>
+        <div style="margin-top:14px; background:#EBF5FB; border-radius:8px; padding:12px; font-size:12.5px; color:#1A5276;">
+          <strong>Tọa độ trung tâm:</strong> 10°46'19"N, 106°41'51"E<br>
+          <strong>Quận:</strong> Quận 1 – Trung tâm TP. Hồ Chí Minh
+        </div>
+      </div>
+      <div class="geo-box">
+        <h4>🏙️ Đặc điểm địa lý đô thị</h4>
+        <div class="geo-feature">
+          <span class="geo-feat-icon">🌊</span>
+          <div><strong>Kênh Bến Nghé</strong> – ranh giới phía nam, lịch sử gắn liền với "bến" trước thành Gia Định</div>
+        </div>
+        <div class="geo-feature">
+          <span class="geo-feat-icon">🚇</span>
+          <div><strong>Ga Metro trung tâm</strong> – Ga Bến Thành (Metro 1, 2, 3b) – điểm giao cắt của nhiều tuyến metro TPHCM</div>
+        </div>
+        <div class="geo-feature">
+          <span class="geo-feat-icon">🛤️</span>
+          <div><strong>Trục đường huyết mạch</strong> – Lê Lợi, Nguyễn Huệ, Nguyễn Trãi, Phạm Ngũ Lão, Bùi Viện</div>
+        </div>
+        <div class="geo-feature">
+          <span class="geo-feat-icon">🌳</span>
+          <div><strong>Công viên 23/9</strong> – công viên lớn nhất trung tâm Quận 1, ốc đảo xanh trong lòng đô thị</div>
+        </div>
+        <div class="geo-feature">
+          <span class="geo-feat-icon">🏬</span>
+          <div><strong>Mật độ đô thị cao nhất</strong> Việt Nam – 38.803 người/km², tập trung thương mại, dịch vụ, du lịch 24/7</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3: TIMELINE LỊCH SỬ ===== -->
+  <div class="section timeline-section">
+    <div class="section-title">⏳ Phần 3</div>
+    <div class="section-heading">Dòng chảy Lịch sử</div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Thế kỷ 17</div>
+        <div class="tl-content">
+          <h4>🌊 Bến sông Bến Nghé – Khai phá vùng đất</h4>
+          <p>Vùng đất Bến Thành ngày nay là bờ bắc kênh Bến Nghé, nơi người Việt và người Hoa bắt đầu lập nghiệp. Bến sông là điểm giao thương nhộn nhịp đầu tiên, thuyền bè từ Đồng bằng sông Cửu Long cập bến mua bán hàng hóa.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1790</div>
+        <div class="tl-content">
+          <h4>🏯 Xây dựng Thành Bát Quái (Thành Quy – Gia Định Kinh)</h4>
+          <p>Vua Nguyễn Ánh chọn vùng Sài Gòn làm kinh đô, huy động 30.000 dân phu xây Thành Bát Quái theo thiết kế kỹ sư Pháp Olivier de Puymanel. Bến sông gần thành được gọi là "Bến Thành" – bến trước khi vào thành. Đây là khởi nguồn địa danh Bến Thành tồn tại đến ngày nay.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1830–1835</div>
+        <div class="tl-content">
+          <h4>⚔️ Cuộc loạn Lê Văn Khôi &amp; phá Thành Bát Quái</h4>
+          <p>Lê Văn Khôi (con nuôi Tổng trấn Lê Văn Duyệt) nổi dậy chiếm Thành Bát Quái năm 1833. Sau khi dẹp loạn năm 1835, vua Minh Mạng ra lệnh phá Thành Bát Quái, dời lập Thành Phụng nhỏ hơn về phía Tây Bắc năm 1837. Khu vực Bến Thành từ đây trở thành vùng dân cư, chợ búa.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1859</div>
+        <div class="tl-content">
+          <h4>🇫🇷 Pháp chiếm Sài Gòn – Xây chợ gỗ đầu tiên</h4>
+          <p>Thực dân Pháp đánh chiếm Sài Gòn ngày 17/2/1859. Chính quyền Pháp xây chợ gỗ đầu tiên mang tên Bến Thành tại bờ kênh Chợ Vải (nay là đường Nguyễn Huệ). Khu vực bắt đầu phát triển thành trung tâm thương mại của thành phố thuộc địa.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1912–1914</div>
+        <div class="tl-content">
+          <h4>🏛️ Xây dựng Chợ Bến Thành hiện đại</h4>
+          <p>Nhà thầu Pháp Brossard et Maupin khởi công xây Chợ Bến Thành mới tại vị trí hiện tại (diện tích 13.056 m²). Ngày 28/3/1914, chợ khánh thành với kiến trúc Pháp đặc trưng – tháp đồng hồ, 4 cổng chính. Chợ trở thành trái tim thương mại của Sài Gòn suốt 100 năm.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1955–1975</div>
+        <div class="tl-content">
+          <h4>🏙️ Sài Gòn phát triển – Khu phố trung tâm sầm uất</h4>
+          <p>Đường Phạm Ngũ Lão được đặt tên năm 1955, khu vực phát triển thành trung tâm khách sạn, thương mại. Phường Phạm Ngũ Lão chính thức thành lập năm 1988 theo Quyết định 184/HĐBT. Khu vực trở thành điểm hội tụ văn hóa, thương mại năng động của Sài Gòn.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1993</div>
+        <div class="tl-content">
+          <h4>🌏 Lonely Planet giới thiệu "Phố Tây ba lô" Phạm Ngũ Lão</h4>
+          <p>Sách du lịch Lonely Planet lần đầu giới thiệu khu Phạm Ngũ Lão – Bùi Viện là điểm đến cho khách Tây ba lô. Từ đây "Phố Tây" hình thành, thu hút triệu lượt khách quốc tế mỗi năm, đưa Bến Thành lên bản đồ du lịch toàn cầu.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2024</div>
+        <div class="tl-content">
+          <h4>🏆 Chợ Bến Thành được xếp hạng Di tích Lịch sử cấp Thành phố</h4>
+          <p>Tháng 11/2024, UBND TP.HCM chính thức công nhận Chợ Bến Thành là Di tích Lịch sử – Văn hóa cấp Thành phố, ghi nhận giá trị 110 năm của biểu tượng Sài Gòn. Tạp chí TIME (Mỹ) nhiều lần vinh danh Chợ Bến Thành trong danh sách điểm đến đáng đến nhất thế giới.</p>
+        </div>
+      </div>
+
+      <div class="tl-item highlight">
+        <div class="tl-dot"></div>
+        <div class="tl-year">⭐ 01/07/2025</div>
+        <div class="tl-content">
+          <h4>🎉 Sáp nhập thành Phường Bến Thành mới (Nghị quyết 1685/NQ-UBTVQH15)</h4>
+          <p>Theo Nghị quyết UBTVQH, phường Bến Thành (cũ), phường Phạm Ngũ Lão, một phần phường Cầu Ông Lãnh và Nguyễn Thái Bình hợp nhất thành phường Bến Thành mới. Diện tích 1,85 km², dân số 71.785 người, mật độ 38.803 người/km² – đơn vị hành chính tiêu biểu trung tâm TP.HCM.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4: NGUỒN GỐC ĐỊA DANH ===== -->
+  <div class="section name-section">
+    <div class="section-title">📖 Phần 4</div>
+    <div class="section-heading">Nguồn gốc Địa danh "Bến Thành"</div>
+    <div class="name-etymology">
+      <div class="etym-box">
+        <div class="etym-icon">⚓</div>
+        <span class="han-nom">埠</span>
+        <h4>"Bến" (埠)</h4>
+        <p>Bến tàu, bến sông – nơi thuyền bè cập vào trao đổi hàng hóa. Kênh Bến Nghé là tuyến đường thủy huyết mạch từ Đồng bằng sông Cửu Long vào trung tâm Sài Gòn.</p>
+      </div>
+      <div class="etym-box">
+        <div class="etym-icon">🏯</div>
+        <span class="han-nom">城</span>
+        <h4>"Thành" (城)</h4>
+        <p>Thành Bát Quái (Thành Gia Định) do vua Nguyễn Ánh xây năm 1790. Đây là kinh đô tạm thời của nhà Nguyễn, tòa thành hình bát giác kiên cố nhất Đông Dương thế kỷ 18.</p>
+      </div>
+    </div>
+    <div style="background:#fff8e1; border-radius:10px; padding:16px; margin-bottom:16px; border-left:4px solid #F39C12;">
+      <p style="font-size:14px; color:#7D6608; line-height:1.7;">
+        <strong>🔍 Ý nghĩa đầy đủ:</strong> "Bến Thành" = <em>bến sông trước Thành Gia Định</em> – nơi khách vãng lai và quân nhân bắt thuyền để vào thành Gia Định xưa. Tên gọi hình thành từ cuối thế kỷ 18, tồn tại suốt hơn 230 năm và trở thành biểu tượng không thể tách rời của đô thị Sài Gòn – TP.HCM.
+      </p>
+    </div>
+    <div class="name-evolution">
+      <h4>🔄 Lịch sử tên gọi qua các thời kỳ</h4>
+      <div class="evo-flow">
+        <div class="evo-tag">Bến Nghé<br><small style="font-weight:400">TK 17</small></div>
+        <span class="evo-arrow">→</span>
+        <div class="evo-tag">Bến Thành<br><small style="font-weight:400">1790</small></div>
+        <span class="evo-arrow">→</span>
+        <div class="evo-tag">Chợ Bến Thành<br><small style="font-weight:400">1914</small></div>
+        <span class="evo-arrow">→</span>
+        <div class="evo-tag">Phường Bến Thành<br><small style="font-weight:400">Trước 1975</small></div>
+        <span class="evo-arrow">→</span>
+        <div class="evo-tag new">Phường Bến Thành (mới)<br><small style="font-weight:400;opacity:0.85">01/07/2025</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5: DI SẢN VĂN HÓA ===== -->
+  <div class="section heritage-section">
+    <div class="section-title">🏛️ Phần 5</div>
+    <div class="section-heading">Di sản Văn hóa &amp; Điểm nhấn</div>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="hc-icon">🏪</div>
+        <h4>Chợ Bến Thành</h4>
+        <p>Di tích cấp TP (2024). Xây 1912–1914, diện tích 13.056 m². Biểu tượng số 1 của TP.HCM, TIME vinh danh. Hơn 3.000 tiểu thương, 6.000 khách/ngày.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="hc-icon">🕌</div>
+        <h4>Đền Mariamman</h4>
+        <p>45 Trương Định. Xây cuối TK 19 bởi cộng đồng người Ấn. Thờ nữ thần Hindu Mariamman theo phong cách kiến trúc Nam Ấn độc đáo tại Việt Nam.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="hc-icon">🌃</div>
+        <h4>Phố đi bộ Bùi Viện</h4>
+        <p>"Phố Tây ba lô" nổi tiếng nhất Đông Nam Á. Hơn 200 quán bar, nhà hàng, khách sạn. Hoạt động 24/7, triệu lượt khách quốc tế mỗi năm.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="hc-icon">🚉</div>
+        <h4>Ga Metro Bến Thành</h4>
+        <p>Ga trung tâm Metro số 1 (2024). Tổng hợp Metro 1, 2, 3b. Trung tâm TM ngầm 18.100 m². Biểu tượng giao thông hiện đại TP.HCM.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="hc-icon">🌳</div>
+        <h4>Công viên 23/9</h4>
+        <p>Công viên trung tâm lớn nhất Quận 1, diện tích ~3,5 ha. Không gian xanh lịch sử gắn với ngày Nam Bộ kháng chiến 23/9/1945.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="hc-icon">🏛️</div>
+        <h4>Tòa Án &amp; Công trình Pháp</h4>
+        <p>Tòa Đại hình Sài Gòn (1881) tại Nam Kỳ Khởi Nghĩa. Nhiều công trình kiến trúc Pháp từ cuối TK 19 còn lại, tạo nét đặc trưng đô thị thuộc địa.</p>
+      </div>
+    </div>
+    <div class="festival-row">
+      <h4>🎉 Lễ hội &amp; Hoạt động văn hóa tiêu biểu</h4>
+      <div class="festival-list">
+        <span class="festival-tag">🏮 Tết Nguyên Đán – Đường hoa Nguyễn Huệ</span>
+        <span class="festival-tag">🎆 Lễ Giỗ Tổ Hùng Vương</span>
+        <span class="festival-tag">🕌 Lễ hội Deepavali (Mariamman)</span>
+        <span class="festival-tag">🎭 Đêm nhạc Bùi Viện (mỗi cuối tuần)</span>
+        <span class="festival-tag">🎊 Countdown 31/12 – Quảng trường Bến Thành</span>
+        <span class="festival-tag">🛍️ Lễ hội mua sắm Black Friday Sài Gòn</span>
+      </div>
+    </div>
+    <div class="special-note">
+      <strong>⭐ Danh hiệu quốc tế:</strong> Chợ Bến Thành được tạp chí TIME (Mỹ) vinh danh là một trong những ngôi chợ biểu tượng nhất châu Á. Khu Phạm Ngũ Lão – Bùi Viện được các tạp chí Lonely Planet, CNN Travel liên tục xếp hạng trong top điểm đến du lịch ba lô hàng đầu Đông Nam Á.
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6: KINH TẾ & ĐÔ THỊ HÓA ===== -->
+  <div class="section economy-section">
+    <div class="section-title">💼 Phần 6</div>
+    <div class="section-heading">Kinh tế &amp; Đô thị hóa</div>
+    <div class="econ-grid">
+      <div class="econ-box">
+        <h4>📊 Cơ cấu Kinh tế</h4>
+        <div class="bar-item">
+          <div class="bar-label"><span>🛍️ Thương mại – Du lịch</span><span>55%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:55%"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>🏢 Dịch vụ – Văn phòng</span><span>28%</span></div>
+          <div class="bar-track"><div class="bar-fill blue" style="width:28%"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>🍽️ F&amp;B – Ẩm thực</span><span>12%</span></div>
+          <div class="bar-track"><div class="bar-fill orange" style="width:12%"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>🏭 Khác</span><span>5%</span></div>
+          <div class="bar-track"><div class="bar-fill red" style="width:5%"></div></div>
+        </div>
+        <div class="econ-highlight">
+          <div class="big-num">#1</div>
+          <div class="big-label">Mật độ kinh tế cao nhất cả nước<br>Giá BĐS đắt nhất Việt Nam</div>
+        </div>
+      </div>
+      <div class="econ-box">
+        <h4>🚀 Dự án Hạ tầng &amp; Định hướng</h4>
+        <ul class="project-list">
+          <li><strong>Metro số 1 (Bến Thành – Suối Tiên):</strong> Vận hành từ 2024, phục vụ hàng triệu hành khách, kết nối TP.Thủ Đức với trung tâm Quận 1.</li>
+          <li><strong>Metro số 2 (Bến Thành – Tham Lương):</strong> Khởi công 15/1/2026, đi qua Quận Bình Thạnh, Tân Bình, Tân Phú – dự kiến hoàn thành trước 2030.</li>
+          <li><strong>Metro số 12 (Bến Thành – Cần Giờ):</strong> Động thổ 19/12/2025, tuyến dài 54 km, vốn đầu tư gần 4 tỷ USD, dự kiến khai thác 2028.</li>
+          <li><strong>Quảng trường ngầm Bến Thành:</strong> 21.500 m² không gian đa chức năng, kết nối 4 tuyến metro, trung tâm TM ngầm 18.100 m².</li>
+          <li><strong>Quy hoạch sau sáp nhập:</strong> Định hướng phường Bến Thành thành trung tâm kinh tế – du lịch – tài chính của TP.HCM, tích hợp giao thông công cộng đa phương thức.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <h4>📚 Nguồn tham khảo</h4>
+    <ul class="source-list">
+      <li>1. <a href="https://xaydungchinhsach.chinhphu.vn/sap-xep-dvhc-danh-sach-168-xa-phuong-dac-khu-cua-thanh-pho-ho-chi-minh-119250623085031865.htm" target="_blank">Danh sách 168 xã, phường, đặc khu TPHCM (Chinhphu.vn, 2025)</a></li>
+      <li>2. <a href="https://www.arental.vn/phuong-ben-thanh-tphcm/" target="_blank">Phường Bến Thành mới sáp nhập từ các phường nào? (Arental.vn)</a></li>
+      <li>3. <a href="https://vi.wikipedia.org/wiki/B%E1%BA%BFn_Th%C3%A0nh_(ph%C6%B0%E1%BB%9Dng)" target="_blank">Bến Thành (phường) – Wikipedia tiếng Việt</a></li>
+      <li>4. <a href="https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_B%E1%BA%BFn_Th%C3%A0nh" target="_blank">Chợ Bến Thành – Wikipedia tiếng Việt</a></li>
+      <li>5. <a href="https://tphcm.chinhphu.vn/cho-ben-thanh-duoc-xep-hang-di-tich-cap-thanh-pho-101241120205021906.htm" target="_blank">Chợ Bến Thành được xếp hạng Di tích cấp Thành phố (TPHCM.ChinhPhu.vn, 11/2024)</a></li>
+      <li>6. <a href="https://vi.wikipedia.org/wiki/Th%C3%A0nh_B%C3%A1t_Qu%C3%A1i" target="_blank">Thành Bát Quái – Wikipedia tiếng Việt</a></li>
+      <li>7. <a href="https://iwater.vn/thong-tin-dia-danh/lich-su-hinh-thanh-va-phat-trien-phuong-pham-ngu-lao-quan-1-38477.html" target="_blank">Lịch sử hình thành phường Phạm Ngũ Lão (iWater.vn)</a></li>
+      <li>8. <a href="https://www.annhome.vn/metro-ben-thanh-suoi-tien/" target="_blank">Metro số 1 Bến Thành – Suối Tiên (Annhome.vn, 2026)</a></li>
+      <li>9. <a href="https://duyenbuirealty.vn/ha-tang/tuyen-metro-ben-thanh-can-gio/" target="_blank">Tuyến Metro Bến Thành – Cần Giờ (DuyenBuiRealty.vn)</a></li>
+      <li>10. <a href="https://thanhnien.vn/ten-phuong-xa-moi-sap-nhap-o-tphcm-phuong-ben-thanh-co-gi-ma-time-vinh-danh-185250530171320312.htm" target="_blank">Phường Bến Thành có gì mà TIME vinh danh (Thanhnien.vn, 2025)</a></li>
+    </ul>
+    <div class="footer-note">
+      📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh<br>
+      Dữ liệu được thu thập từ các nguồn chính thống. Một số thông tin có thể cần cập nhật theo thực tế hành chính mới.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographic – Phường Cầu Ông Lãnh – TP. Hồ Chí Minh</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700;800;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Be Vietnam Pro', 'Segoe UI', Arial, sans-serif;
+    background: #1a1a2e;
+    color: #2C3E50;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* ===== SECTION STYLES ===== */
+  .section {
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .section-inner { padding: 30px; }
+
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: currentColor;
+    opacity: 0.25;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: linear-gradient(135deg, #C0392B 0%, #922B21 50%, #7B241C 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 40px 30px 30px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -30px;
+    width: 250px; height: 250px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .badge {
+    display: inline-block;
+    background: #F39C12;
+    color: #2C3E50;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .header h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .header .subtitle {
+    font-size: 1rem;
+    opacity: 0.85;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  .stat-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .stat-card .icon { font-size: 1.6rem; margin-bottom: 6px; }
+  .stat-card .value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    display: block;
+    color: #F9E79F;
+  }
+  .stat-card .label {
+    font-size: 0.75rem;
+    opacity: 0.85;
+    font-weight: 500;
+  }
+
+  .publish-date {
+    margin-top: 20px;
+    font-size: 0.78rem;
+    opacity: 0.65;
+    text-align: right;
+  }
+
+  /* ===== SECTION 2: ĐỊA LÝ ===== */
+  .geo-section { background: #EBF5FB; }
+  .geo-section .section-title { color: #1A5276; }
+
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .border-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(41,128,185,0.1);
+  }
+
+  .border-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2980B9;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .direction-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.88rem;
+  }
+
+  .dir-icon {
+    font-size: 1.1rem;
+    min-width: 28px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .dir-text strong { color: #1A5276; display: block; font-size: 0.8rem; }
+  .dir-text span { color: #566573; font-size: 0.83rem; }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.88rem;
+    color: #2C3E50;
+  }
+
+  .feature-icon { font-size: 1rem; min-width: 24px; }
+
+  .merged-from {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    border-left: 4px solid #2980B9;
+  }
+
+  .merged-from h4 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #2980B9;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .merged-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .merged-tag {
+    background: #D6EAF8;
+    color: #1A5276;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #AED6F1;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .merged-tag::before { content: '→'; color: #2980B9; font-weight: 700; }
+
+  /* ===== SECTION 3: TIMELINE ===== */
+  .timeline-section { background: #FDFEFE; }
+  .timeline-section .section-title { color: #C0392B; }
+
+  .timeline {
+    position: relative;
+    padding-left: 44px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #C0392B, #E74C3C, #F39C12);
+    border-radius: 2px;
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: -34px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #C0392B;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #C0392B;
+    z-index: 1;
+  }
+
+  .tl-item.highlight .tl-dot {
+    background: #F39C12;
+    box-shadow: 0 0 0 2px #F39C12, 0 0 15px rgba(243,156,18,0.5);
+    width: 20px; height: 20px;
+    left: -36px; top: 2px;
+  }
+
+  .tl-year {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #C0392B;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  .tl-item.highlight .tl-year { color: #E67E22; font-size: 0.9rem; }
+
+  .tl-content {
+    background: #FAFAFA;
+    border-radius: 10px;
+    padding: 12px 16px;
+    border-left: 3px solid #EDEDED;
+    font-size: 0.88rem;
+  }
+
+  .tl-item.highlight .tl-content {
+    background: linear-gradient(135deg, #FFF3CD, #FDEBD0);
+    border-left: 3px solid #F39C12;
+    box-shadow: 0 3px 12px rgba(243,156,18,0.2);
+  }
+
+  .tl-content strong { display: block; color: #2C3E50; margin-bottom: 2px; font-size: 0.9rem; }
+  .tl-content p { color: #5D6D7E; margin: 0; line-height: 1.5; }
+
+  /* ===== SECTION 4: NGUỒN GỐC ĐỊA DANH ===== */
+  .origin-section { background: #FFFDE7; }
+  .origin-section .section-title { color: #B7770D; }
+
+  .origin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .origin-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border-top: 4px solid #F39C12;
+    box-shadow: 0 2px 8px rgba(243,156,18,0.1);
+  }
+
+  .origin-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #B7770D;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .name-compare {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .old-name, .new-name {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .old-name {
+    background: #F8F9FA;
+    color: #5D6D7E;
+    border: 1px solid #DEE2E6;
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+
+  .new-name {
+    background: #F39C12;
+    color: white;
+  }
+
+  .arrow-icon { font-size: 1.2rem; color: #F39C12; }
+
+  .origin-card p { font-size: 0.86rem; color: #566573; line-height: 1.6; }
+
+  .theory-box {
+    background: #FEF9E7;
+    border: 1px solid #F9E79F;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 0.83rem;
+    color: #7D6608;
+  }
+
+  .theory-box .theory-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #F39C12;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  /* ===== SECTION 5: DI SẢN ===== */
+  .heritage-section { background: #1A5276; color: white; }
+  .heritage-section .section-title { color: #AED6F1; }
+
+  .heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .heritage-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 18px;
+    transition: background 0.2s;
+  }
+
+  .heritage-card:hover { background: rgba(255,255,255,0.12); }
+
+  .heritage-card .hc-icon { font-size: 1.8rem; margin-bottom: 8px; }
+  .heritage-card h4 { font-size: 0.9rem; font-weight: 700; color: #AED6F1; margin-bottom: 6px; }
+  .heritage-card .hc-badge {
+    display: inline-block;
+    background: #F39C12;
+    color: #2C3E50;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .heritage-card p { font-size: 0.83rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
+
+  .festival-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .festival-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .festival-item .fi-icon { font-size: 1.5rem; margin-bottom: 6px; }
+  .festival-item h5 { font-size: 0.82rem; font-weight: 700; color: #F9E79F; margin-bottom: 4px; }
+  .festival-item p { font-size: 0.76rem; color: rgba(255,255,255,0.65); }
+
+  /* ===== SECTION 6: KINH TẾ ===== */
+  .economy-section { background: #F2F3F4; }
+  .economy-section .section-title { color: #2C3E50; }
+
+  .economy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .eco-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .eco-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2980B9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .bar-item { margin-bottom: 12px; }
+
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: #2C3E50;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  .bar-track {
+    background: #ECF0F1;
+    border-radius: 6px;
+    height: 10px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.6s ease;
+  }
+
+  .project-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+  }
+
+  .proj-icon {
+    font-size: 1.1rem;
+    min-width: 26px;
+    text-align: center;
+    margin-top: 1px;
+  }
+
+  .project-item strong { display: block; color: #2C3E50; font-size: 0.86rem; }
+  .project-item span { color: #7F8C8D; font-size: 0.8rem; }
+
+  .highlight-stat {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #ECF0F1;
+  }
+
+  .hl-stat { text-align: center; }
+  .hl-stat .hl-val {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #C0392B;
+    display: block;
+  }
+  .hl-stat .hl-lbl { font-size: 0.72rem; color: #7F8C8D; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: #2C3E50;
+    color: rgba(255,255,255,0.8);
+    border-radius: 16px;
+    padding: 24px 30px;
+    font-size: 0.82rem;
+  }
+
+  .footer h4 {
+    color: #F39C12;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  .source-list { list-style: none; }
+  .source-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .source-list li::before { content: '📎'; font-size: 0.8rem; }
+
+  .source-list a {
+    color: #AED6F1;
+    text-decoration: none;
+    font-size: 0.8rem;
+    word-break: break-all;
+  }
+
+  .source-list a:hover { color: #F39C12; text-decoration: underline; }
+
+  .footer-bottom {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: white; }
+    .section { box-shadow: 0 0 1px #ccc; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .heritage-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="badge">🗺️ Đơn vị hành chính mới 2025 · TP. Hồ Chí Minh</div>
+    <h1>Phường Cầu Ông Lãnh</h1>
+    <div class="subtitle">Quận 1 · Thành phố Hồ Chí Minh · Hiệu lực từ 01/07/2025</div>
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="icon">📐</div>
+        <span class="value">1,6 km²</span>
+        <div class="label">Diện tích</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">👥</div>
+        <span class="value">78.734</span>
+        <div class="label">Dân số (2024)</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">🏘️</div>
+        <span class="value">~24</span>
+        <div class="label">Khu phố / Tổ dân phố</div>
+      </div>
+    </div>
+    <div class="publish-date">📅 Xuất bản: 28/06/2026 · Dữ liệu: Nghị quyết 1685/NQ-UBTVQH15</div>
+  </div>
+
+  <!-- ===== SECTION 2: VỊ TRÍ & ĐỊA LÝ ===== -->
+  <div class="section geo-section">
+    <div class="section-inner">
+      <div class="section-title" style="color:#1A5276;">📍 Vị trí & Địa lý</div>
+      <div class="geo-grid">
+        <div class="border-card">
+          <h4>🧭 Địa giới hành chính</h4>
+          <div class="direction-item">
+            <div class="dir-icon">⬆️</div>
+            <div class="dir-text">
+              <strong>Phía Bắc</strong>
+              <span>Giáp phường Bàn Cờ (ranh giới: đường Nguyễn Thị Minh Khai)</span>
+            </div>
+          </div>
+          <div class="direction-item">
+            <div class="dir-icon">⬇️</div>
+            <div class="dir-text">
+              <strong>Phía Nam</strong>
+              <span>Giáp phường Khánh Hội & Vĩnh Hội (ranh giới: Rạch Bến Nghé)</span>
+            </div>
+          </div>
+          <div class="direction-item">
+            <div class="dir-icon">⬅️</div>
+            <div class="dir-text">
+              <strong>Phía Tây</strong>
+              <span>Giáp phường Chợ Quán (ranh giới: đường Nguyễn Văn Cừ)</span>
+            </div>
+          </div>
+          <div class="direction-item">
+            <div class="dir-icon">➡️</div>
+            <div class="dir-text">
+              <strong>Phía Đông</strong>
+              <span>Giáp phường Bến Thành (đường Nguyễn Thái Học, Trần Hưng Đạo, Cống Quỳnh)</span>
+            </div>
+          </div>
+        </div>
+        <div class="border-card">
+          <h4>🌆 Đặc điểm địa lý đô thị</h4>
+          <div class="feature-item">
+            <div class="feature-icon">🌊</div>
+            <div>Phía Nam giáp Rạch Bến Nghé – tuyến đường thủy lịch sử kết nối Chợ Lớn & cảng Sài Gòn</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🏙️</div>
+            <div>Mật độ dân số siêu cao: <strong>49.208 người/km²</strong> – thuộc nhóm dày đặc nhất TP.HCM</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🛣️</div>
+            <div>Nằm trên các trục giao thông huyết mạch: Võ Văn Kiệt, Trần Hưng Đạo, Nguyễn Cư Trinh</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🏛️</div>
+            <div>Trụ sở UBND phường tại: 105 Trần Đình Xu, Quận 1</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🌐</div>
+            <div>Vị trí: Trung tâm lõi phía Tây Nam Quận 1, cửa ngõ sang Quận 5 – Chợ Lớn</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="merged-from">
+        <h4>🔀 Hợp nhất từ các đơn vị cũ (Nghị quyết 1685/NQ-UBTVQH15)</h4>
+        <div class="merged-tags">
+          <span class="merged-tag">P. Cầu Ông Lãnh (một phần)</span>
+          <span class="merged-tag">P. Nguyễn Cư Trinh (toàn bộ)</span>
+          <span class="merged-tag">P. Cầu Kho (toàn bộ)</span>
+          <span class="merged-tag">P. Cô Giang (toàn bộ)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3: TIMELINE LỊCH SỬ ===== -->
+  <div class="section">
+    <div class="section-inner">
+      <div class="section-title" style="color:#C0392B;">⏳ Timeline Lịch sử</div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">1698</div>
+          <div class="tl-content">
+            <strong>🏛️ Thống suất Nguyễn Hữu Cảnh thiết lập phủ Gia Định</strong>
+            <p>Vùng đất nay là phường Cầu Ông Lãnh thuộc thôn Trọng Hòa, tổng Bình Trị, huyện Bình Dương, tỉnh Gia Định. Đây là bước đặt nền móng hành chính cho toàn vùng Nam Bộ.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">Đầu thế kỷ XIX</div>
+          <div class="tl-content">
+            <strong>⚔️ Khu vực dưới thời Nhà Nguyễn – Thành Gia Định</strong>
+            <p>Khu vực ven rạch Bến Nghé là đầu mối giao thương sầm uất. Đình làng và các công trình tín ngưỡng dân gian bắt đầu hình thành, phản ánh sự định cư của cư dân Việt – Hoa – Khmer.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">1840s–1860s</div>
+          <div class="tl-content">
+            <strong>🏯 Lãnh binh Nguyễn Ngọc Thăng (1798–1866) đóng quân và xây cầu</strong>
+            <p>Khi đóng đồn Cây Mai, Lãnh binh Thăng cho xây cầu gỗ bắc qua kênh Bến Nghé – tiền thân của Cầu Ông Lãnh ngày nay. Ông sau đó chiến đấu dưới quyền Trương Định chống thực dân Pháp đến hơi thở cuối cùng.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">1862–1874</div>
+          <div class="tl-content">
+            <strong>🇫🇷 Pháp chiếm Sài Gòn – Hình thành đô thị thuộc địa</strong>
+            <p>Khu vực Cầu Ông Lãnh – Cầu Kho nằm trong vùng đô thị hóa của người Pháp. Năm 1874, Chợ Cầu Ông Lãnh được xây dựng, trở thành chợ đầu mối trái cây và thủy hải sản lớn nhất Sài Gòn trong hơn một thế kỷ.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">1929</div>
+          <div class="tl-content">
+            <strong>🌉 Pháp xây lại cầu Ông Lãnh bằng bê tông xi măng, dài 120m</strong>
+            <p>Cây cầu được nâng cấp, trở thành biểu tượng kiến trúc và giao thông quan trọng của Sài Gòn – Chợ Lớn, gắn kết hai bờ rạch Bến Nghé.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">1956–1975</div>
+          <div class="tl-content">
+            <strong>🏙️ Đô thành Sài Gòn – Quận Nhì</strong>
+            <p>Khu vực thuộc Quận Nhì, Đô thành Sài Gòn thời Việt Nam Cộng hòa. Vùng Cầu Kho, Cô Giang, Nguyễn Cư Trinh là khu dân cư đông đúc với người Việt lẫn Hoa kiều, nổi tiếng với thương mại và văn hóa đa tầng.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">Sau 1975</div>
+          <div class="tl-content">
+            <strong>🔴 Thành lập các phường thuộc Quận 1, TP. Hồ Chí Minh</strong>
+            <p>Khu vực được phân thành nhiều phường nhỏ: Cầu Ông Lãnh, Nguyễn Cư Trinh, Cầu Kho, Cô Giang – mỗi đơn vị mang tên danh nhân hoặc địa danh lịch sử đặc sắc của Sài Gòn.</p>
+          </div>
+        </div>
+
+        <div class="tl-item highlight">
+          <div class="tl-dot"></div>
+          <div class="tl-year">⭐ 01/07/2025</div>
+          <div class="tl-content">
+            <strong>🎉 Hợp nhất thành Phường Cầu Ông Lãnh (mới) – Nghị quyết 1685/NQ-UBTVQH15</strong>
+            <p>Bốn phường cũ (Cầu Ông Lãnh, Nguyễn Cư Trinh, Cầu Kho, Cô Giang) hợp nhất thành một đơn vị. Diện tích 1,6 km², dân số 78.734 người. Đây là một trong 168 đơn vị hành chính cấp xã mới của TP. Hồ Chí Minh sau cuộc cải cách lịch sử 2025.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4: NGUỒN GỐC ĐỊA DANH ===== -->
+  <div class="section origin-section">
+    <div class="section-inner">
+      <div class="section-title" style="color:#B7770D;">📖 Nguồn gốc & Ý nghĩa Địa danh</div>
+      <div class="origin-grid">
+
+        <div class="origin-card">
+          <h4>🌉 Cầu Ông Lãnh</h4>
+          <div class="name-compare">
+            <span class="old-name">Bến Nghé Bridge</span>
+            <span class="arrow-icon">→</span>
+            <span class="new-name">Cầu Ông Lãnh</span>
+          </div>
+          <p>Theo học giả <strong>Trương Vĩnh Ký</strong>, tên gọi bắt nguồn từ "Lãnh binh" – chức quan võ của Nguyễn Ngọc Thăng, người cho xây cây cầu gỗ đầu tiên bắc qua kênh Bến Nghé. Dân gian gọi thân mật là "Cầu Ông Lãnh."</p>
+          <div class="theory-box">
+            <span class="theory-tag">⚖️ Giả thuyết khác</span>
+            Một số ý kiến cho rằng cầu được đặt tên theo ông Lãnh sự Nguyễn Thành Ý – người từng ở gần khu vực này. Tuy nhiên, giả thuyết lãnh binh được đa số học giả chấp nhận.
+          </div>
+        </div>
+
+        <div class="origin-card">
+          <h4>🧑‍⚖️ Nguyễn Cư Trinh (1716–1767)</h4>
+          <div class="name-compare">
+            <span class="old-name">P. Nguyễn Cư Trinh</span>
+            <span class="arrow-icon">🔀</span>
+            <span class="new-name">Hợp vào CÔL mới</span>
+          </div>
+          <p>Phường đặt theo tên danh thần Nguyễn Cư Trinh – quan nhà Nguyễn, nhà thơ lớn, người có công khai mở và bình định vùng đất Nam Bộ. Ông là tác giả tập thơ Nôm <em>"Sãi Vãi"</em> nổi tiếng.</p>
+        </div>
+
+        <div class="origin-card">
+          <h4>🌺 Cô Giang</h4>
+          <div class="name-compare">
+            <span class="old-name">P. Cô Giang</span>
+            <span class="arrow-icon">🔀</span>
+            <span class="new-name">Hợp vào CÔL mới</span>
+          </div>
+          <p>Tên phường gắn với <strong>Nguyễn Thị Giang</strong> (Cô Giang, 1906–1930) – người yêu và đồng đội của nhà cách mạng Nguyễn Thái Học. Bà tuẫn tiết để thể hiện lòng kiên trung với lý tưởng dân tộc.</p>
+        </div>
+
+        <div class="origin-card">
+          <h4>🏚️ Cầu Kho</h4>
+          <div class="name-compare">
+            <span class="old-name">P. Cầu Kho</span>
+            <span class="arrow-icon">🔀</span>
+            <span class="new-name">Hợp vào CÔL mới</span>
+          </div>
+          <p>Tên gọi xuất phát từ việc khu vực này xưa từng có <strong>kho lương thực của triều đình</strong> (kho gạo, kho muối) và một cây cầu bắc qua rạch dẫn đến kho đó. Đây là vùng đầu mối cung ứng lương thực của Sài Gòn thời cổ.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5: DI SẢN VĂN HÓA ===== -->
+  <div class="section heritage-section">
+    <div class="section-inner">
+      <div class="section-title" style="color:#AED6F1;">🏛️ Di sản Văn hóa & Lễ hội</div>
+
+      <div class="heritage-grid">
+
+        <div class="heritage-card">
+          <div class="hc-icon">⛩️</div>
+          <h4>Đình Nhơn Hòa</h4>
+          <span class="hc-badge">Di tích cấp Thành phố · 2008</span>
+          <p>Tọa lạc tại 27 Cô Giang, xây dựng thế kỷ XIX. Đặc biệt: thờ cả <strong>Hưng Đạo Vương Trần Quốc Tuấn</strong> và <strong>Lãnh binh Nguyễn Ngọc Thăng</strong> – hai vị danh tướng chống ngoại xâm. Còn gọi là Đình Cầu Muối vì nằm gần khu chợ muối xưa.</p>
+        </div>
+
+        <div class="heritage-card">
+          <div class="hc-icon">🎭</div>
+          <h4>Nhà Truyền thống Sân khấu</h4>
+          <span class="hc-badge">Di sản nghệ thuật</span>
+          <p>Tọa lạc tại 133 Cô Bắc – nơi thờ Tổ nghề sân khấu Việt Nam. Hàng năm vào ngày <strong>12 tháng 8 âm lịch</strong>, nghệ sĩ và công chúng khắp nơi về đây dâng lễ cúng Tổ, giữ gìn truyền thống nghệ thuật hát bội, cải lương.</p>
+        </div>
+
+        <div class="heritage-card">
+          <div class="hc-icon">🛒</div>
+          <h4>Chợ Cầu Ông Lãnh (1874)</h4>
+          <span class="hc-badge">Di sản thương mại · 150 năm</span>
+          <p>Xây năm 1874, là <strong>chợ đầu mối trái cây và thủy hải sản lớn nhất Sài Gòn</strong> trong hơn 1 thế kỷ. Nơi tàu ghe từ miền Tây theo sông Sài Gòn vào kênh Tàu Hủ tập nập buôn bán. Đã giải tỏa đầu thập niên 2000.</p>
+        </div>
+
+        <div class="heritage-card">
+          <div class="hc-icon">🌉</div>
+          <h4>Cầu Ông Lãnh – Biểu tượng lịch sử</h4>
+          <span class="hc-badge">Công trình lịch sử</span>
+          <p>Cầu gỗ đầu tiên do Lãnh binh Thăng xây dựng (thế kỷ XIX), Pháp xây lại bằng bê tông năm 1929 dài 120m. Là nhịp nối lịch sử giữa Sài Gòn và Chợ Lớn, gắn với dòng chảy thương mại sầm uất của vùng đất Nam Bộ.</p>
+        </div>
+
+      </div>
+
+      <div class="festival-row">
+        <div class="festival-item">
+          <div class="fi-icon">🎑</div>
+          <h5>Lễ cúng Tổ Sân khấu</h5>
+          <p>12 tháng 8 âm lịch – lễ hội nghệ thuật đặc sắc của nghệ sĩ cả nước</p>
+        </div>
+        <div class="festival-item">
+          <div class="fi-icon">🏮</div>
+          <h5>Lễ hội Đình Nhơn Hòa</h5>
+          <p>Cúng đình kỳ yên hàng năm – cầu quốc thái dân an, mưa thuận gió hòa</p>
+        </div>
+        <div class="festival-item">
+          <div class="fi-icon">🍊</div>
+          <h5>Văn hóa Chợ Đầu mối</h5>
+          <p>Trái cây miền Tây – cam, bưởi, dưa hấu; thủy hải sản Sài Gòn – nét đặc trưng vùng đất</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6: KINH TẾ & ĐÔ THỊ ===== -->
+  <div class="section economy-section">
+    <div class="section-inner">
+      <div class="section-title" style="color:#2C3E50;">📊 Kinh tế & Đô thị hóa</div>
+      <div class="economy-grid">
+
+        <div class="eco-card">
+          <h4>📈 Cơ cấu kinh tế</h4>
+
+          <div class="bar-item">
+            <div class="bar-label">
+              <span>🛍️ Thương mại – Dịch vụ</span>
+              <span>60%</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:60%; background: linear-gradient(90deg,#C0392B,#E74C3C);"></div>
+            </div>
+          </div>
+
+          <div class="bar-item">
+            <div class="bar-label">
+              <span>🏭 Công nghiệp – Tiểu thủ CN</span>
+              <span>20%</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:20%; background: linear-gradient(90deg,#2980B9,#5DADE2);"></div>
+            </div>
+          </div>
+
+          <div class="bar-item">
+            <div class="bar-label">
+              <span>🍜 Ẩm thực – Du lịch đêm</span>
+              <span>12%</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:12%; background: linear-gradient(90deg,#27AE60,#52BE80);"></div>
+            </div>
+          </div>
+
+          <div class="bar-item">
+            <div class="bar-label">
+              <span>📦 Logistics đô thị</span>
+              <span>8%</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:8%; background: linear-gradient(90deg,#F39C12,#F8C471);"></div>
+            </div>
+          </div>
+
+          <div class="highlight-stat">
+            <div class="hl-stat">
+              <span class="hl-val">49.208</span>
+              <span class="hl-lbl">người/km²</span>
+            </div>
+            <div class="hl-stat">
+              <span class="hl-val">26</span>
+              <span class="hl-lbl">chỉ tiêu 2025–2030</span>
+            </div>
+            <div class="hl-stat">
+              <span class="hl-val">150+</span>
+              <span class="hl-lbl">năm lịch sử thương mại</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="eco-card">
+          <h4>🏗️ Dự án Hạ tầng & Định hướng</h4>
+
+          <div class="project-item">
+            <div class="proj-icon">🚇</div>
+            <div>
+              <strong>Metro Bến Thành – Suối Tiên (Tuyến số 1)</strong>
+              <span>Nâng tầm giao thông công cộng, kết nối trực tiếp với trung tâm phường</span>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="proj-icon">🚌</div>
+            <div>
+              <strong>Mạng lưới xe buýt & đường thủy</strong>
+              <span>Hệ thống bus kết hợp đường thủy qua kênh Bến Nghé – giao thông đa phương tiện</span>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="proj-icon">🌃</div>
+            <div>
+              <strong>Phát triển Kinh tế đêm & Du lịch cộng đồng</strong>
+              <span>Định hướng 2025–2030: khu ẩm thực, phố đi bộ, di sản văn hóa gắn du lịch</span>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="proj-icon">🏙️</div>
+            <div>
+              <strong>Chiếu sáng thông minh & Mỹ quan đô thị</strong>
+              <span>Cải tạo hẻm, nâng cấp vỉa hè, cây xanh, mô hình "đô thị thông minh" đến 2030</span>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="proj-icon">📋</div>
+            <div>
+              <strong>Quy hoạch đa chức năng</strong>
+              <span>Tái cấu trúc đô thị hiện hữu: thương mại – dịch vụ – logistics – văn hóa</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <h4>📚 Nguồn tham khảo</h4>
+    <ul class="source-list">
+      <li><a href="https://xaydungchinhsach.chinhphu.vn/sap-xep-dvhc-danh-sach-168-xa-phuong-dac-khu-cua-thanh-pho-ho-chi-minh-119250623085031865.htm" target="_blank">Cổng TTĐT Chính phủ – Danh sách 168 xã, phường, đặc khu TP.HCM</a></li>
+      <li><a href="https://ghtk.vn/blog/phuong-cau-ong-lanh-sau-sap-nhap/" target="_blank">GHTK – Phường Cầu Ông Lãnh sau sáp nhập: Địa giới và thay đổi</a></li>
+      <li><a href="https://thanhnien.vn/tphcm-ten-phuong-cau-ong-lanh-goi-nho-bac-danh-tuong-lay-lung-thoi-nguyen-185250807210147335.htm" target="_blank">Thanh Niên – Tên phường Cầu Ông Lãnh gợi nhớ danh tướng thời Nguyễn</a></li>
+      <li><a href="https://mia.vn/cam-nang-du-lich/phuong-cau-ong-lanh-sau-sap-nhap-19921" target="_blank">MIA.vn – Phường Cầu Ông Lãnh sau sáp nhập: Vùng đất di sản</a></li>
+      <li><a href="https://fptshop.com.vn/tin-tuc/danh-gia/phuong-cau-ong-lanh-cua-tp-hcm-sau-sap-nhap-181980" target="_blank">FPT Shop – Toàn cảnh phường Cầu Ông Lãnh: Hạ tầng và tiềm năng</a></li>
+      <li><a href="https://hochiminhcity.gov.vn/vi/web/pho-chu-tich-duong-ngoc-hai/chi-tiet/-/asset_publisher/7NvaeEaqhSbx/content/phuong-cau-ong-lanh-dau-an-moi-dien-mao-moi-vi-hanh-phuc-cua-nhan-dan/39403" target="_blank">Cổng TTĐT TP.HCM – Phường Cầu Ông Lãnh: Dấu ấn mới, diện mạo mới</a></li>
+      <li><a href="https://vi.wikipedia.org/wiki/L%C3%A3nh_binh_Th%C4%83ng" target="_blank">Wikipedia – Lãnh binh Nguyễn Ngọc Thăng</a></li>
+      <li><a href="https://1thegioi.vn/cac-cach-ly-giai-nguon-goc-ten-goi-cau-ong-lanh-81245.html" target="_blank">1TheGiới – Các cách lý giải nguồn gốc tên gọi Cầu Ông Lãnh</a></li>
+      <li><a href="https://www.phunuonline.com.vn/phuong-cau-ong-lanh-luu-dau-xua-trong-nhung-cai-ten-a1554660.html" target="_blank">Phụ Nữ Online – Phường Cầu Ông Lãnh: Lưu dấu xưa trong những cái tên</a></li>
+    </ul>
+    <div class="footer-bottom">
+      <span>📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh</span>
+      <span>📅 28/06/2026 · Dữ liệu: Nghị quyết 1685/NQ-UBTVQH15 (01/07/2025)</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

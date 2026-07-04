@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographic: Phường Chợ Lớn – Lịch sử & Địa lý</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Be Vietnam Pro', 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: #2C3E50;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 15px 40px;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: linear-gradient(135deg, #C0392B 0%, #922B21 40%, #2C3E50 100%);
+    border-radius: 16px;
+    padding: 40px 36px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.35);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '堤岸';
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    font-size: 180px;
+    opacity: 0.06;
+    font-weight: 900;
+    color: #F39C12;
+    pointer-events: none;
+  }
+
+  .header-badge {
+    display: inline-block;
+    background: #F39C12;
+    color: #2C3E50;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  .header h1 {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .header h2 {
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.85;
+    margin-bottom: 28px;
+  }
+
+  .stat-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 18px 16px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .stat-card .icon { font-size: 28px; margin-bottom: 6px; }
+  .stat-card .value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #F39C12;
+    display: block;
+    line-height: 1.1;
+  }
+  .stat-card .label {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .pub-date {
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.65;
+    text-align: right;
+  }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title .icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  /* ===== SECTION 2: ĐỊA LÝ ===== */
+  .geo-section {
+    background: linear-gradient(135deg, #EBF5FB 0%, #D6EAF8 100%);
+    border-left: 5px solid #2980B9;
+  }
+
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .geo-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+  }
+
+  .geo-box h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2980B9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+  }
+
+  .direction-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .direction-arrow {
+    width: 28px;
+    height: 28px;
+    background: #2980B9;
+    color: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .feature-dot {
+    width: 8px;
+    height: 8px;
+    background: #27AE60;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  /* ===== SECTION 3: TIMELINE ===== */
+  .timeline-section {
+    background: #fff;
+    border-left: 5px solid #C0392B;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #C0392B, #F39C12);
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 22px;
+  }
+
+  .timeline-item:last-child { margin-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    left: -22px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #C0392B;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #C0392B;
+  }
+
+  .timeline-item.highlight .timeline-dot {
+    background: #F39C12;
+    box-shadow: 0 0 0 3px #F39C12, 0 0 12px rgba(243,156,18,0.5);
+    width: 20px;
+    height: 20px;
+    left: -24px;
+    top: 2px;
+  }
+
+  .timeline-year {
+    font-size: 13px;
+    font-weight: 800;
+    color: #C0392B;
+    letter-spacing: 0.5px;
+  }
+
+  .timeline-item.highlight .timeline-year {
+    color: #E67E22;
+    font-size: 14px;
+  }
+
+  .timeline-content {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+
+  .timeline-item.highlight {
+    background: linear-gradient(135deg, #FEF9E7, #FDEBD0);
+    border-radius: 10px;
+    padding: 14px 16px;
+    border: 2px solid #F39C12;
+    margin-left: -16px;
+    padding-left: 32px;
+  }
+
+  .timeline-item.highlight .timeline-dot {
+    left: -8px;
+  }
+
+  /* ===== SECTION 4: ĐỊA DANH ===== */
+  .name-section {
+    background: linear-gradient(135deg, #FEF9E7 0%, #FDEBD0 100%);
+    border-left: 5px solid #F39C12;
+  }
+
+  .name-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .name-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+  }
+
+  .name-box h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #E67E22;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .han-nom {
+    font-size: 52px;
+    font-weight: 900;
+    color: #C0392B;
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 8px;
+  }
+
+  .han-nom-sub {
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .name-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .name-flow-item {
+    background: #FEF9E7;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-left: 3px solid #F39C12;
+  }
+
+  .name-flow-item .old {
+    font-size: 12px;
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  .name-flow-item .new {
+    font-weight: 700;
+    color: #C0392B;
+  }
+
+  /* ===== SECTION 5: DI SẢN ===== */
+  .heritage-section {
+    background: #1A5276;
+    color: #fff;
+    border-left: 5px solid #F39C12;
+  }
+
+  .heritage-section .section-title { color: #F39C12; }
+
+  .heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .heritage-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 16px 14px;
+    transition: background 0.2s;
+  }
+
+  .heritage-card:hover { background: rgba(255,255,255,0.14); }
+
+  .heritage-card .icon { font-size: 26px; margin-bottom: 8px; }
+
+  .heritage-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #F39C12;
+    margin-bottom: 6px;
+  }
+
+  .heritage-card p {
+    font-size: 12px;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  .national-badge {
+    display: inline-block;
+    background: #E74C3C;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  .festival-row {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-top: 4px;
+  }
+
+  .festival-row h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #F39C12;
+    margin-bottom: 12px;
+  }
+
+  .festival-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .festival-item {
+    font-size: 13px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* ===== SECTION 6: KINH TẾ ===== */
+  .economy-section {
+    background: #f7f8fc;
+    border-left: 5px solid #27AE60;
+  }
+
+  .econ-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .econ-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+  }
+
+  .econ-box h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #27AE60;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+  }
+
+  .bar-item {
+    margin-bottom: 12px;
+  }
+
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  .bar-track {
+    background: #ECF0F1;
+    border-radius: 6px;
+    height: 10px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #27AE60, #2ECC71);
+    transition: width 1s ease;
+  }
+
+  .project-list {
+    list-style: none;
+  }
+
+  .project-list li {
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 1px solid #ECF0F1;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .project-list li:last-child { border-bottom: none; }
+
+  .project-list li::before {
+    content: '▶';
+    color: #27AE60;
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .highlight-box {
+    background: linear-gradient(135deg, #D5F5E3, #A9DFBF);
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .highlight-box .big-num {
+    font-size: 36px;
+    font-weight: 900;
+    color: #1E8449;
+  }
+
+  .highlight-box .label {
+    font-size: 13px;
+    color: #1E8449;
+    font-weight: 600;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: #2C3E50;
+    color: rgba(255,255,255,0.8);
+    border-radius: 14px;
+    padding: 24px 30px;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  .footer h3 {
+    color: #F39C12;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .source-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .source-list li {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .source-list li::before {
+    content: '🔗';
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .source-list a { color: #85C1E9; text-decoration: none; }
+  .source-list a:hover { color: #F39C12; text-decoration: underline; }
+
+  .footer-note {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 12px;
+    opacity: 0.6;
+    text-align: center;
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: #fff; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section { break-inside: avoid; }
+    .heritage-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== SECTION 1: HEADER ===== -->
+  <div class="header">
+    <div class="header-badge">⭐ Đơn vị hành chính mới 2025</div>
+    <h1>Phường Chợ Lớn</h1>
+    <h2>Quận 5 · Thành phố Hồ Chí Minh</h2>
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="icon">📐</div>
+        <span class="value">1,67</span>
+        <div class="label">Diện tích (km²)</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">👥</div>
+        <span class="value">85.066</span>
+        <div class="label">Dân số (người)</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">🏙️</div>
+        <span class="value">50.937</span>
+        <div class="label">Mật độ (người/km²)</div>
+      </div>
+    </div>
+    <div class="pub-date">📅 Ngày xuất bản: 27/06/2026 | Hiệu lực: 01/07/2025</div>
+  </div>
+
+  <!-- ===== SECTION 2: VỊ TRÍ & ĐỊA LÝ ===== -->
+  <div class="section geo-section">
+    <div class="section-title">
+      <div class="icon-circle" style="background:#2980B9;color:#fff;">🗺️</div>
+      <span style="color:#1A5276;">Vị trí & Địa lý Đô thị</span>
+    </div>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>🧭 Địa giới hành chính</h3>
+        <div class="direction-item">
+          <div class="direction-arrow">⬆️</div>
+          <div><strong>Phía Bắc:</strong> Phường Minh Phụng & Diên Hồng – ranh giới là trục đường Hùng Vương và Nguyễn Chí Thanh</div>
+        </div>
+        <div class="direction-item">
+          <div class="direction-arrow">⬇️</div>
+          <div><strong>Phía Nam:</strong> Phường Phú Định – ranh giới tự nhiên là kênh Tàu Hủ</div>
+        </div>
+        <div class="direction-item">
+          <div class="direction-arrow">➡️</div>
+          <div><strong>Phía Đông:</strong> Phường An Đông – ranh giới theo trục Nguyễn Trãi và Trần Hưng Đạo</div>
+        </div>
+        <div class="direction-item">
+          <div class="direction-arrow">⬅️</div>
+          <div><strong>Phía Tây:</strong> Phường Bình Tây & Bình Tiên – theo các đường Nguyễn Thị Nhỏ, Ngô Nhân Tịnh, Lê Quang Sung</div>
+        </div>
+      </div>
+      <div class="geo-box">
+        <h3>🌆 Đặc điểm địa lý đô thị</h3>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <div>Nằm dọc các tuyến đường huyết mạch: <strong>Hồng Bàng, Trần Hưng Đạo, Hải Thượng Lãn Ông</strong></div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <div>Phía Nam giáp <strong>kênh Tàu Hủ</strong> – tuyến đường thủy lịch sử quan trọng</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <div>Mật độ dân số <strong>50.937 người/km²</strong> – thuộc hàng cao nhất TP.HCM</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <div>Trụ sở UBND: <strong>131 Triệu Quang Phục</strong>, phường Chợ Lớn</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <div>Hợp nhất từ: <strong>Phường 11, 12, 13 và 14</strong> (Quận 5 cũ) theo Nghị quyết 1685/NQ-UBTVQH15</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <div>Là hạt nhân của khu vực <strong>Chợ Lớn lịch sử</strong> – trung tâm văn hóa người Hoa phía Tây Nam TP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3: TIMELINE LỊCH SỬ ===== -->
+  <div class="section timeline-section">
+    <div class="section-title">
+      <div class="icon-circle" style="background:#C0392B;color:#fff;">⏳</div>
+      <span style="color:#922B21;">Dòng Chảy Lịch Sử</span>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Trước 1698</div>
+        <div class="timeline-content">Vùng Đề Ngạn (堤岸) đã có <strong>làng Minh Hương</strong> – người Hoa không thần phục nhà Thanh vượt biển sang định cư. Họ là tiền thân của cộng đồng Hoa Kiều Chợ Lớn.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">1698</div>
+        <div class="timeline-content">Chúa Nguyễn Phúc Chu lập <strong>phủ Gia Định</strong>, chính thức hóa vùng đất Nam Bộ. Đề Ngạn thuộc đơn vị hành chính Gia Định.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">1778</div>
+        <div class="timeline-content">Người Hoa ở <strong>Cù Lao Phố (Biên Hòa)</strong> bị quân Tây Sơn đánh phá, ồ ạt chạy vào lánh nạn, mang theo nghề thủ công và thương mại. Khu vực Đề Ngạn chính thức hình thành "Chợ Lớn" – người Việt gọi theo nghĩa "Đại Phố" (phố lớn).</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">1789</div>
+        <div class="timeline-content"><strong>Đình Minh Hương</strong> được xây dựng – ngôi đình đầu tiên của người Hoa trên đất Chợ Lớn, là trung tâm cộng đồng và tín ngưỡng.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">1859</div>
+        <div class="timeline-content">Quân Pháp đánh chiếm Sài Gòn – Chợ Lớn. Người Pháp nhanh chóng nhận ra tiềm năng thương mại, mở cảng Sài Gòn – Chợ Lớn, xây kho hàng. <strong>Chợ Lớn trở thành trung tâm thương mại lớn nhất miền Nam</strong> dưới thời Pháp thuộc.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">06/06/1865</div>
+        <div class="timeline-content">Chính quyền Pháp chính thức thành lập <strong>thành phố Chợ Lớn</strong> – lần đầu tiên danh xưng này được dùng để đặt tên một đơn vị hành chính cấp thành phố.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">1931</div>
+        <div class="timeline-content">Sài Gòn và Chợ Lớn chính thức <strong>hợp nhất</strong> thành Khu đô thị Sài Gòn – Chợ Lớn, địa danh "Chợ Lớn" dần trở thành tên gọi của quận.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Sau 1975</div>
+        <div class="timeline-content">Khu vực Chợ Lớn tái cơ cấu, trở thành <strong>Quận 5</strong> với các phường đánh số. Tên gọi "Chợ Lớn" vẫn sống trong ký ức dân gian dù vắng bóng trên bản đồ hành chính.</div>
+      </div>
+
+      <div class="timeline-item highlight">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">⭐ 01/07/2025 – SÁP NHẬP MỚI</div>
+        <div class="timeline-content">Theo <strong>Nghị quyết 1685/NQ-UBTVQH15</strong> của Ủy ban Thường vụ Quốc hội, phường 11, 12, 13, 14 (Quận 5) sáp nhập thành <strong>phường Chợ Lớn</strong> – cái tên lịch sử chính thức hồi sinh trên bản đồ hành chính TP.HCM sau hơn nửa thế kỷ.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4: NGUỒN GỐC ĐỊA DANH ===== -->
+  <div class="section name-section">
+    <div class="section-title">
+      <div class="icon-circle" style="background:#F39C12;color:#fff;">📜</div>
+      <span style="color:#7D6608;">Nguồn Gốc Địa Danh</span>
+    </div>
+    <div class="name-grid">
+      <div class="name-box">
+        <h3>Chữ Hán – Chữ Nôm</h3>
+        <div class="han-nom">堤岸</div>
+        <div class="han-nom-sub">Âm Hán-Việt: <strong>Đề Ngạn</strong><br>Nghĩa: "bờ đê" / "bờ ngạn" (bờ sông)</div>
+        <div style="margin-top:14px;font-size:13.5px;color:#555;line-height:1.7;">
+          <strong>🔤 Hành trình tên gọi:</strong><br>
+          堤岸 (Đề Ngạn) → Âm Quảng Đông: <em>Thầy Ngòn / Thì Ngòn</em> → phiên âm tiếng Việt thành <strong>Sài Gòn</strong><br><br>
+          <em>Tên "Sài Gòn" ban đầu dùng để chỉ chính khu vực Chợ Lớn (Quận 5, 6, 10…), trước khi mở rộng ra toàn thành phố.</em>
+        </div>
+      </div>
+      <div class="name-box">
+        <h3>Tên cũ → Tên mới (2025)</h3>
+        <div class="name-flow">
+          <div class="name-flow-item">
+            <div class="old">Phường 11 (Quận 5)</div>
+            <div style="font-size:11px;color:#888;margin-top:1px;">Địa bàn cũ: Nguyễn Trãi, Hồng Bàng (phía tây)</div>
+          </div>
+          <div class="name-flow-item">
+            <div class="old">Phường 12 (Quận 5)</div>
+            <div style="font-size:11px;color:#888;margin-top:1px;">Địa bàn cũ: Nguyễn Trãi, Triệu Quang Phục</div>
+          </div>
+          <div class="name-flow-item">
+            <div class="old">Phường 13 (Quận 5)</div>
+            <div style="font-size:11px;color:#888;margin-top:1px;">Địa bàn cũ: Hải Thượng Lãn Ông, Trần Hưng Đạo (B)</div>
+          </div>
+          <div class="name-flow-item">
+            <div class="old">Phường 14 (Quận 5)</div>
+            <div style="font-size:11px;color:#888;margin-top:1px;">Địa bàn cũ: Hồng Bàng, Ngô Quyền</div>
+          </div>
+          <div style="text-align:center;font-size:24px;color:#C0392B;font-weight:900;padding:8px 0;">↓</div>
+          <div class="name-flow-item" style="border-left-color:#C0392B;background:#FEF9E7;">
+            <div class="new" style="font-size:18px;">🏙️ Phường Chợ Lớn</div>
+            <div style="font-size:11px;color:#888;margin-top:4px;">Hiệu lực từ 01/07/2025 · Nghị quyết 1685/NQ-UBTVQH15</div>
+          </div>
+        </div>
+        <div style="margin-top:14px;font-size:13px;color:#555;line-height:1.6;padding:12px;background:#FDEBD0;border-radius:8px;">
+          <strong>💡 Ý nghĩa tên gọi:</strong> "Chợ Lớn" = tiếng Việt của <em>Đại Phố</em> (大 埔) – "phố lớn, chợ lớn". Phản ánh vai trò là trung tâm thương mại hàng đầu của người Hoa tại miền Nam Việt Nam.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5: DI SẢN VĂN HÓA ===== -->
+  <div class="section heritage-section">
+    <div class="section-title">
+      <div class="icon-circle" style="background:#F39C12;color:#1A5276;">🏛️</div>
+      Di Sản Văn Hóa & Tín Ngưỡng
+    </div>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="icon">🛕</div>
+        <h4>Hội Quán Tuệ Thành<br>(Chùa Bà Thiên Hậu)</h4>
+        <p>710 Nguyễn Trãi. Xây dựng cuối TK 18, thờ Bà Thiên Hậu – nơi linh thiêng nhất của người Hoa Quảng Đông tại TP.HCM.</p>
+        <span class="national-badge">🏅 Di tích Quốc gia 1993</span>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏠</div>
+        <h4>Hội Quán Nhị Phủ<br>(Chùa Ông Bổn)</h4>
+        <p>Miếu cổ của người Hoa gốc Phúc Kiến (Tuyền Châu & Dương Châu), xây dựng cuối TK 17, thờ Bổn Đầu Công – thần bảo hộ.</p>
+        <span class="national-badge">🏅 Di tích Quốc gia 1998</span>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">⛩️</div>
+        <h4>Hội Quán Nghĩa An<br>(Chùa Ông Quan Công)</h4>
+        <p>678 Nguyễn Trãi. Một trong những hội quán lâu đời nhất do người Triều Châu xây dựng, thờ Quan Thánh Đế Quân.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🙏</div>
+        <h4>Chùa Quan Âm<br>(Hội Quán Ôn Lăng)</h4>
+        <p>Xây dựng năm 1740, kiến trúc gỗ đặc sắc phong cách đền miếu Phúc Kiến. Là điểm tâm linh quan trọng dịp rằm tháng Giêng.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏯</div>
+        <h4>Đình Minh Hương</h4>
+        <p>Xây dựng năm 1789, là ngôi đình đầu tiên của người Hoa trên đất Chợ Lớn. Trung tâm cộng đồng Minh Hương qua nhiều thế kỷ.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌸</div>
+        <h4>Phố Lồng Đèn &<br>Thuốc Bắc</h4>
+        <p>Phố thuốc bắc <strong>Hải Thượng Lãn Ông</strong>, phố lồng đèn <strong>Lương Nhữ Học</strong>, phố vải <strong>Soái Kình Lâm</strong> – di sản thương mại sống còn hàng trăm năm.</p>
+      </div>
+    </div>
+
+    <div class="festival-row">
+      <h3>🎉 Lễ hội truyền thống & Đặc sản văn hóa</h3>
+      <div class="festival-list">
+        <div class="festival-item">
+          <span>🏮</span>
+          <div><strong>Tết Nguyên Tiêu</strong> (Rằm tháng Giêng) – Lễ hội lớn nhất, đèn lồng rực rỡ khắp phố Chợ Lớn</div>
+        </div>
+        <div class="festival-item">
+          <span>🙏</span>
+          <div><strong>Vía Quan Âm</strong> (19/6 âm lịch) – Hàng nghìn người hành hương về chùa Ôn Lăng</div>
+        </div>
+        <div class="festival-item">
+          <span>⚔️</span>
+          <div><strong>Vía Quan Công</strong> (24/6 âm lịch) – Lễ hội truyền thống tại Hội Quán Nghĩa An</div>
+        </div>
+        <div class="festival-item">
+          <span>☕</span>
+          <div><strong>Cà phê Ba Lù</strong> – Quán cà phê gần 100 tuổi, pha vợt truyền thống người Hoa, hương vị Sài Gòn xưa</div>
+        </div>
+        <div class="festival-item">
+          <span>✍️</span>
+          <div><strong>Tục viết liễn Tết</strong> – Nghệ nhân thư pháp người Hoa viết liễn, câu đối mừng xuân tại hội quán</div>
+        </div>
+        <div class="festival-item">
+          <span>🔪</span>
+          <div><strong>Phố mài dao kéo</strong> Triệu Quang Phục – Nghề thủ công truyền thống người Hoa qua nhiều thế hệ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6: KINH TẾ & ĐÔ THỊ ===== -->
+  <div class="section economy-section">
+    <div class="section-title">
+      <div class="icon-circle" style="background:#27AE60;color:#fff;">📈</div>
+      <span style="color:#1E8449;">Kinh tế & Đô thị hóa</span>
+    </div>
+    <div class="econ-grid">
+      <div class="econ-box">
+        <h3>📊 Cơ cấu kinh tế</h3>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>🏪 Thương mại – Dịch vụ</span>
+            <span style="font-weight:700;color:#27AE60;">75%+</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:75%;"></div>
+          </div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>🏥 Y tế – Giáo dục</span>
+            <span style="font-weight:700;color:#2980B9;">15%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:15%;background:linear-gradient(90deg,#2980B9,#3498DB);"></div>
+          </div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>🏭 Tiểu thủ công nghiệp</span>
+            <span style="font-weight:700;color:#E67E22;">10%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:10%;background:linear-gradient(90deg,#E67E22,#F39C12);"></div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;font-size:13px;color:#555;line-height:1.7;">
+          <strong>🏥 Tiện ích y tế – giáo dục:</strong>
+          <ul style="list-style:none;margin-top:8px;">
+            <li>🏨 Bệnh viện Chợ Rẫy (tuyến cuối lớn nhất miền Nam)</li>
+            <li>🤰 Bệnh viện Hùng Vương (sản phụ khoa hàng đầu)</li>
+            <li>🎓 Đại học Y Dược TP.HCM</li>
+            <li>📚 Đại học Hùng Vương TP.HCM</li>
+          </ul>
+        </div>
+
+        <div class="highlight-box">
+          <div class="big-num">300+</div>
+          <div class="label">Năm lịch sử thương mại không gián đoạn</div>
+        </div>
+      </div>
+
+      <div class="econ-box">
+        <h3>🚧 Dự án hạ tầng & Quy hoạch</h3>
+        <ul class="project-list">
+          <li><strong>Chợ Lớn Heritage Walk</strong> – Tuyến đi bộ văn hóa đầu tiên TP.HCM, kết nối các điểm di sản, khởi công Q1/2026</li>
+          <li><strong>The Garden Mall</strong> (cũ: Thuận Kiều Plaza 1994–1998) – Trung tâm thương mại 100.000m² hồi sinh trên đường Hồng Bàng</li>
+          <li><strong>Cải tạo vỉa hè</strong> toàn tuyến Trần Hưng Đạo – Nguyễn Trãi, nâng cấp hạ tầng thương mại – du lịch</li>
+          <li><strong>Smart Campus Đại học Hùng Vương</strong> – Đầu tư 110 tỷ đồng, triển khai ngành Logistics & AI từ 2026</li>
+          <li><strong>Bến xe Chợ Lớn</strong> (1930s) – nâng cấp thành đầu mối giao thông chiến lược khu Tây Nam TP</li>
+        </ul>
+        <div style="margin-top:16px;padding:14px;background:#D5F5E3;border-radius:10px;font-size:13px;color:#1E8449;line-height:1.6;">
+          <strong>🎯 Định hướng sau sáp nhập:</strong> Lấy <em>thương mại – dịch vụ – du lịch văn hóa</em> làm mũi nhọn. Bảo tồn di sản đi đôi với phát triển đô thị hiện đại. Chuyển đổi số, cải cách hành chính, chăm lo an sinh xã hội.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <h3>📚 Nguồn tham khảo</h3>
+    <ul class="source-list">
+      <li><a href="https://xaydungchinhsach.chinhphu.vn/sap-xep-dvhc-danh-sach-168-xa-phuong-dac-khu-cua-thanh-pho-ho-chi-minh-119250623085031865.htm" target="_blank">Danh sách 168 đơn vị hành chính TP.HCM (Chính phủ)</a></li>
+      <li><a href="https://dantri.com.vn/thoi-su/phuong-cho-lon-hoi-sinh-cai-ten-mang-dau-an-nguoi-hoa-giua-long-sai-gon-20250726214220625.htm" target="_blank">Phường Chợ Lớn hồi sinh – Báo Dân Trí</a></li>
+      <li><a href="https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_L%E1%BB%9Bn_(ph%C6%B0%E1%BB%9Dng)" target="_blank">Phường Chợ Lớn – Wikipedia tiếng Việt</a></li>
+      <li><a href="https://www.arental.vn/phuong-cho-lon-moi-tphcm/" target="_blank">Thông tin phường Chợ Lớn mới – Arental</a></li>
+      <li><a href="https://thanhnien.vn/phuong-cho-lon-dau-an-chua-co-tram-tuoi-le-hoi-tet-nguyen-tieu-giua-long-tphcm-185250630140839732.htm" target="_blank">Di sản chùa cổ & lễ hội Tết Nguyên Tiêu – Báo Thanh Niên</a></li>
+      <li><a href="https://chuyenxua.vn/lich-su-hinh-thanh-va-hinh-anh-ngay-xua-cua-cho-lon/" target="_blank">Lịch sử hình thành Chợ Lớn – Chuyên Xưa</a></li>
+      <li><a href="https://vnexpress.net/ten-goi-sai-gon-cho-lon-gia-dinh-qua-tram-nam-4874491.html" target="_blank">Tên gọi Sài Gòn, Chợ Lớn, Gia Định – VnExpress</a></li>
+      <li><a href="https://fptshop.com.vn/tin-tuc/danh-gia/phuong-cho-lon-cua-tp-hcm-180680" target="_blank">Phường Chợ Lớn: Kinh tế – Đô thị 2025-2026</a></li>
+    </ul>
+    <div class="footer-note">
+      📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh<br>
+      Dữ liệu tổng hợp từ nguồn chính thức và báo chí uy tín. Vui lòng kiểm tra thông tin tại cơ quan hành chính địa phương trước khi sử dụng.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
