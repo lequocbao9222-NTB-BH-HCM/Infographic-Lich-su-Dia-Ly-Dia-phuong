@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#19 – Infographic Phường An Phú | Lịch sử & Địa lý TP. HCM</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #2C3E50; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header {
+    background: linear-gradient(135deg, #4A235A 0%, #6C3483 50%, #8E44AD 100%);
+    color: white; border-radius: 16px; padding: 40px 36px 32px;
+    text-align: center; margin-bottom: 20px; position: relative;
+    box-shadow: 0 8px 32px rgba(74,35,90,0.35);
+  }
+  .number-badge { position: absolute; top: 18px; left: 22px; background: rgba(255,255,255,0.22); border: 2px solid rgba(255,255,255,0.55); color: white; font-size: 1.1rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; }
+  .new-badge { display: inline-block; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.5); color: white; font-size: 0.85rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px; }
+  .stat-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .stat-card { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 140px; }
+  .stat-card .val { font-size: 1.7rem; font-weight: 800; }
+  .stat-card .lbl { font-size: 0.78rem; opacity: 0.85; margin-top: 3px; }
+  .pub-date { margin-top: 16px; font-size: 0.82rem; opacity: 0.75; }
+  section { border-radius: 14px; padding: 30px 32px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .geo-section { background: linear-gradient(135deg, #F3E5F5, #FAF0FF); border-left: 5px solid #8E44AD; }
+  .geo-section h2 { color: #4A235A; }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .geo-box { background: white; border-radius: 10px; padding: 16px; }
+  .geo-box h3 { font-size: 0.95rem; color: #6C3483; font-weight: 700; margin-bottom: 12px; }
+  .direction-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 0.88rem; }
+  .geo-tag { display: inline-block; background: #F3E5F5; color: #4A235A; border-radius: 6px; padding: 4px 10px; font-size: 0.8rem; margin: 3px 2px; }
+  .timeline-section { background: white; border-left: 5px solid #8E44AD; }
+  .timeline-section h2 { color: #4A235A; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #4A235A, #8E44AD, #F39C12); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #6C3483; border: 3px solid white; box-shadow: 0 0 0 2px #6C3483; }
+  .tl-item.highlight::before { background: #F39C12; box-shadow: 0 0 0 2px #F39C12; }
+  .tl-year { font-size: 0.78rem; font-weight: 800; color: #4A235A; text-transform: uppercase; letter-spacing: 1px; }
+  .tl-item.highlight .tl-year { color: #E67E22; }
+  .tl-title { font-size: 0.97rem; font-weight: 700; margin: 2px 0; }
+  .tl-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+  .tl-item.highlight { background: #FEF9E7; border-radius: 10px; padding: 10px 14px; border-left: 3px solid #F39C12; }
+  .name-section { background: linear-gradient(135deg, #FEF9E7, #FDEBD0); border-left: 5px solid #F39C12; }
+  .name-section h2 { color: #D35400; }
+  .name-box { background: white; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+  .han-nom { font-size: 2rem; color: #4A235A; font-weight: 900; text-align: center; padding: 12px; border: 2px solid #8E44AD; border-radius: 10px; background: #F3E5F5; display: inline-block; margin: 8px auto; }
+  .name-evolution { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .evo-step { background: #FDEBD0; border: 1px solid #F39C12; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 600; }
+  .evo-arrow { color: #E67E22; font-weight: bold; }
+  .heritage-section { background: #1A5276; color: white; border-radius: 14px; }
+  .heritage-section h2 { color: #85C1E9; }
+  .heritage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .heritage-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 16px; text-align: center; }
+  .heritage-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .heritage-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: #AED6F1; }
+  .heritage-card p { font-size: 0.78rem; opacity: 0.85; line-height: 1.4; }
+  .economy-section { background: #F8F9FA; border-left: 5px solid #8E44AD; }
+  .economy-section h2 { color: #4A235A; }
+  .eco-bars { margin-bottom: 18px; }
+  .eco-bar-item { margin-bottom: 12px; }
+  .eco-bar-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .eco-bar-track { background: #F3E5F5; border-radius: 10px; height: 12px; overflow: hidden; }
+  .eco-bar-fill { height: 100%; border-radius: 10px; }
+  .eco-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .eco-project { background: white; border-radius: 8px; padding: 12px; border-left: 3px solid #8E44AD; font-size: 0.83rem; }
+  .eco-project strong { display: block; color: #4A235A; margin-bottom: 3px; }
+  .footer-section { background: #2C3E50; color: white; border-radius: 14px; padding: 24px 32px; }
+  .footer-section h2 { color: #85C1E9; font-size: 1.1rem; margin-bottom: 14px; }
+  .source-list { list-style: none; }
+  .source-list li { font-size: 0.78rem; opacity: 0.75; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .source-list li::before { content: '›'; position: absolute; left: 0; color: #85C1E9; }
+  .copyright { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.82rem; opacity: 0.9; text-align: center; color: #F39C12; font-weight: 600; }
+  .bd-note { background: #F3E5F5; border: 1px solid #8E44AD; border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 0.85rem; color: #4A235A; }
+  @media print { body { background: white; } .container { padding: 0; } section { box-shadow: none; break-inside: avoid; } .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="number-badge">📌 #19</div>
+    <div class="new-badge">🏙️ Phường thuộc địa bàn Bình Dương cũ – nay TP. HCM</div>
+    <h1>PHƯỜNG AN PHÚ</h1>
+    <div class="subtitle">TP. Hồ Chí Minh (từ địa bàn TP. Thuận An, Bình Dương) &nbsp;|&nbsp; Đơn vị mới từ 01/07/2025</div>
+    <div class="stat-cards">
+      <div class="stat-card"><div class="val">16,85</div><div class="lbl">Diện tích (km²)</div></div>
+      <div class="stat-card"><div class="val">~67.000</div><div class="lbl">Dân số (người)</div></div>
+      <div class="stat-card"><div class="val">~3.976</div><div class="lbl">Mật độ (người/km²)</div></div>
+    </div>
+    <div class="pub-date">📅 Ngày xuất bản: 04/07/2026 &nbsp;|&nbsp; Nghị quyết 1685/NQ-UBTVQH15</div>
+  </div>
+
+  <section class="geo-section">
+    <h2>🗺️ Vị trí & Địa lý</h2>
+    <div class="bd-note">⚠️ <strong>Lưu ý quan trọng:</strong> Phường An Phú này thuộc địa bàn <strong>TP. Thuận An (Bình Dương cũ)</strong>, được sáp nhập vào TP. Hồ Chí Minh từ 01/07/2025 theo Nghị quyết 1685/NQ-UBTVQH15. Không nhầm với Phường An Phú (Quận 2 cũ / TP Thủ Đức).</div>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>📍 Địa giới 4 phía</h3>
+        <div class="direction-item"><span>⬆️</span><span><strong>Bắc:</strong> Phường Thuận Giao (TP. Thuận An, thuộc địa bàn TP HCM mới)</span></div>
+        <div class="direction-item"><span>➡️</span><span><strong>Đông:</strong> Phường Bình Chuẩn (một phần nhập vào An Phú)</span></div>
+        <div class="direction-item"><span>⬇️</span><span><strong>Nam:</strong> Phường Bình Hòa (Thuận An, nay TP HCM)</span></div>
+        <div class="direction-item"><span>⬅️</span><span><strong>Tây:</strong> Sông Sài Gòn – ranh giới tự nhiên với TP Thủ Đức</span></div>
+      </div>
+      <div class="geo-box">
+        <h3>🌆 Đặc điểm đô thị</h3>
+        <div class="geo-tag">🛣️ Quốc lộ 13 – hành lang kinh tế Bình Dương</div>
+        <div class="geo-tag">🏭 Gần các KCN lớn của Bình Dương cũ</div>
+        <div class="geo-tag">🌊 Sông Sài Gòn phía Tây</div>
+        <div class="geo-tag">🏘️ Khu dân cư công nhân mật độ cao</div>
+        <div class="geo-tag">🏗️ Đô thị hóa nhanh từ 2010-2025</div>
+        <div class="geo-tag">🔌 Hạ tầng KCN, kho xưởng logistics</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <h2>📜 Timeline Lịch sử</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">TK 17 – 19</div>
+        <div class="tl-title">Vùng đất An Phú – Đất lành dọc Quốc lộ 13</div>
+        <div class="tl-desc">Vùng đất An Phú nằm trên hành lang quan trọng từ Sài Gòn lên miền Đông Nam Bộ. Cư dân khai khẩn đất đai, lập làng dọc theo trục đường thiên lý Bắc – Nam. Tên "An Phú" thể hiện ước vọng bình an và no đủ của những lưu dân đầu tiên.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1945 – 1975</div>
+        <div class="tl-title">Kháng chiến – Vùng giáp ranh chiến lược Sài Gòn–Bình Dương</div>
+        <div class="tl-desc">An Phú là vùng đệm chiến lược giữa Sài Gòn và Bình Dương trong cả hai cuộc kháng chiến. Người dân địa phương tham gia kháng chiến, cung cấp lương thực và nơi ẩn nấp cho lực lượng cách mạng. Địa bàn chứng kiến nhiều trận đánh ác liệt.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1975 – 1997</div>
+        <div class="tl-title">Tái thiết – Xây dựng xã An Phú (huyện Thuận An, tỉnh Sông Bé/Bình Dương)</div>
+        <div class="tl-desc">Sau giải phóng, An Phú là xã thuộc huyện Thuận An, tỉnh Sông Bé (sau đổi thành Bình Dương). Kinh tế nông nghiệp dần chuyển dịch nhờ gần Sài Gòn. Làn sóng công nghiệp hóa từ cuối thập niên 1980 bắt đầu thay đổi diện mạo vùng đất.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1999 – 2011</div>
+        <div class="tl-title">Thị xã Thuận An thành lập – An Phú chuyển thành phường</div>
+        <div class="tl-desc">Năm 1999, huyện Thuận An nâng cấp thành thị xã. Xã An Phú được chuyển thành phường An Phú – phường đô thị. Dân số tăng mạnh do làn sóng công nhân các khu công nghiệp Bình Dương đổ vào từ khắp nơi trong cả nước.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2011</div>
+        <div class="tl-title">Phường An Phú chính thức thuộc TP. Thuận An (Bình Dương)</div>
+        <div class="tl-desc">TP. Thuận An được thành lập, An Phú là một trong các phường đô thị. Dân số 51.674 người, là một trong những phường đông dân nhất Bình Dương. Kinh tế phát triển mạnh nhờ vị trí chiến lược trên Quốc lộ 13.</div>
+      </div>
+      <div class="tl-item highlight">
+        <div class="tl-year">⭐ 01/07/2025</div>
+        <div class="tl-title">Phường An Phú (Thuận An) sáp nhập vào TP. Hồ Chí Minh</div>
+        <div class="tl-desc">Nghị quyết 1685/NQ-UBTVQH15: Toàn bộ tỉnh Bình Dương (gồm TP Thuận An) được sáp nhập vào TP. Hồ Chí Minh. Phường An Phú sáp nhập với một phần Phường Bình Chuẩn để tạo thành Phường An Phú mới, DT 16,85 km², thuộc TP. Hồ Chí Minh. Một đơn vị hành chính mới với tiềm năng phát triển lớn trong siêu đô thị mở rộng.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <h2>🔤 Nguồn gốc Địa danh</h2>
+    <div class="name-box" style="text-align:center;">
+      <div class="han-nom">安富</div>
+      <p style="font-size:0.85rem; color:#888; margin-top:4px;">AN PHÚ (chiết tự Hán-Nôm)</p>
+    </div>
+    <div class="name-box">
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">
+        <strong>An Phú</strong> nghĩa là:<br>
+        <strong>"An"</strong> = bình an, yên ổn, an bình.<br>
+        <strong>"Phú"</strong> = giàu có, phú quý, no đủ.<br>
+        <em style="font-size:1rem; color:#D35400; font-weight:700;">"Vùng đất bình an và phú quý"</em><br>
+        Tên gọi thể hiện ước nguyện của những lưu dân đầu tiên khai phá đất phương Nam — mong tìm được cuộc sống bình an và thịnh vượng. Đây là mẫu tên địa danh phổ biến ở Nam Bộ, phản ánh giá trị cốt lõi của người dân khai phá.
+      </p>
+    </div>
+    <div class="name-box">
+      <h3 style="color:#D35400; font-size:0.95rem; font-weight:700; margin-bottom:10px;">📊 Quá trình hành chính</h3>
+      <div class="name-evolution">
+        <span class="evo-step">Làng An Phú (TK 17-18)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Xã An Phú (huyện Thuận An, Sông Bé)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Phường An Phú (TX Thuận An, Bình Dương, 1999)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">TP Thuận An (Bình Dương, 2011)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step" style="background:#F3E5F5;border-color:#8E44AD;">P. An Phú (TP HCM, 2025)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage-section">
+    <h2>🏛️ Di sản Văn hóa & Điểm nhấn</h2>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="icon">🛣️</div>
+        <h3>Quốc lộ 13 – Hành lang lịch sử</h3>
+        <p>QL 13 chạy qua phường là con đường huyết mạch nối Sài Gòn–Bình Dương–Bình Phước. Từ thời thuộc địa đến nay, đây là tuyến đường thương mại và quân sự quan trọng nhất vùng Đông Nam Bộ.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">⛪</div>
+        <h3>Đình làng An Phú cổ kính</h3>
+        <p>Đình làng An Phú thờ Thành Hoàng bổn cảnh — trung tâm sinh hoạt cộng đồng từ thế kỷ 18. Lễ cúng đình hàng năm thu hút đông đảo người dân địa phương, gìn giữ văn hóa truyền thống Bình Dương.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏭</div>
+        <h3>Tiên phong Công nghiệp hóa</h3>
+        <p>An Phú là một trong những địa bàn đầu tiên của Bình Dương đón nhận làn sóng đầu tư công nghiệp từ 1993. Giai đoạn này biến vùng đất nông nghiệp thành đô thị công nghiệp năng động của Bình Dương.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌊</div>
+        <h3>Cảnh quan Sông Sài Gòn</h3>
+        <p>Bờ sông Sài Gòn phía Tây phường An Phú tạo ra cảnh quan đặc trưng. Là ranh giới tự nhiên giữa Bình Dương cũ và TP HCM. Tiềm năng phát triển du lịch sinh thái ven sông đang được quy hoạch.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏘️</div>
+        <h3>Cộng đồng đa vùng miền</h3>
+        <p>Sự bùng nổ công nghiệp Bình Dương kéo theo hàng chục nghìn công nhân từ khắp cả nước. Phường An Phú là "nồi lẩu văn hóa" — nơi hội tụ người từ Nghệ An, Thanh Hóa, Miền Tây, Tây Nguyên.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🔗</div>
+        <h3>Cầu nối Bình Dương – TP HCM</h3>
+        <p>An Phú từng là cửa ngõ phía Nam của Bình Dương, nay là phường cửa ngõ phía Bắc của TP HCM mở rộng. Vị thế cầu nối giữa hai vùng kinh tế trọng điểm tạo lợi thế phát triển đặc biệt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="economy-section">
+    <h2>💼 Kinh tế & Đô thị hóa</h2>
+    <div class="eco-bars">
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏭 Công nghiệp – Sản xuất – Chế biến</span><span>50%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:50%;background:linear-gradient(90deg,#4A235A,#8E44AD);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🛍️ Thương mại – Dịch vụ – Bán lẻ</span><span>30%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:30%;background:linear-gradient(90deg,#1A5276,#2E86C1);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏠 Nhà ở – Bất động sản – Dịch vụ công nhân</span><span>20%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:20%;background:linear-gradient(90deg,#186A3B,#27AE60);"></div></div>
+      </div>
+    </div>
+    <div class="eco-projects">
+      <div class="eco-project">
+        <strong>🏭 Hạ tầng KCN Thuận An</strong>
+        Phường tiếp giáp các KCN lớn của Thuận An cũ. Hàng chục ngàn công nhân làm việc tại đây cần nhà trọ, dịch vụ ăn uống, y tế. Dịch vụ công nhân là ngành kinh tế đặc thù và quan trọng.
+      </div>
+      <div class="eco-project">
+        <strong>🛣️ Quốc lộ 13 – Hành lang thương mại</strong>
+        Nằm trên QL 13 – tuyến đường huyết mạch Sài Gòn–Bình Dương. Hàng loạt trung tâm thương mại, siêu thị, ngân hàng, dịch vụ tài chính đang phát triển dọc tuyến đường này.
+      </div>
+      <div class="eco-project">
+        <strong>🏗️ Đô thị hóa sau sáp nhập</strong>
+        Từ 01/07/2025, An Phú được hưởng lợi từ ngân sách và đầu tư cơ sở hạ tầng TP HCM. Dự kiến nhiều dự án nâng cấp đường bộ, hệ thống thoát nước và công viên trong 5 năm tới.
+      </div>
+      <div class="eco-project">
+        <strong>🌊 Phát triển ven sông Sài Gòn</strong>
+        Bờ sông Sài Gòn phía Tây An Phú đang được quy hoạch thành khu đô thị ven sông cao cấp, tương tự mô hình Thảo Điền (TP Thủ Đức) đang thành công ở phía Nam.
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-section">
+    <h2>📚 Nguồn tham khảo</h2>
+    <ul class="source-list">
+      <li>Nghị quyết 1685/NQ-UBTVQH15 ngày 16/06/2025 – Ủy ban Thường vụ Quốc hội</li>
+      <li>Phường An Phú, TP Thuận An, tỉnh Bình Dương – vi.wikipedia.org</li>
+      <li>Tinhthanhvn.com – Phường An Phú, TP Hồ Chí Minh sau sáp nhập 2025</li>
+      <li>Bình Dương sáp nhập vào TP HCM từ 01/07/2025 – Nghị quyết 1685</li>
+      <li>Lịch sử hình thành TP Thuận An (Bình Dương) – Cổng thông tin tỉnh Bình Dương</li>
+      <li>GHTK Blog – Phường An Phú TP HCM sau sáp nhập: Địa chỉ, địa giới hành chính</li>
+    </ul>
+    <div class="copyright">📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#13 – Infographic Phường Phú Nhuận | Lịch sử & Địa lý TP. HCM</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #2C3E50; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header {
+    background: linear-gradient(135deg, #1E8449 0%, #27AE60 50%, #229954 100%);
+    color: white; border-radius: 16px; padding: 40px 36px 32px;
+    text-align: center; margin-bottom: 20px; position: relative;
+    box-shadow: 0 8px 32px rgba(39,174,96,0.35);
+  }
+  .number-badge { position: absolute; top: 18px; left: 22px; background: rgba(255,255,255,0.22); border: 2px solid rgba(255,255,255,0.55); color: white; font-size: 1.1rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; }
+  .new-badge { display: inline-block; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.5); color: white; font-size: 0.85rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px; }
+  .stat-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .stat-card { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 140px; }
+  .stat-card .val { font-size: 1.7rem; font-weight: 800; }
+  .stat-card .lbl { font-size: 0.78rem; opacity: 0.85; margin-top: 3px; }
+  .pub-date { margin-top: 16px; font-size: 0.82rem; opacity: 0.75; }
+  section { border-radius: 14px; padding: 30px 32px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .geo-section { background: linear-gradient(135deg, #D6EAF8, #EBF5FB); border-left: 5px solid #2980B9; }
+  .geo-section h2 { color: #1A5276; }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .geo-box { background: white; border-radius: 10px; padding: 16px; }
+  .geo-box h3 { font-size: 0.95rem; color: #2980B9; font-weight: 700; margin-bottom: 12px; }
+  .direction-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 0.88rem; }
+  .geo-tag { display: inline-block; background: #D6EAF8; color: #1A5276; border-radius: 6px; padding: 4px 10px; font-size: 0.8rem; margin: 3px 2px; }
+  .timeline-section { background: white; border-left: 5px solid #1E8449; }
+  .timeline-section h2 { color: #1E8449; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #1E8449, #27AE60, #F39C12); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #27AE60; border: 3px solid white; box-shadow: 0 0 0 2px #27AE60; }
+  .tl-item.highlight::before { background: #F39C12; box-shadow: 0 0 0 2px #F39C12; }
+  .tl-year { font-size: 0.78rem; font-weight: 800; color: #1E8449; text-transform: uppercase; letter-spacing: 1px; }
+  .tl-item.highlight .tl-year { color: #E67E22; }
+  .tl-title { font-size: 0.97rem; font-weight: 700; margin: 2px 0; }
+  .tl-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+  .tl-item.highlight { background: #FEF9E7; border-radius: 10px; padding: 10px 14px; border-left: 3px solid #F39C12; }
+  .name-section { background: linear-gradient(135deg, #FEF9E7, #FDEBD0); border-left: 5px solid #F39C12; }
+  .name-section h2 { color: #D35400; }
+  .name-box { background: white; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+  .han-nom { font-size: 2rem; color: #C0392B; font-weight: 900; text-align: center; padding: 12px; border: 2px solid #F39C12; border-radius: 10px; background: #FEF9E7; display: inline-block; margin: 8px auto; }
+  .name-evolution { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .evo-step { background: #FDEBD0; border: 1px solid #F39C12; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 600; }
+  .evo-arrow { color: #E67E22; font-weight: bold; }
+  .heritage-section { background: #1A5276; color: white; border-radius: 14px; }
+  .heritage-section h2 { color: #85C1E9; }
+  .heritage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .heritage-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 16px; text-align: center; }
+  .heritage-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .heritage-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: #AED6F1; }
+  .heritage-card p { font-size: 0.78rem; opacity: 0.85; line-height: 1.4; }
+  .economy-section { background: #F8F9FA; border-left: 5px solid #27AE60; }
+  .economy-section h2 { color: #1E8449; }
+  .eco-bars { margin-bottom: 18px; }
+  .eco-bar-item { margin-bottom: 12px; }
+  .eco-bar-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .eco-bar-track { background: #E8F8F5; border-radius: 10px; height: 12px; overflow: hidden; }
+  .eco-bar-fill { height: 100%; border-radius: 10px; }
+  .eco-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .eco-project { background: white; border-radius: 8px; padding: 12px; border-left: 3px solid #27AE60; font-size: 0.83rem; }
+  .eco-project strong { display: block; color: #1E8449; margin-bottom: 3px; }
+  .footer-section { background: #2C3E50; color: white; border-radius: 14px; padding: 24px 32px; }
+  .footer-section h2 { color: #85C1E9; font-size: 1.1rem; margin-bottom: 14px; }
+  .source-list { list-style: none; }
+  .source-list li { font-size: 0.78rem; opacity: 0.75; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .source-list li::before { content: '›'; position: absolute; left: 0; color: #85C1E9; }
+  .copyright { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.82rem; opacity: 0.9; text-align: center; color: #F39C12; font-weight: 600; }
+  @media print { body { background: white; } .container { padding: 0; } section { box-shadow: none; break-inside: avoid; } .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="number-badge">📌 #13</div>
+    <div class="new-badge">🌿 Đất làng cổ từ 1698</div>
+    <h1>PHƯỜNG PHÚ NHUẬN</h1>
+    <div class="subtitle">Quận Phú Nhuận · TP. Hồ Chí Minh &nbsp;|&nbsp; Đơn vị mới từ 01/07/2025</div>
+    <div class="stat-cards">
+      <div class="stat-card"><div class="val">1,46</div><div class="lbl">Diện tích (km²)</div></div>
+      <div class="stat-card"><div class="val">68.420</div><div class="lbl">Dân số (người)</div></div>
+      <div class="stat-card"><div class="val">46.863</div><div class="lbl">Mật độ (người/km²)</div></div>
+    </div>
+    <div class="pub-date">📅 Ngày xuất bản: 04/07/2026</div>
+  </div>
+
+  <section class="geo-section">
+    <h2>🗺️ Vị trí & Địa lý</h2>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>📍 Địa giới 4 phía</h3>
+        <div class="direction-item"><span>⬆️</span><span><strong>Bắc:</strong> Phường Đức Nhuận (Quận Phú Nhuận)</span></div>
+        <div class="direction-item"><span>➡️</span><span><strong>Đông:</strong> Phường Cầu Kiệu (Quận Phú Nhuận)</span></div>
+        <div class="direction-item"><span>⬇️</span><span><strong>Nam:</strong> Quận 3 – ngăn cách bởi kênh Nhiêu Lộc – Thị Nghè</span></div>
+        <div class="direction-item"><span>⬅️</span><span><strong>Tây:</strong> Quận Tân Bình</span></div>
+      </div>
+      <div class="geo-box">
+        <h3>🌆 Đặc điểm đô thị</h3>
+        <div class="geo-tag">🌊 Kênh Nhiêu Lộc – Thị Nghè</div>
+        <div class="geo-tag">🛣️ Nguyễn Văn Trỗi – trục chính</div>
+        <div class="geo-tag">⛪ Chùa Phú Long (TK 19)</div>
+        <div class="geo-tag">🏛️ Đình Phú Nhuận (~1818)</div>
+        <div class="geo-tag">🏘️ Khu dân cư mật độ cao</div>
+        <div class="geo-tag">🏢 Trụ sở UBND 159 NVT</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <h2>📜 Timeline Lịch sử</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1698</div>
+        <div class="tl-title">Thôn Phú Nhuận được thành lập</div>
+        <div class="tl-desc">Chúa Nguyễn Phúc Chu cử Nguyễn Hữu Cảnh vào Nam mở đất. Thôn Phú Nhuận ra đời, thuộc tổng Bình Trị, huyện Bình Dương, phủ Tân Bình, trấn Phiên An – là một trong những làng xã cổ nhất vùng Sài Gòn – Gia Định.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1813</div>
+        <div class="tl-title">Ghi nhận trong Gia Định thành thông chí</div>
+        <div class="tl-desc">Trịnh Hoài Đức ghi chép thôn Phú Nhuận trong tác phẩm địa chí nổi tiếng. Làng nằm sát kênh Nhiêu Lộc, cư dân sinh sống bằng nông nghiệp và thủ công nghiệp, có đình làng thờ Thành Hoàng.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1818</div>
+        <div class="tl-title">Xây dựng Đình Phú Nhuận</div>
+        <div class="tl-desc">Đình Phú Nhuận (18 Mai Văn Ngọc) được xây dựng bên bờ kênh Nhiêu Lộc, thờ Thành Hoàng Bổn Cảnh. Năm 1852, đình được xây lại kiên cố. Năm 1893, vua Tự Đức ban sắc phong.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">05/01/1876</div>
+        <div class="tl-title">Trở thành Làng Phú Nhuận – Hạt tham biện Sài Gòn</div>
+        <div class="tl-desc">Thực dân Pháp tổ chức lại hành chính Nam Kỳ. Thôn Phú Nhuận lên thành làng thuộc hạt tham biện Sài Gòn (sau là Bình Hòa). Kênh Nhiêu Lộc trở thành ranh giới tự nhiên với Sài Gòn.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1949 – 1975</div>
+        <div class="tl-title">Quận Phú Nhuận – Tự trị hành chính</div>
+        <div class="tl-desc">Phú Nhuận được nâng lên thành quận riêng, không thuộc các quận lớn của Sài Gòn. Đây là giai đoạn phát triển mạnh về dân số, xuất hiện nhiều chợ búa, trường học và cơ sở tôn giáo.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2012</div>
+        <div class="tl-title">Cải tạo kênh Nhiêu Lộc – Thị Nghè</div>
+        <div class="tl-desc">Dự án cải tạo kênh Nhiêu Lộc phía Nam Phú Nhuận hoàn thành, biến "dòng kênh chết" thành tuyến cảnh quan xanh đẹp, tăng chất lượng môi trường sống và giá trị bất động sản vùng giáp ranh.</div>
+      </div>
+      <div class="tl-item highlight">
+        <div class="tl-year">⭐ 01/07/2025</div>
+        <div class="tl-title">Thành lập Phường Phú Nhuận mới – Hợp nhất 5 phường cũ</div>
+        <div class="tl-desc">Sáp nhập Phường 8, 10, 11, 13, 15 (Quận Phú Nhuận) thành Phường Phú Nhuận, diện tích 1,46 km², dân số 68.420 người, mật độ 46.863 người/km². Tên làng cổ 327 năm vẫn được bảo tồn.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <h2>🔤 Nguồn gốc Địa danh</h2>
+    <div class="name-box" style="text-align:center;">
+      <div class="han-nom">富潤</div>
+      <p style="font-size:0.85rem; color:#888; margin-top:4px;">PHÚ NHUẬN (chữ Hán)</p>
+    </div>
+    <div class="name-box">
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">
+        <strong>Phú Nhuận</strong> (富潤) lấy ý từ câu cổ ngữ:<br>
+        <em style="font-size:1rem; color:#D35400; font-weight:700;">"Phú nhuận ốc, đức nhuận thân"</em><br>
+        Nghĩa là: <strong>"Giàu có làm đẹp nhà cửa, đức độ làm đẹp con người"</strong><br>
+        Tên gọi thể hiện mong ước của các bậc tiền nhân về một vùng đất thịnh vượng, cư dân phúc đức và đời sống no đủ.
+      </p>
+    </div>
+    <div class="name-box">
+      <h3 style="color:#D35400; font-size:0.95rem; font-weight:700; margin-bottom:10px;">📊 Quá trình hành chính (327 năm)</h3>
+      <div class="name-evolution">
+        <span class="evo-step">Thôn Phú Nhuận (1698)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Làng PN (1876)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Quận Phú Nhuận</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Các Phường 8/10/11/13/15</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step" style="background:#D5F5E3;border-color:#27AE60;">P. Phú Nhuận (2025)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage-section">
+    <h2>🏛️ Di sản Văn hóa & Điểm nhấn</h2>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="icon">⛩️</div>
+        <h3>Đình Phú Nhuận (~1818)</h3>
+        <p>Đình cổ ~200 năm tại 18 Mai Văn Ngọc, được vua Tự Đức ban sắc phong năm 1893. Di tích lịch sử văn hóa cấp thành phố, lưu giữ hồn cốt làng cổ Sài Gòn.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🛕</div>
+        <h3>Chùa Phú Long (TK 19)</h3>
+        <p>Chùa cổ tại 58 Huỳnh Văn Bánh, sở hữu 53 cổ vật gỗ quý hiếm gồm 38 tượng, 6 hoành phi, 9 đôi liễn đối – kho tàng cổ vật Phật giáo quý giá nhất Phú Nhuận.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌊</div>
+        <h3>Kênh Nhiêu Lộc – Thị Nghè</h3>
+        <p>Ranh giới tự nhiên phía Nam Phú Nhuận, từng là "dòng kênh chết" nay được cải tạo thành tuyến xanh cảnh quan đô thị đẹp nhất TP HCM.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">📖</div>
+        <h3>Gia Định thành thông chí</h3>
+        <p>Tác phẩm địa chí quan trọng của Trịnh Hoài Đức (1813) ghi chép thôn Phú Nhuận, là bằng chứng lịch sử về làng cổ 300+ năm của vùng đất Sài Gòn – Gia Định.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">✈️</div>
+        <h3>Gần sân bay Tân Sơn Nhất</h3>
+        <p>Vị trí chiến lược tiếp giáp sân bay quốc tế lớn nhất VN, tạo ra lợi thế giao thương, du lịch và phát triển dịch vụ hạng cao cấp.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🎵</div>
+        <h3>Phố cà phê – Văn hóa đô thị</h3>
+        <p>Phú Nhuận nổi tiếng với văn hóa cà phê, nhiều hẻm nhỏ có quán cà phê độc đáo. Nơi lưu giữ nhiều nét đặc trưng của đời sống đô thị Sài Gòn xưa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="economy-section">
+    <h2>💼 Kinh tế & Đô thị hóa</h2>
+    <div class="eco-bars">
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🛍️ Thương mại – Dịch vụ – Bán lẻ</span><span>45%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:45%;background:linear-gradient(90deg,#27AE60,#2ECC71);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏠 Nhà ở – Bất động sản</span><span>35%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:35%;background:linear-gradient(90deg,#F39C12,#F8C471);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏥 Y tế – Giáo dục – Dịch vụ công</span><span>20%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:20%;background:linear-gradient(90deg,#2980B9,#5DADE2);"></div></div>
+      </div>
+    </div>
+    <div class="eco-projects">
+      <div class="eco-project">
+        <strong>🛣️ Nâng cấp Nguyễn Văn Trỗi</strong>
+        Trục đường chính của Phú Nhuận được mở rộng và hiện đại hóa, kết nối trung tâm TP với sân bay Tân Sơn Nhất thuận tiện hơn.
+      </div>
+      <div class="eco-project">
+        <strong>🏢 Tòa nhà hành chính mới</strong>
+        Trụ sở UBND phường tại 159 Nguyễn Văn Trỗi phục vụ 68.000+ cư dân sau sáp nhập, đầu tư cơ sở hạ tầng công vụ hiện đại.
+      </div>
+      <div class="eco-project">
+        <strong>🌊 Phát triển kinh tế ven kênh</strong>
+        Tuyến đường bờ kênh Nhiêu Lộc phía Phú Nhuận được khai thác phát triển không gian thương mại – du lịch ven nước.
+      </div>
+      <div class="eco-project">
+        <strong>✈️ Hưởng lợi từ mở rộng TSN</strong>
+        Dự án mở rộng sân bay Tân Sơn Nhất tăng lưu lượng hành khách, thúc đẩy ngành khách sạn, dịch vụ và ẩm thực khu Phú Nhuận.
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-section">
+    <h2>📚 Nguồn tham khảo</h2>
+    <ul class="source-list">
+      <li>Wikipedia – Quận Phú Nhuận (vi.wikipedia.org)</li>
+      <li>Thanh Niên – Tên phường xã mới TP HCM, Phường Phú Nhuận có nét gì riêng? (thanhnien.vn)</li>
+      <li>eViland – Phường Phú Nhuận sau sáp nhập (eviland.vn)</li>
+      <li>Tuổi Trẻ – Dấu xưa danh tướng và đình chùa cổ Phú Nhuận (tuoitre.vn)</li>
+      <li>iWATER – Đình Phú Nhuận Di tích lịch sử văn hóa (iwater.vn)</li>
+      <li>Gia Định thành thông chí – Trịnh Hoài Đức (1813)</li>
+    </ul>
+    <div class="copyright">📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh</div>
+  </div>
+
+</div>
+</body>
+</html>

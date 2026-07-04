@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#12 – Infographic Phường Cầu Kiệu | Lịch sử & Địa lý TP. HCM</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #2C3E50; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header {
+    background: linear-gradient(135deg, #6C3483 0%, #8E44AD 50%, #9B59B6 100%);
+    color: white; border-radius: 16px; padding: 40px 36px 32px;
+    text-align: center; margin-bottom: 20px; position: relative;
+    box-shadow: 0 8px 32px rgba(108,52,131,0.35);
+  }
+  .number-badge { position: absolute; top: 18px; left: 22px; background: rgba(255,255,255,0.22); border: 2px solid rgba(255,255,255,0.55); color: white; font-size: 1.1rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; }
+  .new-badge { display: inline-block; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.5); color: white; font-size: 0.85rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px; }
+  .stat-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .stat-card { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 140px; }
+  .stat-card .val { font-size: 1.7rem; font-weight: 800; }
+  .stat-card .lbl { font-size: 0.78rem; opacity: 0.85; margin-top: 3px; }
+  .pub-date { margin-top: 16px; font-size: 0.82rem; opacity: 0.75; }
+  section { border-radius: 14px; padding: 30px 32px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .geo-section { background: linear-gradient(135deg, #F5EEF8, #EBF5FB); border-left: 5px solid #8E44AD; }
+  .geo-section h2 { color: #6C3483; }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .geo-box { background: white; border-radius: 10px; padding: 16px; }
+  .geo-box h3 { font-size: 0.95rem; color: #8E44AD; font-weight: 700; margin-bottom: 12px; }
+  .direction-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 0.88rem; }
+  .geo-tag { display: inline-block; background: #F5EEF8; color: #6C3483; border-radius: 6px; padding: 4px 10px; font-size: 0.8rem; margin: 3px 2px; }
+  .timeline-section { background: white; border-left: 5px solid #8E44AD; }
+  .timeline-section h2 { color: #6C3483; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #6C3483, #8E44AD, #F39C12); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #8E44AD; border: 3px solid white; box-shadow: 0 0 0 2px #8E44AD; }
+  .tl-item.highlight::before { background: #F39C12; box-shadow: 0 0 0 2px #F39C12; }
+  .tl-year { font-size: 0.78rem; font-weight: 800; color: #6C3483; text-transform: uppercase; letter-spacing: 1px; }
+  .tl-item.highlight .tl-year { color: #E67E22; }
+  .tl-title { font-size: 0.97rem; font-weight: 700; margin: 2px 0; }
+  .tl-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+  .tl-item.highlight { background: #FEF9E7; border-radius: 10px; padding: 10px 14px; border-left: 3px solid #F39C12; }
+  .name-section { background: linear-gradient(135deg, #FEF9E7, #FDEBD0); border-left: 5px solid #F39C12; }
+  .name-section h2 { color: #D35400; }
+  .name-box { background: white; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+  .han-nom { font-size: 2rem; color: #6C3483; font-weight: 900; text-align: center; padding: 12px; border: 2px solid #8E44AD; border-radius: 10px; background: #F5EEF8; display: inline-block; margin: 8px auto; }
+  .name-evolution { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .evo-step { background: #FDEBD0; border: 1px solid #F39C12; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 600; }
+  .evo-arrow { color: #E67E22; font-weight: bold; }
+  .heritage-section { background: #1A5276; color: white; border-radius: 14px; }
+  .heritage-section h2 { color: #85C1E9; }
+  .heritage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .heritage-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 16px; text-align: center; }
+  .heritage-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .heritage-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: #AED6F1; }
+  .heritage-card p { font-size: 0.78rem; opacity: 0.85; line-height: 1.4; }
+  .economy-section { background: #F8F9FA; border-left: 5px solid #8E44AD; }
+  .economy-section h2 { color: #6C3483; }
+  .eco-bars { margin-bottom: 18px; }
+  .eco-bar-item { margin-bottom: 12px; }
+  .eco-bar-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .eco-bar-track { background: #F5EEF8; border-radius: 10px; height: 12px; overflow: hidden; }
+  .eco-bar-fill { height: 100%; border-radius: 10px; }
+  .eco-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .eco-project { background: white; border-radius: 8px; padding: 12px; border-left: 3px solid #8E44AD; font-size: 0.83rem; }
+  .eco-project strong { display: block; color: #6C3483; margin-bottom: 3px; }
+  .footer-section { background: #2C3E50; color: white; border-radius: 14px; padding: 24px 32px; }
+  .footer-section h2 { color: #85C1E9; font-size: 1.1rem; margin-bottom: 14px; }
+  .source-list { list-style: none; }
+  .source-list li { font-size: 0.78rem; opacity: 0.75; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .source-list li::before { content: '›'; position: absolute; left: 0; color: #85C1E9; }
+  .copyright { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.82rem; opacity: 0.9; text-align: center; color: #F39C12; font-weight: 600; }
+  @media print { body { background: white; } .container { padding: 0; } section { box-shadow: none; break-inside: avoid; } .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="number-badge">📌 #12</div>
+    <div class="new-badge">🌉 Cây cầu lịch sử kênh Nhiêu Lộc</div>
+    <h1>PHƯỜNG CẦU KIỆU</h1>
+    <div class="subtitle">Quận Phú Nhuận · TP. Hồ Chí Minh &nbsp;|&nbsp; Đơn vị mới từ 01/07/2025</div>
+    <div class="stat-cards">
+      <div class="stat-card"><div class="val">1,23</div><div class="lbl">Diện tích (km²)</div></div>
+      <div class="stat-card"><div class="val">62.663</div><div class="lbl">Dân số (người)</div></div>
+      <div class="stat-card"><div class="val">50.937</div><div class="lbl">Mật độ (người/km²)</div></div>
+    </div>
+    <div class="pub-date">📅 Ngày xuất bản: 04/07/2026</div>
+  </div>
+
+  <section class="geo-section">
+    <h2>🗺️ Vị trí & Địa lý</h2>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>📍 Địa giới 4 phía</h3>
+        <div class="direction-item"><span>⬆️</span><span><strong>Bắc:</strong> Phường Đức Nhuận (Quận Phú Nhuận)</span></div>
+        <div class="direction-item"><span>➡️</span><span><strong>Đông:</strong> Quận Bình Thạnh – kênh Nhiêu Lộc</span></div>
+        <div class="direction-item"><span>⬇️</span><span><strong>Nam:</strong> Phường Phú Nhuận (Quận Phú Nhuận)</span></div>
+        <div class="direction-item"><span>⬅️</span><span><strong>Tây:</strong> Phường Đức Nhuận – trục Nguyễn Kiệm</span></div>
+      </div>
+      <div class="geo-box">
+        <h3>🌆 Đặc điểm đô thị</h3>
+        <div class="geo-tag">🌊 Cầu Kiệu – Kênh Nhiêu Lộc</div>
+        <div class="geo-tag">🛣️ Nguyễn Kiệm – trục giao thương</div>
+        <div class="geo-tag">🍜 Phố ẩm thực Phan Đình Phùng</div>
+        <div class="geo-tag">🏘️ Mật độ dân cư cao nhất Phú Nhuận</div>
+        <div class="geo-tag">🏥 Bệnh viện Bình Dân (cận kề)</div>
+        <div class="geo-tag">🚦 Ngã tư Phú Nhuận – nút giao trọng yếu</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <h2>📜 Timeline Lịch sử</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1698</div>
+        <div class="tl-title">Vùng đất phía Đông thôn Phú Nhuận</div>
+        <div class="tl-desc">Khu vực ứng với phường Cầu Kiệu ngày nay là phần phía Đông của thôn Phú Nhuận cổ, giáp kênh Nhiêu Lộc – Thị Nghè. Dân cư sống trên kênh bằng thuyền bè, buôn bán theo kênh rạch Sài Gòn.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">TK 18 – 19</div>
+        <div class="tl-title">Hình thành Cầu Kiệu – Điểm vượt kênh Nhiêu Lộc</div>
+        <div class="tl-desc">Cây cầu gỗ nhỏ bắc qua kênh Nhiêu Lộc tại vị trí Cầu Kiệu được xây dựng để kết nối vùng Phú Nhuận với trung tâm Sài Gòn. Tên gọi "Cầu Kiệu" xuất phát từ kiệu rước lễ của người dân địa phương qua cây cầu này.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1876</div>
+        <div class="tl-title">Pháp mở rộng đường Nguyễn Kiệm – Trục thương mại</div>
+        <div class="tl-desc">Thực dân Pháp mở rộng tuyến đường Nguyễn Kiệm (tên cũ: Route de Phu Nhuan) kết nối Sài Gòn với Phú Nhuận qua Cầu Kiệu. Khu vực trở thành trục giao thương sầm uất, nhiều hiệu buôn, nhà hàng mọc lên.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1950 – 1975</div>
+        <div class="tl-title">Phố ẩm thực Cầu Kiệu – Nổi tiếng toàn Sài Gòn</div>
+        <div class="tl-desc">Khu vực Cầu Kiệu nổi tiếng với hàng chục quán ăn ngon, đặc biệt là các quán hủ tiếu Nam Vang, bánh mì, cà phê vỉa hè. Trở thành "thiên đường ẩm thực" của người Sài Gòn xưa.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1976 – 2025</div>
+        <div class="tl-title">Phường 1, 2, 7 và phần 15 – Quận Phú Nhuận</div>
+        <div class="tl-desc">Vùng đất Cầu Kiệu được phân chia thành các Phường 1, 2, 7 và một phần Phường 15. Mật độ dân số ngày càng tăng cao, hình thành các khu dân cư chật chội nhưng sầm uất và đặc sắc về văn hóa.</div>
+      </div>
+      <div class="tl-item highlight">
+        <div class="tl-year">⭐ 01/07/2025</div>
+        <div class="tl-title">Thành lập Phường Cầu Kiệu – Hợp nhất Phường 1+2+7+phần 15</div>
+        <div class="tl-desc">Nghị quyết 1685/NQ-UBTVQH15: Các Phường 1, 2, 7 và phần Phường 15 (Quận Phú Nhuận) hợp nhất thành Phường Cầu Kiệu. Diện tích 1,23 km², dân số 62.663 người, mật độ 50.937 người/km² – thuộc hàng cao nhất TP HCM. Cái tên lịch sử "Cầu Kiệu" được phục hồi trên bản đồ hành chính.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <h2>🔤 Nguồn gốc Địa danh</h2>
+    <div class="name-box" style="text-align:center;">
+      <div class="han-nom">橋轎</div>
+      <p style="font-size:0.85rem; color:#888; margin-top:4px;">CẦU KIỆU (chiết tự Hán-Nôm)</p>
+    </div>
+    <div class="name-box">
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">
+        <strong>Cầu Kiệu</strong> có nguồn gốc dân gian đặc sắc:<br>
+        <em style="font-size:1rem; color:#D35400; font-weight:700;">"Cây cầu dành cho kiệu rước lễ hội"</em><br>
+        <strong>"Cầu"</strong> = cây cầu bắc qua kênh.<br>
+        <strong>"Kiệu"</strong> = chiếc kiệu khiêng trong lễ hội truyền thống.<br>
+        Tương truyền, mỗi kỳ lễ hội đình làng, người dân rước kiệu Thành Hoàng qua cây cầu này, nên dân gian gọi là "Cầu Kiệu". Tên gọi lưu truyền qua nhiều thế kỷ, trở thành địa danh gắn bó với ký ức tập thể Phú Nhuận.
+      </p>
+    </div>
+    <div class="name-box">
+      <h3 style="color:#D35400; font-size:0.95rem; font-weight:700; margin-bottom:10px;">📊 Quá trình hành chính</h3>
+      <div class="name-evolution">
+        <span class="evo-step">Cầu Kiệu cổ (TK 18-19)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Làng Phú Nhuận (1876)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Phường 1+2+7+15 (Quận PN)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step" style="background:#F5EEF8;border-color:#8E44AD;">P. Cầu Kiệu (2025)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage-section">
+    <h2>🏛️ Di sản Văn hóa & Điểm nhấn</h2>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="icon">🌉</div>
+        <h3>Cầu Kiệu lịch sử</h3>
+        <p>Cây cầu bắc qua kênh Nhiêu Lộc gắn với lịch sử hàng trăm năm của Phú Nhuận. Từ cầu gỗ thô sơ thuở khai phá, nay là cầu bê tông hiện đại – biểu tượng kết nối của vùng đất.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🍜</div>
+        <h3>Phố ẩm thực Phan Đình Phùng</h3>
+        <p>Tuyến đường Phan Đình Phùng là "thiên đường ẩm thực" nổi tiếng TP HCM: hủ tiếu, bún bò, chè, bánh mì... Hàng trăm quán ăn ngon phục vụ từ sáng sớm đến đêm khuya.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌊</div>
+        <h3>Kênh Nhiêu Lộc – Thị Nghè</h3>
+        <p>Kênh đào thiên nhiên chạy qua ranh giới Cầu Kiệu với Bình Thạnh. Sau cải tạo, trở thành tuyến cảnh quan xanh đẹp nhất TP HCM, với nhiều điểm sinh hoạt văn hóa ven kênh.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🎭</div>
+        <h3>Văn hóa dân gian Phú Nhuận</h3>
+        <p>Cầu Kiệu là khu vực giữ gìn nhiều lễ hội dân gian, mang đậm nét văn hóa Phú Nhuận cổ xưa. Lễ kỳ yên, nghi thức rước kiệu vẫn được duy trì đến ngày nay.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏪</div>
+        <h3>Chợ truyền thống Cầu Kiệu</h3>
+        <p>Khu chợ tự phát ven kênh và các ngõ hẻm là linh hồn thương mại dân gian của khu vực. Nơi giao thoa mua bán hàng hóa, nông sản, thủy sản từ các vùng lân cận.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🚦</div>
+        <h3>Ngã tư Phú Nhuận</h3>
+        <p>Nút giao thông Nguyễn Kiệm – Nguyễn Thượng Hiền – Phan Đình Phùng là một trong những ngã tư nhộn nhịp nhất TP HCM, thể hiện sức sống đô thị đặc trưng của Cầu Kiệu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="economy-section">
+    <h2>💼 Kinh tế & Đô thị hóa</h2>
+    <div class="eco-bars">
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🍜 Ẩm thực – Dịch vụ – Bán lẻ</span><span>55%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:55%;background:linear-gradient(90deg,#6C3483,#9B59B6);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏠 Nhà ở – Khu dân cư</span><span>30%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:30%;background:linear-gradient(90deg,#F39C12,#F8C471);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏢 Thương mại – Văn phòng nhỏ</span><span>15%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:15%;background:linear-gradient(90deg,#2980B9,#5DADE2);"></div></div>
+      </div>
+    </div>
+    <div class="eco-projects">
+      <div class="eco-project">
+        <strong>🍜 Phát triển du lịch ẩm thực</strong>
+        Cầu Kiệu đang được quy hoạch thành "phố ẩm thực đêm" chính thức, thu hút du khách trong và ngoài nước trải nghiệm ẩm thực đường phố đặc sắc Sài Gòn.
+      </div>
+      <div class="eco-project">
+        <strong>🌊 Phố đi bộ ven kênh Nhiêu Lộc</strong>
+        Tuyến bờ kênh phía Cầu Kiệu được đề xuất phát triển thành phố đi bộ cuối tuần, kết hợp ẩm thực – nghệ thuật – văn hóa cộng đồng.
+      </div>
+      <div class="eco-project">
+        <strong>🏗️ Cải tạo hẻm và nhà ở</strong>
+        Nhiều hẻm nhỏ trong phường được cải tạo, mở rộng. Nhà ở được chỉnh trang, tạo ra môi trường sống ngăn nắp, an toàn hơn cho 62.000 cư dân.
+      </div>
+      <div class="eco-project">
+        <strong>🚦 Giải quyết ùn tắc ngã tư PN</strong>
+        Ngã tư Phú Nhuận được đầu tư hệ thống đèn thông minh, nâng cấp vỉa hè và hầm chui kết nối để giảm tải giao thông theo quy hoạch đô thị mới.
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-section">
+    <h2>📚 Nguồn tham khảo</h2>
+    <ul class="source-list">
+      <li>Nghị quyết 1685/NQ-UBTVQH15 ngày 16/06/2025 – Ủy ban Thường vụ Quốc hội</li>
+      <li>Thanh Niên – TP.HCM sáp nhập phường: Quận Phú Nhuận còn 3 phường, có tên Cầu Kiệu (thanhnien.vn)</li>
+      <li>Arental.vn – Sáp nhập phường Quận Phú Nhuận: Danh sách phường mới & bản đồ</li>
+      <li>GHTK Blog – Quận Phú Nhuận sáp nhập: Quy hoạch địa giới và trụ sở hành chính mới</li>
+      <li>Wikipedia – Phú Nhuận (quận) (vi.wikipedia.org)</li>
+      <li>Eviland.vn – Sáp nhập phường Quận Phú Nhuận: Tên gọi mới và bản đồ</li>
+    </ul>
+    <div class="copyright">📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh</div>
+  </div>
+
+</div>
+</body>
+</html>

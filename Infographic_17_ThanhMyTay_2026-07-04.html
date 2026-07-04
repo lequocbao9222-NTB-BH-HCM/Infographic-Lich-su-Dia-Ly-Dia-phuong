@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#17 – Infographic Phường Thạnh Mỹ Tây | Lịch sử & Địa lý TP. HCM</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #2C3E50; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header {
+    background: linear-gradient(135deg, #4A235A 0%, #6C3483 50%, #7D3C98 100%);
+    color: white; border-radius: 16px; padding: 40px 36px 32px;
+    text-align: center; margin-bottom: 20px; position: relative;
+    box-shadow: 0 8px 32px rgba(74,35,90,0.40);
+  }
+  .number-badge { position: absolute; top: 18px; left: 22px; background: rgba(255,255,255,0.22); border: 2px solid rgba(255,255,255,0.55); color: white; font-size: 1.1rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; }
+  .new-badge { display: inline-block; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.5); color: white; font-size: 0.85rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px; }
+  .stat-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .stat-card { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 140px; }
+  .stat-card .val { font-size: 1.7rem; font-weight: 800; }
+  .stat-card .lbl { font-size: 0.78rem; opacity: 0.85; margin-top: 3px; }
+  .pub-date { margin-top: 16px; font-size: 0.82rem; opacity: 0.75; }
+  section { border-radius: 14px; padding: 30px 32px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .geo-section { background: linear-gradient(135deg, #E8DAEF, #F5EEF8); border-left: 5px solid #7D3C98; }
+  .geo-section h2 { color: #4A235A; }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .geo-box { background: white; border-radius: 10px; padding: 16px; }
+  .geo-box h3 { font-size: 0.95rem; color: #7D3C98; font-weight: 700; margin-bottom: 12px; }
+  .direction-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 0.88rem; }
+  .geo-tag { display: inline-block; background: #E8DAEF; color: #4A235A; border-radius: 6px; padding: 4px 10px; font-size: 0.8rem; margin: 3px 2px; }
+  .timeline-section { background: white; border-left: 5px solid #7D3C98; }
+  .timeline-section h2 { color: #4A235A; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #4A235A, #7D3C98, #F39C12); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #7D3C98; border: 3px solid white; box-shadow: 0 0 0 2px #7D3C98; }
+  .tl-item.highlight::before { background: #F39C12; box-shadow: 0 0 0 2px #F39C12; }
+  .tl-year { font-size: 0.78rem; font-weight: 800; color: #4A235A; text-transform: uppercase; letter-spacing: 1px; }
+  .tl-item.highlight .tl-year { color: #E67E22; }
+  .tl-title { font-size: 0.97rem; font-weight: 700; margin: 2px 0; }
+  .tl-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+  .tl-item.highlight { background: #FEF9E7; border-radius: 10px; padding: 10px 14px; border-left: 3px solid #F39C12; }
+  .name-section { background: linear-gradient(135deg, #FEF9E7, #FDEBD0); border-left: 5px solid #F39C12; }
+  .name-section h2 { color: #D35400; }
+  .name-box { background: white; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+  .han-nom { font-size: 2rem; color: #4A235A; font-weight: 900; text-align: center; padding: 12px; border: 2px solid #7D3C98; border-radius: 10px; background: #F5EEF8; display: inline-block; margin: 8px auto; }
+  .name-evolution { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .evo-step { background: #FDEBD0; border: 1px solid #F39C12; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 600; }
+  .evo-arrow { color: #E67E22; font-weight: bold; }
+  .heritage-section { background: #1A5276; color: white; border-radius: 14px; }
+  .heritage-section h2 { color: #85C1E9; }
+  .heritage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .heritage-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 16px; text-align: center; }
+  .heritage-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .heritage-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: #AED6F1; }
+  .heritage-card p { font-size: 0.78rem; opacity: 0.85; line-height: 1.4; }
+  .economy-section { background: #F8F9FA; border-left: 5px solid #7D3C98; }
+  .economy-section h2 { color: #4A235A; }
+  .eco-bars { margin-bottom: 18px; }
+  .eco-bar-item { margin-bottom: 12px; }
+  .eco-bar-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .eco-bar-track { background: #E8DAEF; border-radius: 10px; height: 12px; overflow: hidden; }
+  .eco-bar-fill { height: 100%; border-radius: 10px; }
+  .eco-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .eco-project { background: white; border-radius: 8px; padding: 12px; border-left: 3px solid #7D3C98; font-size: 0.83rem; }
+  .eco-project strong { display: block; color: #4A235A; margin-bottom: 3px; }
+  .footer-section { background: #2C3E50; color: white; border-radius: 14px; padding: 24px 32px; }
+  .footer-section h2 { color: #85C1E9; font-size: 1.1rem; margin-bottom: 14px; }
+  .source-list { list-style: none; }
+  .source-list li { font-size: 0.78rem; opacity: 0.75; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .source-list li::before { content: '›'; position: absolute; left: 0; color: #85C1E9; }
+  .copyright { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.82rem; opacity: 0.9; text-align: center; color: #F39C12; font-weight: 600; }
+  @media print { body { background: white; } .container { padding: 0; } section { box-shadow: none; break-inside: avoid; } .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="number-badge">📌 #17</div>
+    <div class="new-badge">🏙️ Khu đô thị hiện đại phía Tây Bình Thạnh</div>
+    <h1>PHƯỜNG THẠNH MỸ TÂY</h1>
+    <div class="subtitle">Quận Bình Thạnh · TP. Hồ Chí Minh &nbsp;|&nbsp; Đơn vị mới từ 01/07/2025</div>
+    <div class="stat-cards">
+      <div class="stat-card"><div class="val">~2,8</div><div class="lbl">Diện tích (km²)</div></div>
+      <div class="stat-card"><div class="val">~105.000</div><div class="lbl">Dân số (người)</div></div>
+      <div class="stat-card"><div class="val">~37.500</div><div class="lbl">Mật độ (người/km²)</div></div>
+    </div>
+    <div class="pub-date">📅 Ngày xuất bản: 04/07/2026</div>
+  </div>
+
+  <section class="geo-section">
+    <h2>🗺️ Vị trí & Địa lý</h2>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>📍 Địa giới 4 phía</h3>
+        <div class="direction-item"><span>⬆️</span><span><strong>Bắc:</strong> Phường Bình Lợi Trung (Quận Bình Thạnh)</span></div>
+        <div class="direction-item"><span>➡️</span><span><strong>Đông:</strong> Phường Bình Lợi Trung – kênh rạch Bình Thạnh</span></div>
+        <div class="direction-item"><span>⬇️</span><span><strong>Nam:</strong> Phường Gia Định / Phường Bình Thạnh</span></div>
+        <div class="direction-item"><span>⬅️</span><span><strong>Tây:</strong> Quận Bình Thạnh (giáp Gò Vấp, Tân Bình)</span></div>
+      </div>
+      <div class="geo-box">
+        <h3>🌆 Đặc điểm đô thị</h3>
+        <div class="geo-tag">🏗️ Nhiều chung cư cao tầng hiện đại</div>
+        <div class="geo-tag">🛣️ Bạch Đằng – Ung Văn Khiêm – trục chính</div>
+        <div class="geo-tag">🏬 Trung tâm thương mại Vincom, Crescent Mall</div>
+        <div class="geo-tag">🏥 Bệnh viện Bình Thạnh</div>
+        <div class="geo-tag">🌳 Công viên Gia Định (cận kề)</div>
+        <div class="geo-tag">🚌 Tuyến xe buýt nhanh BRT kết nối trung tâm</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <h2>📜 Timeline Lịch sử</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1698</div>
+        <div class="tl-title">Vùng đất làng Bình Hòa cổ xưa</div>
+        <div class="tl-desc">Khu vực Thạnh Mỹ Tây ngày nay thuộc về làng Bình Hòa cổ đại, huyện Bình Dương, phủ Tân Bình. Vùng đất bằng phẳng, nhiều kênh rạch nhỏ, cư dân sống bằng nông nghiệp và chài lưới.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1823</div>
+        <div class="tl-title">Thành Gia Định mới – Vùng đất cận thành phát triển</div>
+        <div class="tl-desc">Minh Mạng cho xây Thành Gia Định mới (Phụng Thành) thay Thành Bát Quái bị Tây Sơn phá. Vùng Bình Thạnh – Bình Hòa cận thành phát triển thành khu dân cư đông đúc hơn.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1954</div>
+        <div class="tl-title">Làn sóng di cư – Dân số Bình Thạnh tăng vọt</div>
+        <div class="tl-desc">Sau Hiệp định Genève, hàng triệu người từ miền Bắc và Trung vào Nam. Khu vực Bình Thạnh trở thành nơi định cư của đông đảo người di cư, đô thị hóa nhanh chóng.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1986 – 2000</div>
+        <div class="tl-title">Đổi Mới – Bùng nổ xây dựng khu dân cư</div>
+        <div class="tl-desc">Chính sách Đổi Mới thúc đẩy bất động sản. Vùng Phường 19, 22, 25 (Bình Thạnh) chứng kiến làn sóng xây dựng nhà ở mới, nhiều chung cư thế hệ đầu xuất hiện.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2010 – 2024</div>
+        <div class="tl-title">Kỷ nguyên chung cư cao tầng</div>
+        <div class="tl-desc">Phường 19, 22, 25 trở thành trung tâm xây dựng chung cư cao tầng của Bình Thạnh. Hàng chục dự án căn hộ quy mô lớn mọc lên, thu hút dân số từ khắp TP HCM và các tỉnh đến sinh sống.</div>
+      </div>
+      <div class="tl-item highlight">
+        <div class="tl-year">⭐ 01/07/2025</div>
+        <div class="tl-title">Thành lập Phường Thạnh Mỹ Tây – Hợp nhất Phường 19+22+25</div>
+        <div class="tl-desc">Nghị quyết 1685/NQ-UBTVQH15: Phường 19, 22, 25 (Quận Bình Thạnh) hợp nhất thành Phường Thạnh Mỹ Tây. "Thạnh Mỹ" = thịnh vượng và tươi đẹp; "Tây" = phần phía Tây của khu Bình Thạnh đô thị hóa. Phường là trung tâm đô thị hiện đại mới của Bình Thạnh.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <h2>🔤 Nguồn gốc Địa danh</h2>
+    <div class="name-box" style="text-align:center;">
+      <div class="han-nom">盛美西</div>
+      <p style="font-size:0.85rem; color:#888; margin-top:4px;">THẠNH MỸ TÂY (chiết tự)</p>
+    </div>
+    <div class="name-box">
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">
+        <strong>Thạnh Mỹ Tây</strong> (盛美西) nghĩa là:<br>
+        <strong>"Thạnh"</strong> (盛/繁) = thịnh vượng, phồn thịnh, phát đạt.<br>
+        <strong>"Mỹ"</strong> (美) = tươi đẹp, mỹ miều, hoàn hảo.<br>
+        <strong>"Tây"</strong> (西) = phía Tây – chỉ vị trí địa lý.<br>
+        <em style="font-size:1rem; color:#D35400; font-weight:700;">"Vùng đất phồn thịnh và tươi đẹp phía Tây Bình Thạnh"</em><br>
+        Tên gọi phản ánh kỳ vọng về sự phát triển của khu đô thị mới hiện đại nhất Bình Thạnh.
+      </p>
+    </div>
+    <div class="name-box">
+      <h3 style="color:#D35400; font-size:0.95rem; font-weight:700; margin-bottom:10px;">📊 Quá trình hành chính</h3>
+      <div class="name-evolution">
+        <span class="evo-step">Làng Bình Hòa (1698)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Quận Bình Thạnh (1976)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Phường 19+22+25</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step" style="background:#E8DAEF;border-color:#7D3C98;">P. Thạnh Mỹ Tây (2025)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage-section">
+    <h2>🏛️ Di sản Văn hóa & Điểm nhấn</h2>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="icon">🏗️</div>
+        <h3>Làng chung cư hiện đại</h3>
+        <p>Thạnh Mỹ Tây là nơi tập trung mật độ chung cư cao tầng lớn nhất Bình Thạnh với các dự án nổi tiếng như City Gate, The Gold View, City Land... Đô thị dọc theo trục Bạch Đằng.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌳</div>
+        <h3>Công viên Gia Định</h3>
+        <p>Công viên Gia Định (~53 ha) cận kề phường là lá phổi xanh lớn nhất khu vực. Nơi thể thao, thư giãn, tổ chức sự kiện văn hóa cuối tuần cho hàng vạn cư dân Bình Thạnh.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">📚</div>
+        <h3>Đại học Hutech & Cộng đồng Học thuật</h3>
+        <p>Khu vực Bình Thạnh có nhiều trường đại học, cao đẳng. Thạnh Mỹ Tây là nơi sinh sống của đông đảo sinh viên, tạo nên văn hóa đô thị trẻ năng động đặc trưng.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🎭</div>
+        <h3>Văn hóa cộng đồng đa dạng</h3>
+        <p>Dân số tập trung từ mọi vùng miền Việt Nam và cộng đồng quốc tế tạo nên văn hóa đa dạng, phong phú. Ẩm thực, lễ hội, phong tục của nhiều địa phương hội tụ tại đây.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🛣️</div>
+        <h3>Trục Ung Văn Khiêm</h3>
+        <p>Tuyến đường Ung Văn Khiêm là xương sống giao thông của Thạnh Mỹ Tây, với hệ thống cửa hàng, siêu thị mini, chuỗi ẩm thực và văn phòng dày đặc hai bên đường.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏬</div>
+        <h3>Trung tâm Thương mại</h3>
+        <p>Khu vực có nhiều trung tâm thương mại hiện đại phục vụ cư dân: siêu thị, rạp chiếu phim, nhà hàng, phòng tập gym. Thạnh Mỹ Tây dẫn đầu quận Bình Thạnh về tiện ích đô thị.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="economy-section">
+    <h2>💼 Kinh tế & Đô thị hóa</h2>
+    <div class="eco-bars">
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏠 Bất động sản – Chung cư – Nhà ở</span><span>50%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:50%;background:linear-gradient(90deg,#4A235A,#7D3C98);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🛍️ Thương mại – Dịch vụ – Bán lẻ</span><span>35%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:35%;background:linear-gradient(90deg,#F39C12,#F8C471);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏫 Giáo dục – Y tế</span><span>15%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:15%;background:linear-gradient(90deg,#27AE60,#58D68D);"></div></div>
+      </div>
+    </div>
+    <div class="eco-projects">
+      <div class="eco-project">
+        <strong>🏗️ Dự án chung cư cao cấp trục Bạch Đằng</strong>
+        Hàng chục dự án căn hộ từ trung cấp đến cao cấp đang triển khai dọc trục Bạch Đằng – Ung Văn Khiêm, thu hút đầu tư từ các tập đoàn bất động sản lớn.
+      </div>
+      <div class="eco-project">
+        <strong>🌳 Khai thác Công viên Gia Định</strong>
+        Công viên Gia Định được nâng cấp thêm khu thể thao, nhà hàng ẩm thực, sân khấu ngoài trời. Trở thành điểm du lịch – giải trí hàng đầu khu vực phía Bắc TP HCM.
+      </div>
+      <div class="eco-project">
+        <strong>🚌 Kết nối BRT và Metro</strong>
+        Tuyến BRT kết nối Thạnh Mỹ Tây với trung tâm; Metro số 2 (Bến Thành – Tham Lương) dự kiến đi qua khu vực sẽ thúc đẩy mạnh mẽ giá trị đất và thương mại.
+      </div>
+      <div class="eco-project">
+        <strong>🏢 Khu văn phòng và coworking</strong>
+        Nhiều tòa nhà văn phòng và không gian làm việc chung (coworking) phát triển mạnh, đáp ứng nhu cầu của cộng đồng startup và doanh nghiệp vừa và nhỏ Bình Thạnh.
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-section">
+    <h2>📚 Nguồn tham khảo</h2>
+    <ul class="source-list">
+      <li>Nghị quyết 1685/NQ-UBTVQH15 ngày 16/06/2025 – Ủy ban Thường vụ Quốc hội</li>
+      <li>Arental.vn – Sáp nhập phường Quận Bình Thạnh 2025: Thông tin 5 phường mới & bản đồ</li>
+      <li>THCS Yên Thế HCM – Sáp nhập phường Quận Bình Thạnh: Tên gọi phường mới & bản đồ</li>
+      <li>Okbuy.vn – Danh sách các phường mới sau sáp nhập của Quận Bình Thạnh</li>
+      <li>Nhathuduc.com.vn – Quận Bình Thạnh còn mấy phường sau sáp nhập TP HCM</li>
+      <li>Tuongphatland.com – Chi tiết 102 phường TP HCM sau sáp nhập 1/7/2025</li>
+    </ul>
+    <div class="copyright">📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh</div>
+  </div>
+
+</div>
+</body>
+</html>

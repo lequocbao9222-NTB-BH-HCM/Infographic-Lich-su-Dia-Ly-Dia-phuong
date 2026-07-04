@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#20 – Infographic Phường Bình Hòa | Lịch sử & Địa lý TP. HCM</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #2C3E50; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header {
+    background: linear-gradient(135deg, #7D6608 0%, #B7950B 50%, #D4AC0D 100%);
+    color: white; border-radius: 16px; padding: 40px 36px 32px;
+    text-align: center; margin-bottom: 20px; position: relative;
+    box-shadow: 0 8px 32px rgba(125,102,8,0.35);
+  }
+  .number-badge { position: absolute; top: 18px; left: 22px; background: rgba(255,255,255,0.22); border: 2px solid rgba(255,255,255,0.55); color: white; font-size: 1.1rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; }
+  .new-badge { display: inline-block; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.5); color: white; font-size: 0.85rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px; }
+  .stat-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .stat-card { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 130px; }
+  .stat-card .val { font-size: 1.7rem; font-weight: 800; }
+  .stat-card .lbl { font-size: 0.78rem; opacity: 0.85; margin-top: 3px; }
+  .pub-date { margin-top: 16px; font-size: 0.82rem; opacity: 0.75; }
+  section { border-radius: 14px; padding: 30px 32px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .geo-section { background: linear-gradient(135deg, #FEF9E7, #FEFDE7); border-left: 5px solid #D4AC0D; }
+  .geo-section h2 { color: #7D6608; }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .geo-box { background: white; border-radius: 10px; padding: 16px; }
+  .geo-box h3 { font-size: 0.95rem; color: #B7950B; font-weight: 700; margin-bottom: 12px; }
+  .direction-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 0.88rem; }
+  .geo-tag { display: inline-block; background: #FEF9E7; color: #7D6608; border-radius: 6px; padding: 4px 10px; font-size: 0.8rem; margin: 3px 2px; }
+  .timeline-section { background: white; border-left: 5px solid #D4AC0D; }
+  .timeline-section h2 { color: #7D6608; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #7D6608, #D4AC0D, #F39C12); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #B7950B; border: 3px solid white; box-shadow: 0 0 0 2px #B7950B; }
+  .tl-item.highlight::before { background: #E74C3C; box-shadow: 0 0 0 2px #E74C3C; }
+  .tl-year { font-size: 0.78rem; font-weight: 800; color: #7D6608; text-transform: uppercase; letter-spacing: 1px; }
+  .tl-item.highlight .tl-year { color: #C0392B; }
+  .tl-title { font-size: 0.97rem; font-weight: 700; margin: 2px 0; }
+  .tl-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+  .tl-item.highlight { background: #FDEDEC; border-radius: 10px; padding: 10px 14px; border-left: 3px solid #E74C3C; }
+  .name-section { background: linear-gradient(135deg, #FEF9E7, #FDEBD0); border-left: 5px solid #F39C12; }
+  .name-section h2 { color: #D35400; }
+  .name-box { background: white; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+  .han-nom { font-size: 2rem; color: #7D6608; font-weight: 900; text-align: center; padding: 12px; border: 2px solid #D4AC0D; border-radius: 10px; background: #FEF9E7; display: inline-block; margin: 8px auto; }
+  .name-evolution { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .evo-step { background: #FDEBD0; border: 1px solid #F39C12; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 600; }
+  .evo-arrow { color: #E67E22; font-weight: bold; }
+  .heritage-section { background: #1A5276; color: white; border-radius: 14px; }
+  .heritage-section h2 { color: #85C1E9; }
+  .heritage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .heritage-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 16px; text-align: center; }
+  .heritage-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .heritage-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: #AED6F1; }
+  .heritage-card p { font-size: 0.78rem; opacity: 0.85; line-height: 1.4; }
+  .economy-section { background: #F8F9FA; border-left: 5px solid #D4AC0D; }
+  .economy-section h2 { color: #7D6608; }
+  .eco-bars { margin-bottom: 18px; }
+  .eco-bar-item { margin-bottom: 12px; }
+  .eco-bar-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .eco-bar-track { background: #FEF9E7; border-radius: 10px; height: 12px; overflow: hidden; }
+  .eco-bar-fill { height: 100%; border-radius: 10px; }
+  .eco-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .eco-project { background: white; border-radius: 8px; padding: 12px; border-left: 3px solid #D4AC0D; font-size: 0.83rem; }
+  .eco-project strong { display: block; color: #7D6608; margin-bottom: 3px; }
+  .footer-section { background: #2C3E50; color: white; border-radius: 14px; padding: 24px 32px; }
+  .footer-section h2 { color: #85C1E9; font-size: 1.1rem; margin-bottom: 14px; }
+  .source-list { list-style: none; }
+  .source-list li { font-size: 0.78rem; opacity: 0.75; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .source-list li::before { content: '›'; position: absolute; left: 0; color: #85C1E9; }
+  .copyright { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.82rem; opacity: 0.9; text-align: center; color: #F39C12; font-weight: 600; }
+  .bd-note { background: #FEF9E7; border: 1px solid #D4AC0D; border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 0.85rem; color: #7D6608; }
+  @media print { body { background: white; } .container { padding: 0; } section { box-shadow: none; break-inside: avoid; } .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="number-badge">📌 #20</div>
+    <div class="new-badge">🏺 Vùng đất Lái Thiêu – Cái nôi gốm sứ và trái cây Bình Dương</div>
+    <h1>PHƯỜNG BÌNH HÒA</h1>
+    <div class="subtitle">TP. Hồ Chí Minh (từ địa bàn TP. Thuận An, Bình Dương) &nbsp;|&nbsp; Đơn vị mới từ 01/07/2025</div>
+    <div class="stat-cards">
+      <div class="stat-card"><div class="val">18,49</div><div class="lbl">Diện tích (km²)</div></div>
+      <div class="stat-card"><div class="val">120.035</div><div class="lbl">Dân số (người)</div></div>
+      <div class="stat-card"><div class="val">6.490</div><div class="lbl">Mật độ (người/km²)</div></div>
+      <div class="stat-card"><div class="val">11</div><div class="lbl">Khu phố</div></div>
+    </div>
+    <div class="pub-date">📅 Ngày xuất bản: 04/07/2026 &nbsp;|&nbsp; Nghị quyết 1685/NQ-UBTVQH15</div>
+  </div>
+
+  <section class="geo-section">
+    <h2>🗺️ Vị trí & Địa lý</h2>
+    <div class="bd-note">⚠️ <strong>Lưu ý quan trọng:</strong> Phường Bình Hòa này thuộc địa bàn <strong>TP. Thuận An (Bình Dương cũ)</strong> – vùng Lái Thiêu lịch sử, được sáp nhập vào TP. Hồ Chí Minh từ 01/07/2025. Không nhầm với "làng Bình Hòa lịch sử" ở Bình Thạnh (đã sáp nhập vào Quận Bình Thạnh từ 1997).</div>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>📍 Địa giới 4 phía</h3>
+        <div class="direction-item"><span>⬆️</span><span><strong>Bắc:</strong> Phường Thuận Giao và Phường An Phú (Thuận An, nay TP HCM)</span></div>
+        <div class="direction-item"><span>➡️</span><span><strong>Đông:</strong> Phường Dĩ An (TP Dĩ An, nay TP HCM)</span></div>
+        <div class="direction-item"><span>⬇️</span><span><strong>Nam:</strong> Phường Tam Bình, Hiệp Bình Chánh (TP Thủ Đức, TP HCM)</span></div>
+        <div class="direction-item"><span>⬅️</span><span><strong>Tây:</strong> Phường Lái Thiêu (Thuận An, nay TP HCM)</span></div>
+      </div>
+      <div class="geo-box">
+        <h3>🌆 Đặc điểm vùng đất</h3>
+        <div class="geo-tag">🏺 Vùng đất gốm sứ Lái Thiêu nổi tiếng</div>
+        <div class="geo-tag">🌳 Vườn trái cây Lái Thiêu – Du lịch sinh thái</div>
+        <div class="geo-tag">🛣️ ĐT 743C – trục đường chính phường</div>
+        <div class="geo-tag">🏘️ 11 khu phố đô thị đông đúc</div>
+        <div class="geo-tag">📍 Trụ sở: ĐT 743C, Khu phố Bình Đức 1</div>
+        <div class="geo-tag">🏭 Công nghiệp xen kẽ khu dân cư truyền thống</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <h2>📜 Timeline Lịch sử</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">TK 18</div>
+        <div class="tl-title">Vùng đất Lái Thiêu – Trung tâm gốm sứ và mậu dịch</div>
+        <div class="tl-desc">Vùng Lái Thiêu (bao gồm Bình Hòa) nổi tiếng là trung tâm sản xuất gốm sứ của Nam Kỳ từ thế kỷ 18. Người Hoa từ Triều Châu, Phúc Kiến mang kỹ thuật làm gốm vào, lập các lò gốm dọc sông Sài Gòn. Vùng đất trở thành trung tâm giao thương sầm uất khắp Nam Bộ.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1862 – 1954</div>
+        <div class="tl-title">Thời Pháp thuộc – Lái Thiêu phát triển thương nghiệp</div>
+        <div class="tl-desc">Dưới thời Pháp, Lái Thiêu được phát triển thành trung tâm hành chính–thương mại. Chợ Lái Thiêu nổi tiếng khắp Nam Kỳ. Vườn trái cây – sầu riêng, măng cụt, bưởi – trở thành thương hiệu đặc sản Bình Dương được xuất khẩu sang Sài Gòn và các tỉnh.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1975 – 1997</div>
+        <div class="tl-title">Bình Hòa – Xã thuộc huyện Thuận An (tỉnh Sông Bé, sau là Bình Dương)</div>
+        <div class="tl-desc">Sau 1975, Bình Hòa là xã nông nghiệp thuộc huyện Thuận An. Nghề gốm sứ và trồng cây ăn trái duy trì là kinh tế chủ đạo. Làng nghề gốm Lái Thiêu vẫn sản xuất đồ gốm gia dụng phục vụ thị trường nội địa và xuất khẩu sang Đông Nam Á.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1999 – 2011</div>
+        <div class="tl-title">Đô thị hóa – Xã Bình Hòa lên phường (TX Thuận An, Bình Dương)</div>
+        <div class="tl-desc">Năm 1999, thị xã Thuận An ra đời, xã Bình Hòa chuyển thành phường đô thị. Làn sóng công nghiệp hóa Bình Dương kéo theo đầu tư ồ ạt – nhiều nhà máy, khu công nghiệp mọc lên. Dân số tăng mạnh từ các tỉnh đổ vào làm công nhân, Bình Hòa trở thành phường đông dân nhất Thuận An.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2011</div>
+        <div class="tl-title">Bình Hòa thuộc TP Thuận An (Bình Dương) – Phường đông dân nhất</div>
+        <div class="tl-desc">TP Thuận An thành lập, Bình Hòa là phường có dân số trên 100.000 người – đông nhất Thuận An. Kinh tế đa dạng: công nghiệp, gốm sứ, du lịch vườn trái cây Lái Thiêu, dịch vụ. Vườn trái cây Lái Thiêu đón hàng trăm nghìn khách/năm.</div>
+      </div>
+      <div class="tl-item highlight">
+        <div class="tl-year">⭐ 01/07/2025</div>
+        <div class="tl-title">Phường Bình Hòa (Thuận An) sáp nhập vào TP. Hồ Chí Minh</div>
+        <div class="tl-desc">Nghị quyết 1685/NQ-UBTVQH15: Phường Bình Hòa (Thuận An) sáp nhập với phần Phường Vĩnh Phú để thành lập Phường Bình Hòa mới thuộc TP. Hồ Chí Minh. DT 18,493 km², DS 120.035 người, 11 khu phố. Trụ sở tại ĐT 743C, KP Bình Đức 1. Phường có bề dày lịch sử văn hóa đặc sắc nhất trong các phường từ Bình Dương nhập về TP HCM.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <h2>🔤 Nguồn gốc Địa danh</h2>
+    <div class="name-box" style="text-align:center;">
+      <div class="han-nom">平和</div>
+      <p style="font-size:0.85rem; color:#888; margin-top:4px;">BÌNH HÒA (chiết tự Hán-Nôm)</p>
+    </div>
+    <div class="name-box">
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">
+        <strong>Bình Hòa</strong> nghĩa là:<br>
+        <strong>"Bình"</strong> = bình yên, bằng phẳng, ổn định.<br>
+        <strong>"Hòa"</strong> = hòa thuận, hòa bình, hài hòa.<br>
+        <em style="font-size:1rem; color:#D35400; font-weight:700;">"Vùng đất bình yên, hòa thuận, hài hòa"</em><br>
+        Tên gọi thể hiện ước vọng của cư dân về cuộc sống bình an và đoàn kết. Đây là tên địa danh mang tính triết lý phương Đông — hòa hợp giữa con người với thiên nhiên và cộng đồng. Vùng đất Bình Hòa nổi tiếng với cảnh quan hữu tình của vườn trái cây Lái Thiêu phản ánh đúng nghĩa chữ "Hòa".
+      </p>
+    </div>
+    <div class="name-box">
+      <h3 style="color:#D35400; font-size:0.95rem; font-weight:700; margin-bottom:10px;">📊 Quá trình hành chính</h3>
+      <div class="name-evolution">
+        <span class="evo-step">Làng Bình Hòa (TK 18 – vùng Lái Thiêu)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Xã Bình Hòa (huyện Thuận An, Sông Bé)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Phường Bình Hòa (TX Thuận An, BD, 1999)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">TP Thuận An (Bình Dương, 2011)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step" style="background:#FEF9E7;border-color:#D4AC0D;">P. Bình Hòa (TP HCM, 2025)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage-section">
+    <h2>🏛️ Di sản Văn hóa & Điểm nhấn</h2>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="icon">🏺</div>
+        <h3>Làng gốm Lái Thiêu</h3>
+        <p>Bình Hòa nằm trong vùng Lái Thiêu – trung tâm gốm sứ lớn nhất miền Nam từ thế kỷ 18. Các lò gốm do người Hoa Triều Châu lập, sản xuất chén, đĩa, bình hoa đặc trưng. Nghề gốm Lái Thiêu là di sản văn hóa phi vật thể quý giá.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌳</div>
+        <h3>Vườn Trái cây Lái Thiêu</h3>
+        <p>Khu vực Bình Hòa và lân cận có vườn trái cây nổi tiếng toàn quốc: sầu riêng, măng cụt, bưởi, chôm chôm. Mỗi mùa trái chín (tháng 5-8), vườn Lái Thiêu đón hàng trăm nghìn du khách đến tham quan và tự tay hái trái.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏯</div>
+        <h3>Chùa, Đình cổ vùng Lái Thiêu</h3>
+        <p>Vùng Bình Hòa – Lái Thiêu có nhiều chùa cổ và đình làng từ thế kỷ 18-19. Chùa Bà Thiên Hậu của người Hoa, Đình làng thờ Thành Hoàng là trung tâm tín ngưỡng – văn hóa đặc trưng cộng đồng dân cư đa sắc tộc.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🛶</div>
+        <h3>Du lịch Sinh thái Sông – Vườn</h3>
+        <p>Mô hình "đi thuyền ngắm vườn trái cây" tại Lái Thiêu – Bình Hòa từng là điểm du lịch nổi tiếng khắp Nam Bộ thập niên 1990-2010. Nét văn hóa độc đáo kết hợp sông nước, vườn cây, ẩm thực địa phương.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏭</div>
+        <h3>Trung tâm Công nghiệp Bình Dương</h3>
+        <p>Từ thập niên 1990, Bình Hòa là điểm đến của nhiều nhà máy trong làn sóng FDI vào Bình Dương. Giao thoa giữa truyền thống (làng nghề, vườn trái cây) và hiện đại (KCN, đô thị) tạo bản sắc kinh tế đặc trưng.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🥭</div>
+        <h3>Sầu riêng Lái Thiêu – Đặc sản địa lý</h3>
+        <p>Sầu riêng Lái Thiêu – giống cơm vàng hạt lép – được công nhận đặc sản địa lý của Bình Dương. Vườn sầu riêng Bình Hòa – Lái Thiêu xuất khẩu sang nhiều nước. Đây là "tài sản xanh" quý giá của TP HCM sau sáp nhập 2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="economy-section">
+    <h2>💼 Kinh tế & Đô thị hóa</h2>
+    <div class="eco-bars">
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏭 Công nghiệp – Sản xuất (KCN)</span><span>40%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:40%;background:linear-gradient(90deg,#7D6608,#D4AC0D);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🌳 Nông nghiệp – Vườn cây ăn trái – Du lịch sinh thái</span><span>30%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:30%;background:linear-gradient(90deg,#186A3B,#27AE60);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏺 Làng nghề gốm sứ – Thủ công mỹ nghệ</span><span>20%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:20%;background:linear-gradient(90deg,#922B21,#E74C3C);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🛍️ Thương mại – Dịch vụ</span><span>10%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:10%;background:linear-gradient(90deg,#1A5276,#2E86C1);"></div></div>
+      </div>
+    </div>
+    <div class="eco-projects">
+      <div class="eco-project">
+        <strong>🌳 Phát triển Du lịch Vườn trái cây</strong>
+        Sau sáp nhập, vườn trái cây Lái Thiêu (Bình Hòa) được TP HCM quy hoạch thành khu du lịch sinh thái cấp thành phố. Đầu tư hạ tầng, bến thuyền, nhà hàng sinh thái để thu hút 500.000–1.000.000 khách/năm.
+      </div>
+      <div class="eco-project">
+        <strong>🏺 Bảo tồn Làng nghề Gốm Lái Thiêu</strong>
+        TP HCM đang lập hồ sơ công nhận Di sản Văn hóa Phi vật thể cho nghề gốm Lái Thiêu. Khu "làng nghề gốm sứ kết hợp du lịch" sẽ tái hiện kỹ thuật làm gốm truyền thống, thu hút du khách quốc tế.
+      </div>
+      <div class="eco-project">
+        <strong>🏗️ Nâng cấp hạ tầng ĐT 743C</strong>
+        Tuyến ĐT 743C – trục chính Bình Hòa – đang được nâng cấp mở rộng sau khi sáp nhập vào TP HCM. Kết nối tốt hơn với TP Thủ Đức và trung tâm TP HCM, thúc đẩy phát triển thương mại dọc tuyến.
+      </div>
+      <div class="eco-project">
+        <strong>🏭 Chuyển đổi KCN thế hệ mới</strong>
+        Các KCN tại Bình Hòa đang chuyển từ sản xuất thâm dụng lao động sang công nghiệp công nghệ cao theo định hướng của TP HCM. Thu hút FDI chất lượng cao, nâng cao thu nhập người lao động địa phương.
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-section">
+    <h2>📚 Nguồn tham khảo</h2>
+    <ul class="source-list">
+      <li>Nghị quyết 1685/NQ-UBTVQH15 ngày 16/06/2025 – Ủy ban Thường vụ Quốc hội</li>
+      <li>Tinhthanhvn.com – Phường Bình Hòa, TP Hồ Chí Minh: DT 18,493 km², DS 120.035, 11 khu phố</li>
+      <li>Phường Bình Hòa (TP Thuận An, Bình Dương) – vi.wikipedia.org</li>
+      <li>Làng gốm Lái Thiêu – Bình Dương: Lịch sử 300 năm nghề gốm sứ (nhiều nguồn)</li>
+      <li>Vườn trái cây Lái Thiêu – Điểm du lịch sinh thái đặc trưng Bình Dương</li>
+      <li>FPT Shop – Phường Bình Hòa TP HCM sau sáp nhập: Địa giới, khu phố, UBND</li>
+      <li>GHTK Blog – Bình Hòa, TP Thuận An, Bình Dương sáp nhập thành phường gì năm 2025</li>
+    </ul>
+    <div class="copyright">📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh</div>
+  </div>
+
+</div>
+</body>
+</html>

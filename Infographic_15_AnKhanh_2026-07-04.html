@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#15 – Infographic Phường An Khánh | Lịch sử & Địa lý TP. HCM</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #2C3E50; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header {
+    background: linear-gradient(135deg, #0E6655 0%, #138D75 50%, #1ABC9C 100%);
+    color: white; border-radius: 16px; padding: 40px 36px 32px;
+    text-align: center; margin-bottom: 20px; position: relative;
+    box-shadow: 0 8px 32px rgba(14,102,85,0.35);
+  }
+  .number-badge { position: absolute; top: 18px; left: 22px; background: rgba(255,255,255,0.22); border: 2px solid rgba(255,255,255,0.55); color: white; font-size: 1.1rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; }
+  .new-badge { display: inline-block; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.5); color: white; font-size: 0.85rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px; }
+  .stat-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .stat-card { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 140px; }
+  .stat-card .val { font-size: 1.7rem; font-weight: 800; }
+  .stat-card .lbl { font-size: 0.78rem; opacity: 0.85; margin-top: 3px; }
+  .pub-date { margin-top: 16px; font-size: 0.82rem; opacity: 0.75; }
+  section { border-radius: 14px; padding: 30px 32px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .geo-section { background: linear-gradient(135deg, #D1F2EB, #E8F8F5); border-left: 5px solid #138D75; }
+  .geo-section h2 { color: #0E6655; }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .geo-box { background: white; border-radius: 10px; padding: 16px; }
+  .geo-box h3 { font-size: 0.95rem; color: #138D75; font-weight: 700; margin-bottom: 12px; }
+  .direction-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 0.88rem; }
+  .geo-tag { display: inline-block; background: #D1F2EB; color: #0E6655; border-radius: 6px; padding: 4px 10px; font-size: 0.8rem; margin: 3px 2px; }
+  .timeline-section { background: white; border-left: 5px solid #138D75; }
+  .timeline-section h2 { color: #0E6655; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #0E6655, #1ABC9C, #F39C12); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #138D75; border: 3px solid white; box-shadow: 0 0 0 2px #138D75; }
+  .tl-item.highlight::before { background: #F39C12; box-shadow: 0 0 0 2px #F39C12; }
+  .tl-year { font-size: 0.78rem; font-weight: 800; color: #0E6655; text-transform: uppercase; letter-spacing: 1px; }
+  .tl-item.highlight .tl-year { color: #E67E22; }
+  .tl-title { font-size: 0.97rem; font-weight: 700; margin: 2px 0; }
+  .tl-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+  .tl-item.highlight { background: #FEF9E7; border-radius: 10px; padding: 10px 14px; border-left: 3px solid #F39C12; }
+  .name-section { background: linear-gradient(135deg, #FEF9E7, #FDEBD0); border-left: 5px solid #F39C12; }
+  .name-section h2 { color: #D35400; }
+  .name-box { background: white; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+  .han-nom { font-size: 2rem; color: #0E6655; font-weight: 900; text-align: center; padding: 12px; border: 2px solid #138D75; border-radius: 10px; background: #E8F8F5; display: inline-block; margin: 8px auto; }
+  .name-evolution { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .evo-step { background: #FDEBD0; border: 1px solid #F39C12; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 600; }
+  .evo-arrow { color: #E67E22; font-weight: bold; }
+  .heritage-section { background: #1A5276; color: white; border-radius: 14px; }
+  .heritage-section h2 { color: #85C1E9; }
+  .heritage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .heritage-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 16px; text-align: center; }
+  .heritage-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .heritage-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: #AED6F1; }
+  .heritage-card p { font-size: 0.78rem; opacity: 0.85; line-height: 1.4; }
+  .economy-section { background: #F8F9FA; border-left: 5px solid #138D75; }
+  .economy-section h2 { color: #0E6655; }
+  .eco-bars { margin-bottom: 18px; }
+  .eco-bar-item { margin-bottom: 12px; }
+  .eco-bar-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .eco-bar-track { background: #D1F2EB; border-radius: 10px; height: 12px; overflow: hidden; }
+  .eco-bar-fill { height: 100%; border-radius: 10px; }
+  .eco-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .eco-project { background: white; border-radius: 8px; padding: 12px; border-left: 3px solid #138D75; font-size: 0.83rem; }
+  .eco-project strong { display: block; color: #0E6655; margin-bottom: 3px; }
+  .footer-section { background: #2C3E50; color: white; border-radius: 14px; padding: 24px 32px; }
+  .footer-section h2 { color: #85C1E9; font-size: 1.1rem; margin-bottom: 14px; }
+  .source-list { list-style: none; }
+  .source-list li { font-size: 0.78rem; opacity: 0.75; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .source-list li::before { content: '›'; position: absolute; left: 0; color: #85C1E9; }
+  .copyright { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.82rem; opacity: 0.9; text-align: center; color: #F39C12; font-weight: 600; }
+  @media print { body { background: white; } .container { padding: 0; } section { box-shadow: none; break-inside: avoid; } .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="number-badge">📌 #15</div>
+    <div class="new-badge">🏙️ Siêu phường – Trung tâm TP Thủ Đức</div>
+    <h1>PHƯỜNG AN KHÁNH</h1>
+    <div class="subtitle">TP. Thủ Đức · TP. Hồ Chí Minh &nbsp;|&nbsp; Đơn vị mới từ 01/07/2025</div>
+    <div class="stat-cards">
+      <div class="stat-card"><div class="val">14,82</div><div class="lbl">Diện tích (km²)</div></div>
+      <div class="stat-card"><div class="val">73.629</div><div class="lbl">Dân số (người)</div></div>
+      <div class="stat-card"><div class="val">4.968</div><div class="lbl">Mật độ (người/km²)</div></div>
+    </div>
+    <div class="pub-date">📅 Ngày xuất bản: 04/07/2026</div>
+  </div>
+
+  <section class="geo-section">
+    <h2>🗺️ Vị trí & Địa lý</h2>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>📍 Địa giới 4 phía</h3>
+        <div class="direction-item"><span>⬆️</span><span><strong>Bắc:</strong> Sông Sài Gòn – ranh giới với Bình Dương</span></div>
+        <div class="direction-item"><span>➡️</span><span><strong>Đông:</strong> Phường Bình Trưng (TP Thủ Đức)</span></div>
+        <div class="direction-item"><span>⬇️</span><span><strong>Nam:</strong> Phường Cát Lái (TP Thủ Đức)</span></div>
+        <div class="direction-item"><span>⬅️</span><span><strong>Tây:</strong> Sông Sài Gòn – Quận 1, Bình Thạnh</span></div>
+      </div>
+      <div class="geo-box">
+        <h3>🌆 Đặc điểm đô thị</h3>
+        <div class="geo-tag">🏙️ Khu đô thị mới Thủ Thiêm</div>
+        <div class="geo-tag">🌳 Thảo Điền – biệt thự cao cấp</div>
+        <div class="geo-tag">🌊 Sông Sài Gòn – cảnh quan sông nước</div>
+        <div class="geo-tag">🏢 Trung tâm tài chính Thủ Đức</div>
+        <div class="geo-tag">🛣️ Lương Định Của – trụ sở UBND</div>
+        <div class="geo-tag">🌁 Cầu Thủ Thiêm 1, 2, 3, 4 kết nối Q1</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <h2>📜 Timeline Lịch sử</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">TK 17 – 18</div>
+        <div class="tl-title">Làng Bình Khánh – Thời khai phá vùng bán đảo Thủ Thiêm</div>
+        <div class="tl-desc">Vùng đất tương ứng An Khánh ngày nay là làng Bình Khánh (tổng Bình Trị Trung, huyện Bình Dương, phủ Tân Bình, tỉnh Gia Định). Nằm trên bán đảo phía đông sông Sài Gòn, dân cư sống bằng nông nghiệp và đánh cá ven sông.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1859</div>
+        <div class="tl-title">Pháp đánh chiếm Sài Gòn – Bán đảo Thủ Thiêm đổi chủ</div>
+        <div class="tl-desc">Thực dân Pháp tấn công và chiếm đóng thành Gia Định. Vùng bán đảo Thủ Thiêm – An Khánh được quan sát từ phía bờ đông và dần đưa vào phạm vi quản lý hành chính mới của thực dân Pháp.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1888</div>
+        <div class="tl-title">Khu biệt thự Thảo Điền – Người Pháp lập vườn ven sông</div>
+        <div class="tl-desc">Người Pháp xây dựng khu biệt thự nghỉ dưỡng ven sông Sài Gòn tại Thảo Điền. Vùng đất này nổi tiếng với không khí trong lành, cây xanh mát, trở thành nơi nghỉ cuối tuần của giới thượng lưu Sài Gòn thuộc địa.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1997</div>
+        <div class="tl-title">Thành lập Phường An Khánh (Quận 2)</div>
+        <div class="tl-desc">Phường An Khánh (Quận 2) chính thức thành lập từ xã An Khánh cũ với 169 ha và 12.865 dân. Cùng thời điểm, Quận 2 được thành lập gồm nhiều phường ven sông Sài Gòn.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021</div>
+        <div class="tl-title">Sáp nhập vào TP Thủ Đức – Kỷ nguyên đô thị mới</div>
+        <div class="tl-desc">TP Thủ Đức ra đời từ sáp nhập Quận 2, 9, 12. Phường An Khánh, Thảo Điền, An Lợi Đông, Thủ Thiêm trực thuộc TP Thủ Đức. Khu đô thị mới Thủ Thiêm chính thức được triển khai mạnh mẽ.</div>
+      </div>
+      <div class="tl-item highlight">
+        <div class="tl-year">⭐ 01/07/2025</div>
+        <div class="tl-title">Thành lập Phường An Khánh mới – Hợp nhất 5 phường cũ + phần An Phú</div>
+        <div class="tl-desc">Nghị quyết 1685/NQ-UBTVQH15: An Khánh + An Lợi Đông + Thảo Điền + Thủ Thiêm + phần An Phú hợp nhất thành Phường An Khánh. Diện tích 14,82 km², dân số 73.629 người. Trụ sở tại 171/1 Lương Định Của. Phường là trung tâm tài chính – thương mại – sinh thái tương lai của TP Thủ Đức.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <h2>🔤 Nguồn gốc Địa danh</h2>
+    <div class="name-box" style="text-align:center;">
+      <div class="han-nom">安慶</div>
+      <p style="font-size:0.85rem; color:#888; margin-top:4px;">AN KHÁNH (chữ Hán)</p>
+    </div>
+    <div class="name-box">
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">
+        <strong>An Khánh</strong> (安慶) nghĩa là:<br>
+        <em style="font-size:1rem; color:#D35400; font-weight:700;">"Bình yên và hưng thịnh"</em><br>
+        <strong>"An"</strong> (安) = bình an, ổn định, yên lành.<br>
+        <strong>"Khánh"</strong> (慶) = vui mừng, hưng thịnh, may lành.<br>
+        Tên gọi xuất phát từ làng Bình Khánh cổ xưa – vùng đất được kỳ vọng mang lại cuộc sống bình an và thịnh vượng cho cư dân khai phá vùng bán đảo ven sông.
+      </p>
+    </div>
+    <div class="name-box">
+      <h3 style="color:#D35400; font-size:0.95rem; font-weight:700; margin-bottom:10px;">📊 Quá trình hành chính</h3>
+      <div class="name-evolution">
+        <span class="evo-step">Làng Bình Khánh (TK 17)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Xã An Khánh (huyện Thủ Đức)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">P. An Khánh (Quận 2, 1997)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">TP Thủ Đức (2021)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step" style="background:#D1F2EB;border-color:#138D75;">P. An Khánh mới (2025)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage-section">
+    <h2>🏛️ Di sản Văn hóa & Điểm nhấn</h2>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="icon">🏙️</div>
+        <h3>Khu đô thị mới Thủ Thiêm</h3>
+        <p>Dự án đô thị lớn nhất TP HCM (657 ha), được quy hoạch thành trung tâm tài chính quốc tế, thương mại cao cấp và văn hóa. "Vịnh Manhattan của Sài Gòn" với tầm nhìn sông Sài Gòn.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌳</div>
+        <h3>Thảo Điền – Khu Tây Ngoại ô</h3>
+        <p>Khu biệt thự, villa cao cấp ven sông Sài Gòn từ thời Pháp thuộc. Ngày nay là "khu phố Tây" với trường quốc tế, nhà hàng sang trọng, cộng đồng người nước ngoài đông nhất TP HCM.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌁</div>
+        <h3>Các cầu Thủ Thiêm 1-4</h3>
+        <p>Hệ thống 4 cây cầu hiện đại kết nối bán đảo Thủ Thiêm với Quận 1. Cầu Thủ Thiêm 2 khánh thành 2022 là biểu tượng kiến trúc cầu dây văng đẹp nhất Sài Gòn.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌊</div>
+        <h3>Sông Sài Gòn – Cảnh quan ven sông</h3>
+        <p>Phường An Khánh giáp 3 mặt sông Sài Gòn. Tuyến du lịch đường sông phát triển mạnh, mang lại giá trị cảnh quan và kinh tế đặc biệt cho bán đảo.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">📜</div>
+        <h3>Di chỉ khảo cổ Thủ Thiêm</h3>
+        <p>Trong quá trình xây dựng khu đô thị, các nhà khảo cổ phát hiện nhiều hiện vật quý từ thời Óc Eo và Đồng Nai, chứng tỏ vùng đất có người cư trú từ 2.000+ năm trước.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏢</div>
+        <h3>Trung tâm Tài chính Thủ Đức</h3>
+        <p>An Khánh là hạt nhân của Trung tâm Tài chính Quốc tế TP HCM, với nhiều tòa nhà văn phòng hạng A, ngân hàng, công ty tài chính đang hình thành theo quy hoạch.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="economy-section">
+    <h2>💼 Kinh tế & Đô thị hóa</h2>
+    <div class="eco-bars">
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏢 Bất động sản – Tài chính – Thương mại cao cấp</span><span>55%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:55%;background:linear-gradient(90deg,#0E6655,#1ABC9C);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏫 Giáo dục quốc tế – Y tế – Dịch vụ cao cấp</span><span>30%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:30%;background:linear-gradient(90deg,#2980B9,#5DADE2);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🍜 Du lịch – Ẩm thực – Giải trí</span><span>15%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:15%;background:linear-gradient(90deg,#F39C12,#F8C471);"></div></div>
+      </div>
+    </div>
+    <div class="eco-projects">
+      <div class="eco-project">
+        <strong>🏙️ Khu đô thị Thủ Thiêm 657 ha</strong>
+        Dự án đô thị thế kỷ: tòa nhà 81 tầng, Quảng trường Thủ Thiêm, nhà hát Opera, công viên bờ sông 5,6 km – tổng đầu tư ước tính hàng chục tỷ USD.
+      </div>
+      <div class="eco-project">
+        <strong>🌳 Khu Thảo Điền – Cộng đồng Quốc tế</strong>
+        Hơn 20.000 người nước ngoài sinh sống, hàng chục trường quốc tế, bệnh viện quốc tế, trung tâm thương mại cao cấp phục vụ cộng đồng expatriate.
+      </div>
+      <div class="eco-project">
+        <strong>🌁 Metro số 1 – Ga Thủ Thiêm</strong>
+        Tuyến metro số 1 kết nối An Khánh với trung tâm Bến Thành chỉ 15 phút, thúc đẩy bùng nổ thương mại và giá trị bất động sản khu vực.
+      </div>
+      <div class="eco-project">
+        <strong>🌊 Du lịch đường sông</strong>
+        Cảng Thủ Thiêm phát triển tuyến tàu du lịch sông Sài Gòn, thu hút hàng trăm nghìn khách mỗi năm, tạo ra kinh tế dịch vụ ven sông hấp dẫn.
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-section">
+    <h2>📚 Nguồn tham khảo</h2>
+    <ul class="source-list">
+      <li>Nghị quyết 1685/NQ-UBTVQH15 ngày 16/06/2025 – Ủy ban Thường vụ Quốc hội</li>
+      <li>Hong Phu Land – Phường An Khánh sau sáp nhập: Toàn cảnh về "Siêu phường" TP Thủ Đức</li>
+      <li>GHTK Blog – Phường An Khánh TP Thủ Đức sau sáp nhập: Quy mô, trụ sở</li>
+      <li>Thuvienphapluat.vn – Phường An Khánh TP Thủ Đức đổi thành gì sau sáp nhập 1685</li>
+      <li>Arental.vn – Phường An Khánh TPHCM mới – Siêu phường sáp nhập từ những khu vực nào</li>
+      <li>Tuổi Trẻ – Chi tiết 102 phường TP HCM sau sáp nhập 1/7/2025</li>
+    </ul>
+    <div class="copyright">📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh</div>
+  </div>
+
+</div>
+</body>
+</html>

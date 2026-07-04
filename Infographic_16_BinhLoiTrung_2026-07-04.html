@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#16 – Infographic Phường Bình Lợi Trung | Lịch sử & Địa lý TP. HCM</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #2C3E50; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header {
+    background: linear-gradient(135deg, #17202A 0%, #2C3E50 50%, #34495E 100%);
+    color: white; border-radius: 16px; padding: 40px 36px 32px;
+    text-align: center; margin-bottom: 20px; position: relative;
+    box-shadow: 0 8px 32px rgba(23,32,42,0.45);
+  }
+  .number-badge { position: absolute; top: 18px; left: 22px; background: rgba(255,255,255,0.22); border: 2px solid rgba(255,255,255,0.55); color: white; font-size: 1.1rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; }
+  .new-badge { display: inline-block; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.5); color: white; font-size: 0.85rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px; }
+  .stat-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .stat-card { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 140px; }
+  .stat-card .val { font-size: 1.7rem; font-weight: 800; }
+  .stat-card .lbl { font-size: 0.78rem; opacity: 0.85; margin-top: 3px; }
+  .pub-date { margin-top: 16px; font-size: 0.82rem; opacity: 0.75; }
+  section { border-radius: 14px; padding: 30px 32px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .geo-section { background: linear-gradient(135deg, #D5DBDB, #EAEDED); border-left: 5px solid #2C3E50; }
+  .geo-section h2 { color: #17202A; }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .geo-box { background: white; border-radius: 10px; padding: 16px; }
+  .geo-box h3 { font-size: 0.95rem; color: #2C3E50; font-weight: 700; margin-bottom: 12px; }
+  .direction-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 0.88rem; }
+  .geo-tag { display: inline-block; background: #D5DBDB; color: #17202A; border-radius: 6px; padding: 4px 10px; font-size: 0.8rem; margin: 3px 2px; }
+  .timeline-section { background: white; border-left: 5px solid #2C3E50; }
+  .timeline-section h2 { color: #17202A; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #17202A, #34495E, #F39C12); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #34495E; border: 3px solid white; box-shadow: 0 0 0 2px #34495E; }
+  .tl-item.highlight::before { background: #F39C12; box-shadow: 0 0 0 2px #F39C12; }
+  .tl-year { font-size: 0.78rem; font-weight: 800; color: #17202A; text-transform: uppercase; letter-spacing: 1px; }
+  .tl-item.highlight .tl-year { color: #E67E22; }
+  .tl-title { font-size: 0.97rem; font-weight: 700; margin: 2px 0; }
+  .tl-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+  .tl-item.highlight { background: #FEF9E7; border-radius: 10px; padding: 10px 14px; border-left: 3px solid #F39C12; }
+  .name-section { background: linear-gradient(135deg, #FEF9E7, #FDEBD0); border-left: 5px solid #F39C12; }
+  .name-section h2 { color: #D35400; }
+  .name-box { background: white; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+  .han-nom { font-size: 2rem; color: #2C3E50; font-weight: 900; text-align: center; padding: 12px; border: 2px solid #34495E; border-radius: 10px; background: #EAEDED; display: inline-block; margin: 8px auto; }
+  .name-evolution { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .evo-step { background: #FDEBD0; border: 1px solid #F39C12; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 600; }
+  .evo-arrow { color: #E67E22; font-weight: bold; }
+  .heritage-section { background: #1A5276; color: white; border-radius: 14px; }
+  .heritage-section h2 { color: #85C1E9; }
+  .heritage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .heritage-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 16px; text-align: center; }
+  .heritage-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .heritage-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: #AED6F1; }
+  .heritage-card p { font-size: 0.78rem; opacity: 0.85; line-height: 1.4; }
+  .economy-section { background: #F8F9FA; border-left: 5px solid #34495E; }
+  .economy-section h2 { color: #17202A; }
+  .eco-bars { margin-bottom: 18px; }
+  .eco-bar-item { margin-bottom: 12px; }
+  .eco-bar-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .eco-bar-track { background: #D5DBDB; border-radius: 10px; height: 12px; overflow: hidden; }
+  .eco-bar-fill { height: 100%; border-radius: 10px; }
+  .eco-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .eco-project { background: white; border-radius: 8px; padding: 12px; border-left: 3px solid #34495E; font-size: 0.83rem; }
+  .eco-project strong { display: block; color: #17202A; margin-bottom: 3px; }
+  .footer-section { background: #2C3E50; color: white; border-radius: 14px; padding: 24px 32px; }
+  .footer-section h2 { color: #85C1E9; font-size: 1.1rem; margin-bottom: 14px; }
+  .source-list { list-style: none; }
+  .source-list li { font-size: 0.78rem; opacity: 0.75; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .source-list li::before { content: '›'; position: absolute; left: 0; color: #85C1E9; }
+  .copyright { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.82rem; opacity: 0.9; text-align: center; color: #F39C12; font-weight: 600; }
+  @media print { body { background: white; } .container { padding: 0; } section { box-shadow: none; break-inside: avoid; } .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="number-badge">📌 #16</div>
+    <div class="new-badge">🌉 Cầu Bình Lợi – Cây cầu sắt 120 năm tuổi</div>
+    <h1>PHƯỜNG BÌNH LỢI TRUNG</h1>
+    <div class="subtitle">Quận Bình Thạnh · TP. Hồ Chí Minh &nbsp;|&nbsp; Đơn vị mới từ 01/07/2025</div>
+    <div class="stat-cards">
+      <div class="stat-card"><div class="val">~3,4</div><div class="lbl">Diện tích (km²)</div></div>
+      <div class="stat-card"><div class="val">~95.000</div><div class="lbl">Dân số (người)</div></div>
+      <div class="stat-card"><div class="val">~27.900</div><div class="lbl">Mật độ (người/km²)</div></div>
+    </div>
+    <div class="pub-date">📅 Ngày xuất bản: 04/07/2026</div>
+  </div>
+
+  <section class="geo-section">
+    <h2>🗺️ Vị trí & Địa lý</h2>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>📍 Địa giới 4 phía</h3>
+        <div class="direction-item"><span>⬆️</span><span><strong>Bắc:</strong> Phường Bình Quới (Quận Bình Thạnh) – ven sông Sài Gòn</span></div>
+        <div class="direction-item"><span>➡️</span><span><strong>Đông:</strong> TP Thủ Đức – kênh Thanh Đa</span></div>
+        <div class="direction-item"><span>⬇️</span><span><strong>Nam:</strong> Phường Bình Thạnh / Phường Gia Định (Quận Bình Thạnh)</span></div>
+        <div class="direction-item"><span>⬅️</span><span><strong>Tây:</strong> Phường Thạnh Mỹ Tây (Quận Bình Thạnh)</span></div>
+      </div>
+      <div class="geo-box">
+        <h3>🌆 Đặc điểm đô thị</h3>
+        <div class="geo-tag">🌉 Cầu Bình Lợi lịch sử (1902)</div>
+        <div class="geo-tag">🌊 Kênh Thanh Đa – Bán đảo Bình Quới</div>
+        <div class="geo-tag">🏘️ Khu dân cư sầm uất Bình Thạnh</div>
+        <div class="geo-tag">🏫 Trường THPT Bình Phú & nhiều trường khác</div>
+        <div class="geo-tag">🛣️ Xô Viết Nghệ Tĩnh – trục giao thương</div>
+        <div class="geo-tag">🏥 Gần Bệnh viện Ung Bướu cơ sở 2</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <h2>📜 Timeline Lịch sử</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1698</div>
+        <div class="tl-title">Vùng đất làng Bình Hòa – Thôn ấp đầu tiên</div>
+        <div class="tl-desc">Vùng đất Bình Lợi Trung ngày nay thuộc về thôn Bình Hòa cổ đại (huyện Bình Dương, phủ Tân Bình). Cư dân khai hoang dọc bờ sông Sài Gòn và kênh Thanh Đa, trồng lúa nước và đánh bắt thủy sản.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1876</div>
+        <div class="tl-title">Làng Bình Lợi – Hạt Bình Hòa thuộc tỉnh Gia Định</div>
+        <div class="tl-desc">Thực dân Pháp phân chia lại hành chính. Vùng đất trở thành làng Bình Lợi thuộc hạt Bình Hòa. Tên "Bình Lợi" (平利) hàm nghĩa "bình yên và lợi lộc" – ước muốn của cư dân khai khẩn.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1902</div>
+        <div class="tl-title">Khánh thành Cầu Bình Lợi – Cầu sắt đầu tiên Sài Gòn</div>
+        <div class="tl-desc">Pháp xây dựng Cầu Bình Lợi bắc qua sông Sài Gòn, là cầu sắt đầu tiên của đường sắt Sài Gòn – Mỹ Tho. Cây cầu 120 năm tuổi trở thành chứng nhân lịch sử, di sản kiến trúc công nghiệp hiếm có của miền Nam.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1955</div>
+        <div class="tl-title">Tách từ tỉnh Gia Định – Vùng ngoại ô Sài Gòn</div>
+        <div class="tl-desc">Bình Thạnh phát triển mạnh với làn sóng di dân từ nông thôn vào thành phố. Vùng Bình Lợi từ đất nông nghiệp chuyển dần sang khu dân cư đông đúc. Nhiều xóm lao động hình thành dọc kênh Thanh Đa.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1976 – 2025</div>
+        <div class="tl-title">Các Phường 12, 14, 26 – Quận Bình Thạnh</div>
+        <div class="tl-desc">Vùng đất chia thành các Phường 12, 14, 26 (Quận Bình Thạnh). Khu dân cư phát triển nhanh, nhiều chung cư mới mọc lên. Kênh Thanh Đa được cải tạo, hệ thống thoát nước cải thiện đáng kể.</div>
+      </div>
+      <div class="tl-item highlight">
+        <div class="tl-year">⭐ 01/07/2025</div>
+        <div class="tl-title">Thành lập Phường Bình Lợi Trung – Hợp nhất Phường 12+14+26</div>
+        <div class="tl-desc">Nghị quyết 1685/NQ-UBTVQH15: Phường 12, 14, 26 (Quận Bình Thạnh) hợp nhất thành Phường Bình Lợi Trung. Tên gọi phục hồi địa danh lịch sử "Bình Lợi" của vùng đất. Phường nằm giữa (Trung) khu vực Bình Lợi – vị trí địa lý trung tâm Bình Thạnh.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <h2>🔤 Nguồn gốc Địa danh</h2>
+    <div class="name-box" style="text-align:center;">
+      <div class="han-nom">平利中</div>
+      <p style="font-size:0.85rem; color:#888; margin-top:4px;">BÌNH LỢI TRUNG (chiết tự)</p>
+    </div>
+    <div class="name-box">
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">
+        <strong>Bình Lợi Trung</strong> (平利中) bao gồm:<br>
+        <strong>"Bình"</strong> (平) = bình yên, phẳng lặng.<br>
+        <strong>"Lợi"</strong> (利) = lợi lộc, thịnh vượng.<br>
+        <strong>"Trung"</strong> (中) = ở giữa – vị trí địa lý trung tâm khu Bình Lợi.<br>
+        <em style="font-size:1rem; color:#D35400; font-weight:700;">"Vùng đất bình yên thịnh lợi ở trung tâm"</em><br>
+        Gắn với Cầu Bình Lợi lịch sử 1902 – di sản kỹ thuật hiếm có của Sài Gòn thời Pháp thuộc.
+      </p>
+    </div>
+    <div class="name-box">
+      <h3 style="color:#D35400; font-size:0.95rem; font-weight:700; margin-bottom:10px;">📊 Quá trình hành chính</h3>
+      <div class="name-evolution">
+        <span class="evo-step">Thôn Bình Hòa (1698)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Làng Bình Lợi (1876)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Phường 12+14+26 (Bình Thạnh)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step" style="background:#D5DBDB;border-color:#34495E;">P. Bình Lợi Trung (2025)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage-section">
+    <h2>🏛️ Di sản Văn hóa & Điểm nhấn</h2>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="icon">🌉</div>
+        <h3>Cầu Bình Lợi (1902)</h3>
+        <p>Cây cầu sắt 120 năm tuổi bắc qua sông Sài Gòn, là công trình cầu đường sắt đầu tiên của tuyến Sài Gòn – Mỹ Tho. Di sản kiến trúc công nghiệp thuộc địa hiếm có của TP HCM.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌊</div>
+        <h3>Kênh Thanh Đa</h3>
+        <p>Kênh đào tự nhiên tạo ra bán đảo Bình Quới – Thanh Đa độc đáo. Kênh Thanh Đa gắn liền với ký ức tuổi thơ của bao thế hệ người Bình Thạnh và là cảnh quan xanh quý giá.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏘️</div>
+        <h3>Xóm lao động Bình Thạnh</h3>
+        <p>Bình Lợi Trung giữ gìn hồn cốt xóm lao động truyền thống Sài Gòn. Các con hẻm nhỏ với nhà cổ, quán cóc, chợ sáng – nét văn hóa đời thường không thể tìm thấy ở trung tâm.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏗️</div>
+        <h3>Cầu Bình Lợi mới (2019)</h3>
+        <p>Cầu đường bộ Bình Lợi mới khánh thành năm 2019, thay thế cầu sắt cũ về chức năng giao thông. Cầu cũ được giữ lại như di sản, trở thành điểm check-in và tham quan độc đáo.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌳</div>
+        <h3>Cảnh quan bờ sông Sài Gòn</h3>
+        <p>Bình Lợi Trung có đoạn bờ sông Sài Gòn với cây xanh tự nhiên phong phú. Tuyến bờ sông đang được quy hoạch thành không gian công cộng xanh cho cư dân Bình Thạnh.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">📚</div>
+        <h3>Cộng đồng giáo dục Bình Thạnh</h3>
+        <p>Phường có hệ thống trường học dày đặc từ mầm non đến THPT. Đây là khu vực có tỷ lệ học sinh giỏi cao trong quận Bình Thạnh, phản ánh truyền thống hiếu học của cư dân.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="economy-section">
+    <h2>💼 Kinh tế & Đô thị hóa</h2>
+    <div class="eco-bars">
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏠 Nhà ở – Chung cư – Bất động sản</span><span>45%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:45%;background:linear-gradient(90deg,#17202A,#34495E);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🛍️ Thương mại – Dịch vụ – Bán lẻ</span><span>35%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:35%;background:linear-gradient(90deg,#F39C12,#F8C471);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏫 Giáo dục – Y tế – Dịch vụ công</span><span>20%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:20%;background:linear-gradient(90deg,#27AE60,#58D68D);"></div></div>
+      </div>
+    </div>
+    <div class="eco-projects">
+      <div class="eco-project">
+        <strong>🏗️ Phát triển chung cư ven sông</strong>
+        Nhiều dự án chung cư cao tầng ven sông Sài Gòn và kênh Thanh Đa đang triển khai, khai thác tầm nhìn sông nước đặc trưng của khu vực Bình Lợi Trung.
+      </div>
+      <div class="eco-project">
+        <strong>🌉 Di sản Cầu Bình Lợi – Du lịch</strong>
+        Cầu Bình Lợi cũ đang được nghiên cứu bảo tồn và khai thác du lịch. Điểm check-in nổi tiếng trên mạng xã hội, thu hút giới trẻ TP HCM đến tham quan chụp ảnh.
+      </div>
+      <div class="eco-project">
+        <strong>🛣️ Nâng cấp hạ tầng Xô Viết Nghệ Tĩnh</strong>
+        Trục đường Xô Viết Nghệ Tĩnh được mở rộng và hoàn thiện vỉa hè, cây xanh. Đây là hành lang thương mại chính kết nối Bình Lợi Trung với nội đô TP HCM.
+      </div>
+      <div class="eco-project">
+        <strong>🏥 Kết nối Bệnh viện Ung Bướu cơ sở 2</strong>
+        Bệnh viện Ung Bướu cơ sở 2 (đường Võ Hữu Lợi) gần khu vực phường tạo ra hệ sinh thái dịch vụ y tế – nhà nghỉ – ẩm thực phục vụ bệnh nhân và người thân.
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-section">
+    <h2>📚 Nguồn tham khảo</h2>
+    <ul class="source-list">
+      <li>Nghị quyết 1685/NQ-UBTVQH15 ngày 16/06/2025 – Ủy ban Thường vụ Quốc hội</li>
+      <li>LUẬTSƯ.NET – UBND Phường Bình Lợi Trung mới (từ ngày 01/7/2025)</li>
+      <li>Congtyluatacc.vn – Phường Bình Lợi Trung của TP HCM sau sáp nhập từ 1-7-2025</li>
+      <li>Arental.vn – Sáp nhập phường Quận Bình Thạnh 2025: Thông tin 5 phường mới & bản đồ</li>
+      <li>Nhathuduc.com.vn – Quận Bình Thạnh còn mấy phường sau sáp nhập TP HCM</li>
+      <li>Vn.macro.vn – Danh sách 5 phường thuộc Quận Bình Thạnh sau sáp nhập</li>
+    </ul>
+    <div class="copyright">📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh</div>
+  </div>
+
+</div>
+</body>
+</html>

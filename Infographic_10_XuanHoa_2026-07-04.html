@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#10 – Infographic Phường Xuân Hòa | Lịch sử & Địa lý TP. HCM</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #2C3E50; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header {
+    background: linear-gradient(135deg, #922B21 0%, #C0392B 50%, #E74C3C 100%);
+    color: white; border-radius: 16px; padding: 40px 36px 32px;
+    text-align: center; margin-bottom: 20px; position: relative;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.35);
+  }
+  .number-badge { position: absolute; top: 18px; left: 22px; background: rgba(255,255,255,0.22); border: 2px solid rgba(255,255,255,0.55); color: white; font-size: 1.1rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; }
+  .new-badge { display: inline-block; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.5); color: white; font-size: 0.85rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px; }
+  .stat-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .stat-card { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 140px; }
+  .stat-card .val { font-size: 1.7rem; font-weight: 800; }
+  .stat-card .lbl { font-size: 0.78rem; opacity: 0.85; margin-top: 3px; }
+  .pub-date { margin-top: 16px; font-size: 0.82rem; opacity: 0.75; }
+  section { border-radius: 14px; padding: 30px 32px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .geo-section { background: linear-gradient(135deg, #D6EAF8, #EBF5FB); border-left: 5px solid #2980B9; }
+  .geo-section h2 { color: #1A5276; }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .geo-box { background: white; border-radius: 10px; padding: 16px; }
+  .geo-box h3 { font-size: 0.95rem; color: #2980B9; font-weight: 700; margin-bottom: 12px; }
+  .direction-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 0.88rem; }
+  .geo-tag { display: inline-block; background: #D6EAF8; color: #1A5276; border-radius: 6px; padding: 4px 10px; font-size: 0.8rem; margin: 3px 2px; }
+  .timeline-section { background: white; border-left: 5px solid #C0392B; }
+  .timeline-section h2 { color: #922B21; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #922B21, #C0392B, #F39C12); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #C0392B; border: 3px solid white; box-shadow: 0 0 0 2px #C0392B; }
+  .tl-item.highlight::before { background: #F39C12; box-shadow: 0 0 0 2px #F39C12; }
+  .tl-year { font-size: 0.78rem; font-weight: 800; color: #922B21; text-transform: uppercase; letter-spacing: 1px; }
+  .tl-item.highlight .tl-year { color: #E67E22; }
+  .tl-title { font-size: 0.97rem; font-weight: 700; margin: 2px 0; }
+  .tl-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+  .tl-item.highlight { background: #FEF9E7; border-radius: 10px; padding: 10px 14px; border-left: 3px solid #F39C12; }
+  .name-section { background: linear-gradient(135deg, #FEF9E7, #FDEBD0); border-left: 5px solid #F39C12; }
+  .name-section h2 { color: #D35400; }
+  .name-box { background: white; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+  .han-nom { font-size: 2rem; color: #C0392B; font-weight: 900; text-align: center; padding: 12px; border: 2px solid #C0392B; border-radius: 10px; background: #FDEDEC; display: inline-block; margin: 8px auto; }
+  .name-evolution { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .evo-step { background: #FDEBD0; border: 1px solid #F39C12; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 600; }
+  .evo-arrow { color: #E67E22; font-weight: bold; }
+  .heritage-section { background: #1A5276; color: white; border-radius: 14px; }
+  .heritage-section h2 { color: #85C1E9; }
+  .heritage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .heritage-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 16px; text-align: center; }
+  .heritage-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .heritage-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: #AED6F1; }
+  .heritage-card p { font-size: 0.78rem; opacity: 0.85; line-height: 1.4; }
+  .economy-section { background: #F8F9FA; border-left: 5px solid #C0392B; }
+  .economy-section h2 { color: #922B21; }
+  .eco-bars { margin-bottom: 18px; }
+  .eco-bar-item { margin-bottom: 12px; }
+  .eco-bar-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .eco-bar-track { background: #FADBD8; border-radius: 10px; height: 12px; overflow: hidden; }
+  .eco-bar-fill { height: 100%; border-radius: 10px; }
+  .eco-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .eco-project { background: white; border-radius: 8px; padding: 12px; border-left: 3px solid #C0392B; font-size: 0.83rem; }
+  .eco-project strong { display: block; color: #922B21; margin-bottom: 3px; }
+  .footer-section { background: #2C3E50; color: white; border-radius: 14px; padding: 24px 32px; }
+  .footer-section h2 { color: #85C1E9; font-size: 1.1rem; margin-bottom: 14px; }
+  .source-list { list-style: none; }
+  .source-list li { font-size: 0.78rem; opacity: 0.75; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .source-list li::before { content: '›'; position: absolute; left: 0; color: #85C1E9; }
+  .copyright { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.82rem; opacity: 0.9; text-align: center; color: #F39C12; font-weight: 600; }
+  @media print { body { background: white; } .container { padding: 0; } section { box-shadow: none; break-inside: avoid; } .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="number-badge">📌 #10</div>
+    <div class="new-badge">🌺 Tên cổ từ năm 1880</div>
+    <h1>PHƯỜNG XUÂN HÒA</h1>
+    <div class="subtitle">Quận 3 · TP. Hồ Chí Minh &nbsp;|&nbsp; Đơn vị mới từ 01/07/2025</div>
+    <div class="stat-cards">
+      <div class="stat-card"><div class="val">2,22</div><div class="lbl">Diện tích (km²)</div></div>
+      <div class="stat-card"><div class="val">48.464</div><div class="lbl">Dân số (người)</div></div>
+      <div class="stat-card"><div class="val">21.831</div><div class="lbl">Mật độ (người/km²)</div></div>
+    </div>
+    <div class="pub-date">📅 Ngày xuất bản: 04/07/2026</div>
+  </div>
+
+  <section class="geo-section">
+    <h2>🗺️ Vị trí & Địa lý</h2>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>📍 Địa giới 4 phía</h3>
+        <div class="direction-item"><span>⬆️</span><span><strong>Bắc:</strong> Phường Nhiêu Lộc (Quận 3) – kênh Nhiêu Lộc – Thị Nghè</span></div>
+        <div class="direction-item"><span>➡️</span><span><strong>Đông:</strong> Quận Bình Thạnh</span></div>
+        <div class="direction-item"><span>⬇️</span><span><strong>Nam:</strong> Phường Bàn Cờ (Quận 3)</span></div>
+        <div class="direction-item"><span>⬅️</span><span><strong>Tây:</strong> Phường Phú Nhuận & Sài Gòn (Quận 3)</span></div>
+      </div>
+      <div class="geo-box">
+        <h3>🌆 Đặc điểm đô thị</h3>
+        <div class="geo-tag">🌊 Kênh Nhiêu Lộc – Thị Nghè</div>
+        <div class="geo-tag">🏥 Bệnh viện Từ Dũ</div>
+        <div class="geo-tag">🌳 Công viên Lê Văn Tám</div>
+        <div class="geo-tag">⛩️ Đình Xuân Hòa (di tích TP)</div>
+        <div class="geo-tag">🛣️ Trần Quốc Thảo – trục chính</div>
+        <div class="geo-tag">🏛️ Trụ sở UBND 99-99A Trần Quốc Thảo</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <h2>📜 Timeline Lịch sử</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1698</div>
+        <div class="tl-title">Vùng đất Nam tiến – Khai phá thuộc phủ Tân Bình</div>
+        <div class="tl-desc">Chúa Nguyễn sai Nguyễn Hữu Cảnh vào Nam lập phủ Gia Định. Vùng đất tương ứng phường Xuân Hòa ngày nay thuộc huyện Bình Dương, phủ Tân Bình – nằm trên trục kênh Nhiêu Lộc cổ đại.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1790</div>
+        <div class="tl-title">Thành Gia Định xây dựng – vùng đất phát triển</div>
+        <div class="tl-desc">Nguyễn Ánh ra lệnh xây thành Gia Định (Thành Bát Quái). Vùng từ điền trang, trại làng dần hình thành các khu dân cư đô thị sát thành theo trục đường Tân Định – Phú Nhuận.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1880</div>
+        <div class="tl-title">Thôn Xuân Hòa – Đặt tên chính thức</div>
+        <div class="tl-desc">Thực dân Pháp tổ chức lại địa giới hành chính. Thôn Tân Định đổi thành thôn Xuân Hòa, thuộc tổng Bình Chánh Thượng, huyện Bình Dương. Tên gọi "Xuân Hòa" gắn với đình làng và cộng đồng dân cư ổn định lâu đời.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1959</div>
+        <div class="tl-title">Sáp nhập vào Đô thành Sài Gòn – hình thành Quận 3</div>
+        <div class="tl-desc">Vùng đất Xuân Hòa được quy hoạch vào nội ô Đô thành Sài Gòn, thuộc Quận 3 mới thành lập. Bắt đầu giai đoạn đô thị hóa mạnh mẽ, phố xá sầm uất dọc trục Trần Quốc Thảo, Võ Thị Sáu.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2003</div>
+        <div class="tl-title">Đình Xuân Hòa được xếp hạng Di tích cấp Thành phố</div>
+        <div class="tl-desc">UBND TP HCM công nhận Đình Xuân Hòa là di tích kiến trúc nghệ thuật cấp thành phố. Đình thờ Thành Hoàng Bổn Cảnh, là minh chứng sống động cho 300+ năm văn hóa làng xã vùng đất này.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021</div>
+        <div class="tl-title">Sáp nhập lần 1: Phường 6+7+8 → Phường Võ Thị Sáu</div>
+        <div class="tl-desc">Theo Nghị quyết 1111/NQ-UBTVQH14, ba phường 6, 7, 8 (Quận 3) hợp nhất thành Phường Võ Thị Sáu. Đây là bước sắp xếp đầu tiên chuẩn bị cho đợt sáp nhập tổng thể 2025.</div>
+      </div>
+      <div class="tl-item highlight">
+        <div class="tl-year">⭐ 01/07/2025</div>
+        <div class="tl-title">Thành lập Phường Xuân Hòa – Hợp nhất Phường Võ Thị Sáu + phần Phường 4</div>
+        <div class="tl-desc">Nghị quyết 1685/NQ-UBTVQH15: Phường Võ Thị Sáu và một phần Phường 4 (Quận 3) hợp nhất thành Phường Xuân Hòa. Diện tích 2,22 km², dân số 48.464 người, mật độ 21.831 người/km². Tên làng cổ từ năm 1880 được phục hồi.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <h2>🔤 Nguồn gốc Địa danh</h2>
+    <div class="name-box" style="text-align:center;">
+      <div class="han-nom">春和</div>
+      <p style="font-size:0.85rem; color:#888; margin-top:4px;">XUÂN HÒA (chữ Hán)</p>
+    </div>
+    <div class="name-box">
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">
+        <strong>Xuân Hòa</strong> (春和) nghĩa là:<br>
+        <em style="font-size:1rem; color:#D35400; font-weight:700;">"Mùa Xuân hòa ái, tươi vui"</em><br>
+        <strong>"Xuân"</strong> (春) = mùa xuân, sức sống, phát triển.<br>
+        <strong>"Hòa"</strong> (和) = hòa thuận, bình yên, cộng đồng gắn kết.<br>
+        Tên gọi hàm ý mong ước về một làng xã no ấm, cộng đồng hòa hợp như tiết Xuân tươi sáng.
+      </p>
+    </div>
+    <div class="name-box">
+      <h3 style="color:#D35400; font-size:0.95rem; font-weight:700; margin-bottom:10px;">📊 Quá trình hành chính (145 năm tên Xuân Hòa)</h3>
+      <div class="name-evolution">
+        <span class="evo-step">Thôn Tân Định (TK 19)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Thôn Xuân Hòa (1880)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Quận 3 – Phường 6+7+8</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">P. Võ Thị Sáu (2021)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step" style="background:#FADBD8;border-color:#C0392B;">P. Xuân Hòa (2025)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage-section">
+    <h2>🏛️ Di sản Văn hóa & Điểm nhấn</h2>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="icon">⛩️</div>
+        <h3>Đình Xuân Hòa (300+ năm)</h3>
+        <p>Di tích kiến trúc nghệ thuật cấp Thành phố (công nhận 2003). Thờ Thành Hoàng Bổn Cảnh, là hồn cốt văn hóa làng xã cổ Xuân Hòa, lưu giữ lễ hội kỳ yên truyền thống mỗi năm.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏥</div>
+        <h3>Bệnh viện Từ Dũ</h3>
+        <p>Bệnh viện sản khoa lớn nhất Việt Nam (thành lập 1937 dưới thời Pháp thuộc). Hàng triệu ca sinh nở, là trung tâm y tế phụ sản hàng đầu cả nước, biểu tượng sức sống của vùng đất.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌳</div>
+        <h3>Công viên Lê Văn Tám</h3>
+        <p>Không gian xanh lớn giữa trung tâm TP HCM (trước là nghĩa địa Mạc Đĩnh Chi thời Pháp). Điểm sinh hoạt văn hóa, thể thao của hàng vạn cư dân phường Xuân Hòa và lân cận.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌊</div>
+        <h3>Kênh Nhiêu Lộc – Thị Nghè</h3>
+        <p>Ranh giới tự nhiên phía Bắc, đã được cải tạo thành tuyến cảnh quan xanh nổi tiếng. Bờ kênh phía Xuân Hòa là điểm dạo bộ, tập thể dục ưa chuộng của người dân TP HCM.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🎭</div>
+        <h3>Khu phố văn hóa Tây – Việt</h3>
+        <p>Vùng đất từng có nhiều biệt thự Pháp, dinh thự từ thế kỷ 20. Kiến trúc Đông Dương đan xen với nhà phố Việt Nam, tạo nên không gian văn hóa đặc trưng khó lẫn.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🍜</div>
+        <h3>Ẩm thực đường phố Quận 3</h3>
+        <p>Phường Xuân Hòa nổi tiếng với nhiều quán ăn bình dân và nhà hàng sang trọng. Ẩm thực phong phú từ hủ tiếu, bún bò, đến cà phê phong cách – "thiên đường ẩm thực" của Sài Gòn.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="economy-section">
+    <h2>💼 Kinh tế & Đô thị hóa</h2>
+    <div class="eco-bars">
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🛍️ Thương mại – Dịch vụ – Du lịch</span><span>50%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:50%;background:linear-gradient(90deg,#C0392B,#E74C3C);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏥 Y tế – Giáo dục</span><span>30%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:30%;background:linear-gradient(90deg,#2980B9,#5DADE2);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏠 Nhà ở – Bất động sản cao cấp</span><span>20%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:20%;background:linear-gradient(90deg,#F39C12,#F8C471);"></div></div>
+      </div>
+    </div>
+    <div class="eco-projects">
+      <div class="eco-project">
+        <strong>🏥 Mở rộng Bệnh viện Từ Dũ</strong>
+        Bệnh viện Từ Dũ liên tục đầu tư nâng cấp cơ sở vật chất, tạo ra hàng nghìn việc làm y tế kỹ thuật cao và thúc đẩy dịch vụ hỗ trợ y tế trong phường.
+      </div>
+      <div class="eco-project">
+        <strong>🌊 Kinh tế ven kênh Nhiêu Lộc</strong>
+        Tuyến đường bờ kênh phía Xuân Hòa được phát triển không gian café, ẩm thực ven nước. Giá trị bất động sản tăng mạnh nhờ cảnh quan cải tạo.
+      </div>
+      <div class="eco-project">
+        <strong>🌳 Du lịch Công viên Lê Văn Tám</strong>
+        Công viên thu hút hàng nghìn khách tham quan mỗi tuần, thúc đẩy dịch vụ thể thao, giải trí và kinh tế ban đêm xung quanh.
+      </div>
+      <div class="eco-project">
+        <strong>🏢 Hành chính mới thống nhất</strong>
+        Trụ sở UBND phường tại 99-99A Trần Quốc Thảo phục vụ 48.000+ cư dân, một cửa hành chính hiện đại sau hợp nhất.
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-section">
+    <h2>📚 Nguồn tham khảo</h2>
+    <ul class="source-list">
+      <li>Nghị quyết 1685/NQ-UBTVQH15 ngày 16/06/2025 – Ủy ban Thường vụ Quốc hội</li>
+      <li>Thuvienphápluat.vn – Phường Xuân Hòa TPHCM từ 1/7/2025 gồm những phường nào</li>
+      <li>GHTK Blog – Phường 7 Quận 3 sau sáp nhập: Thuộc phường Xuân Hòa mới</li>
+      <li>Arental.vn – Phường Xuân Hòa TPHCM mới sáp nhập từ các phường nào</li>
+      <li>UBND TP HCM – Quyết định xếp hạng Di tích Đình Xuân Hòa (2003)</li>
+      <li>Tuổi Trẻ – Chi tiết 102 phường TP HCM sau sáp nhập 1/7/2025</li>
+    </ul>
+    <div class="copyright">📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh</div>
+  </div>
+
+</div>
+</body>
+</html>

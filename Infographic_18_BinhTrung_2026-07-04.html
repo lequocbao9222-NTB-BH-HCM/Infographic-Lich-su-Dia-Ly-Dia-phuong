@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#18 – Infographic Phường Bình Trưng | Lịch sử & Địa lý TP. HCM</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #2C3E50; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header {
+    background: linear-gradient(135deg, #186A3B 0%, #1E8449 50%, #27AE60 100%);
+    color: white; border-radius: 16px; padding: 40px 36px 32px;
+    text-align: center; margin-bottom: 20px; position: relative;
+    box-shadow: 0 8px 32px rgba(24,106,59,0.35);
+  }
+  .number-badge { position: absolute; top: 18px; left: 22px; background: rgba(255,255,255,0.22); border: 2px solid rgba(255,255,255,0.55); color: white; font-size: 1.1rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; }
+  .new-badge { display: inline-block; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.5); color: white; font-size: 0.85rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px; }
+  .stat-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .stat-card { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 140px; }
+  .stat-card .val { font-size: 1.7rem; font-weight: 800; }
+  .stat-card .lbl { font-size: 0.78rem; opacity: 0.85; margin-top: 3px; }
+  .pub-date { margin-top: 16px; font-size: 0.82rem; opacity: 0.75; }
+  section { border-radius: 14px; padding: 30px 32px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .geo-section { background: linear-gradient(135deg, #D5F5E3, #EAFAF1); border-left: 5px solid #1E8449; }
+  .geo-section h2 { color: #186A3B; }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .geo-box { background: white; border-radius: 10px; padding: 16px; }
+  .geo-box h3 { font-size: 0.95rem; color: #1E8449; font-weight: 700; margin-bottom: 12px; }
+  .direction-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 0.88rem; }
+  .geo-tag { display: inline-block; background: #D5F5E3; color: #186A3B; border-radius: 6px; padding: 4px 10px; font-size: 0.8rem; margin: 3px 2px; }
+  .timeline-section { background: white; border-left: 5px solid #1E8449; }
+  .timeline-section h2 { color: #186A3B; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #186A3B, #27AE60, #F39C12); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #1E8449; border: 3px solid white; box-shadow: 0 0 0 2px #1E8449; }
+  .tl-item.highlight::before { background: #F39C12; box-shadow: 0 0 0 2px #F39C12; }
+  .tl-year { font-size: 0.78rem; font-weight: 800; color: #186A3B; text-transform: uppercase; letter-spacing: 1px; }
+  .tl-item.highlight .tl-year { color: #E67E22; }
+  .tl-title { font-size: 0.97rem; font-weight: 700; margin: 2px 0; }
+  .tl-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+  .tl-item.highlight { background: #FEF9E7; border-radius: 10px; padding: 10px 14px; border-left: 3px solid #F39C12; }
+  .name-section { background: linear-gradient(135deg, #FEF9E7, #FDEBD0); border-left: 5px solid #F39C12; }
+  .name-section h2 { color: #D35400; }
+  .name-box { background: white; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+  .han-nom { font-size: 2rem; color: #186A3B; font-weight: 900; text-align: center; padding: 12px; border: 2px solid #1E8449; border-radius: 10px; background: #EAFAF1; display: inline-block; margin: 8px auto; }
+  .name-evolution { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .evo-step { background: #FDEBD0; border: 1px solid #F39C12; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 600; }
+  .evo-arrow { color: #E67E22; font-weight: bold; }
+  .heritage-section { background: #1A5276; color: white; border-radius: 14px; }
+  .heritage-section h2 { color: #85C1E9; }
+  .heritage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .heritage-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 16px; text-align: center; }
+  .heritage-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .heritage-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: #AED6F1; }
+  .heritage-card p { font-size: 0.78rem; opacity: 0.85; line-height: 1.4; }
+  .economy-section { background: #F8F9FA; border-left: 5px solid #27AE60; }
+  .economy-section h2 { color: #186A3B; }
+  .eco-bars { margin-bottom: 18px; }
+  .eco-bar-item { margin-bottom: 12px; }
+  .eco-bar-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .eco-bar-track { background: #D5F5E3; border-radius: 10px; height: 12px; overflow: hidden; }
+  .eco-bar-fill { height: 100%; border-radius: 10px; }
+  .eco-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .eco-project { background: white; border-radius: 8px; padding: 12px; border-left: 3px solid #27AE60; font-size: 0.83rem; }
+  .eco-project strong { display: block; color: #186A3B; margin-bottom: 3px; }
+  .footer-section { background: #2C3E50; color: white; border-radius: 14px; padding: 24px 32px; }
+  .footer-section h2 { color: #85C1E9; font-size: 1.1rem; margin-bottom: 14px; }
+  .source-list { list-style: none; }
+  .source-list li { font-size: 0.78rem; opacity: 0.75; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .source-list li::before { content: '›'; position: absolute; left: 0; color: #85C1E9; }
+  .copyright { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.82rem; opacity: 0.9; text-align: center; color: #F39C12; font-weight: 600; }
+  @media print { body { background: white; } .container { padding: 0; } section { box-shadow: none; break-inside: avoid; } .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="number-badge">📌 #18</div>
+    <div class="new-badge">🌊 Phường ven sông Sài Gòn phía Đông</div>
+    <h1>PHƯỜNG BÌNH TRƯNG</h1>
+    <div class="subtitle">TP. Thủ Đức · TP. Hồ Chí Minh &nbsp;|&nbsp; Đơn vị mới từ 01/07/2025</div>
+    <div class="stat-cards">
+      <div class="stat-card"><div class="val">14,82</div><div class="lbl">Diện tích (km²)</div></div>
+      <div class="stat-card"><div class="val">121.382</div><div class="lbl">Dân số (người)</div></div>
+      <div class="stat-card"><div class="val">8.191</div><div class="lbl">Mật độ (người/km²)</div></div>
+    </div>
+    <div class="pub-date">📅 Ngày xuất bản: 04/07/2026</div>
+  </div>
+
+  <section class="geo-section">
+    <h2>🗺️ Vị trí & Địa lý</h2>
+    <div class="geo-grid">
+      <div class="geo-box">
+        <h3>📍 Địa giới 4 phía</h3>
+        <div class="direction-item"><span>⬆️</span><span><strong>Bắc:</strong> Sông Sài Gòn – ranh giới tự nhiên với Bình Dương</span></div>
+        <div class="direction-item"><span>➡️</span><span><strong>Đông:</strong> Phường Cát Lái (TP Thủ Đức)</span></div>
+        <div class="direction-item"><span>⬇️</span><span><strong>Nam:</strong> Phường Long Trường, Long Phước (TP Thủ Đức)</span></div>
+        <div class="direction-item"><span>⬅️</span><span><strong>Tây:</strong> Phường An Khánh (TP Thủ Đức)</span></div>
+      </div>
+      <div class="geo-box">
+        <h3>🌆 Đặc điểm đô thị</h3>
+        <div class="geo-tag">🌊 Sông Sài Gòn – cảnh quan sông nước</div>
+        <div class="geo-tag">🏘️ Khu dân cư Bình Trưng Đông</div>
+        <div class="geo-tag">🌿 Nhiều cây xanh, công viên ven sông</div>
+        <div class="geo-tag">🛣️ Đường Nguyễn Duy Trinh – trục chính</div>
+        <div class="geo-tag">🏢 Trụ sở UBND 8 Hồ Thị Nhung (KP4)</div>
+        <div class="geo-tag">⛽ Khu công nghiệp phía Đông TP Thủ Đức</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <h2>📜 Timeline Lịch sử</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">TK 17 – 18</div>
+        <div class="tl-title">Vùng đất Bình Trưng – Làng ven sông Sài Gòn</div>
+        <div class="tl-desc">Khu vực Bình Trưng nằm trên bờ đông sông Sài Gòn, thuộc huyện Bình Dương cổ đại. Cư dân ban đầu là ngư dân và nông dân khai khẩn vùng đất ven sông màu mỡ, sống bằng canh tác lúa nước và đánh cá trên sông.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1862</div>
+        <div class="tl-title">Pháp chiếm đóng – Vùng đất Thủ Đức sáp nhập Nam Kỳ thuộc địa</div>
+        <div class="tl-desc">Sau khi chiếm Sài Gòn, Pháp mở rộng kiểm soát sang khu vực Thủ Đức – Bình Trưng. Vùng đất trở thành phần của tỉnh Gia Định thuộc địa Pháp, bắt đầu giai đoạn đô thị hóa chậm nhưng ổn định.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1945 – 1975</div>
+        <div class="tl-title">Chiến tranh – Bình Trưng là vùng giải phóng</div>
+        <div class="tl-desc">Trong hai cuộc kháng chiến, Bình Trưng – Bình Trưng Đông – Bình Trưng Tây là vùng tranh chấp ác liệt. Nhiều địa đạo, căn cứ cách mạng được xây dựng. Người dân địa phương tham gia kháng chiến, để lại nhiều di tích lịch sử cách mạng.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1997</div>
+        <div class="tl-title">Thành lập Phường Bình Trưng Đông và Bình Trưng Tây (Quận 2)</div>
+        <div class="tl-desc">Hai phường Bình Trưng Đông (DT 3,45 km², 10.496 dân) và Bình Trưng Tây (DT 2,22 km², 7.832 dân) được thành lập khi Quận 2 ra đời. Giai đoạn này bắt đầu phát triển cơ sở hạ tầng đô thị, kết nối với Quận 1 qua đường Nguyễn Duy Trinh.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021</div>
+        <div class="tl-title">Sáp nhập vào TP Thủ Đức</div>
+        <div class="tl-desc">Bình Trưng Đông và Bình Trưng Tây trực thuộc TP Thủ Đức. Khu vực hưởng lợi từ làn sóng đầu tư bất động sản phía Đông TP HCM, nhiều dự án khu dân cư mới triển khai dọc sông Sài Gòn.</div>
+      </div>
+      <div class="tl-item highlight">
+        <div class="tl-year">⭐ 01/07/2025</div>
+        <div class="tl-title">Thành lập Phường Bình Trưng – Hợp nhất Bình Trưng Đông + Tây + phần An Phú</div>
+        <div class="tl-desc">Nghị quyết 1685/NQ-UBTVQH15: Phường Bình Trưng Đông, Bình Trưng Tây và phần Phường An Phú hợp nhất thành Phường Bình Trưng. DT 14,82 km², DS 121.382 người. Trụ sở tại 8 Hồ Thị Nhung, KP4. Phường ven sông Sài Gòn rộng lớn với tiềm năng phát triển lớn nhất phía Đông TP HCM.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <h2>🔤 Nguồn gốc Địa danh</h2>
+    <div class="name-box" style="text-align:center;">
+      <div class="han-nom">平興</div>
+      <p style="font-size:0.85rem; color:#888; margin-top:4px;">BÌNH TRƯNG (chiết tự Hán-Nôm)</p>
+    </div>
+    <div class="name-box">
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">
+        <strong>Bình Trưng</strong> nghĩa là:<br>
+        <strong>"Bình"</strong> = bình nguyên, vùng đất bằng phẳng ven sông.<br>
+        <strong>"Trưng"</strong> = trưng bày, phát triển, hưng thịnh.<br>
+        <em style="font-size:1rem; color:#D35400; font-weight:700;">"Vùng bình nguyên ven sông đang hưng thịnh và phát triển"</em><br>
+        Tên gọi phản ánh đặc điểm địa lý của vùng đất phẳng ven sông Sài Gòn và kỳ vọng về sự phát triển thịnh vượng của cư dân khai phá vùng đất phía Đông thành phố.
+      </p>
+    </div>
+    <div class="name-box">
+      <h3 style="color:#D35400; font-size:0.95rem; font-weight:700; margin-bottom:10px;">📊 Quá trình hành chính</h3>
+      <div class="name-evolution">
+        <span class="evo-step">Làng Bình Trưng (TK 17)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Xã Bình Trưng (huyện Thủ Đức)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">P. Bình Trưng Đông + Tây (Q2, 1997)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">TP Thủ Đức (2021)</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step" style="background:#D5F5E3;border-color:#1E8449;">P. Bình Trưng (2025)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage-section">
+    <h2>🏛️ Di sản Văn hóa & Điểm nhấn</h2>
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="icon">🌊</div>
+        <h3>Bờ Đông Sông Sài Gòn</h3>
+        <p>Phường Bình Trưng sở hữu đường bờ sông Sài Gòn dài và đẹp, tạo ra cảnh quan sông nước thơ mộng. Quy hoạch phát triển bờ sông thành công viên xanh và khu dịch vụ cao cấp.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">⚔️</div>
+        <h3>Di tích Cách mạng</h3>
+        <p>Khu vực Bình Trưng có nhiều địa điểm lịch sử kháng chiến. Hầm bí mật, căn cứ cách mạng giai đoạn 1945–1975, nơi ghi dấu sự kiên cường của người dân vùng đất phía Đông.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🌿</div>
+        <h3>Hệ sinh thái ven sông</h3>
+        <p>Dải đất ven sông Sài Gòn còn giữ nhiều cây xanh tự nhiên, thảm thực vật đa dạng. Là hành lang xanh quý giá cho khu vực đô thị hóa nhanh của TP Thủ Đức.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏘️</div>
+        <h3>Khu dân cư Bình Trưng Đông</h3>
+        <p>Khu dân cư được quy hoạch bài bản từ cuối những năm 1990, với đường phố rộng, hệ thống thoát nước tốt. Là mô hình khu dân cư hiện đại điển hình của phía Đông TP HCM.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🛣️</div>
+        <h3>Tuyến Nguyễn Duy Trinh</h3>
+        <p>Trục đường chính Nguyễn Duy Trinh kết nối Bình Trưng với cầu Phú Mỹ và trung tâm TP HCM. Hành lang giao thương quan trọng của khu Đông, với nhiều dự án thương mại đang phát triển.</p>
+      </div>
+      <div class="heritage-card">
+        <div class="icon">🏭</div>
+        <h3>Khu vực Cảng và Logistics</h3>
+        <p>Gần cảng Cát Lái – cảng container lớn nhất Việt Nam. Bình Trưng là điểm hút các doanh nghiệp logistics, kho vận, dịch vụ hỗ trợ cảng biển, đóng góp lớn vào kinh tế TP Thủ Đức.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="economy-section">
+    <h2>💼 Kinh tế & Đô thị hóa</h2>
+    <div class="eco-bars">
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏠 Bất động sản – Khu dân cư – Nhà ở</span><span>45%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:45%;background:linear-gradient(90deg,#186A3B,#27AE60);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🏭 Công nghiệp – Logistics – Cảng biển</span><span>35%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:35%;background:linear-gradient(90deg,#2980B9,#5DADE2);"></div></div>
+      </div>
+      <div class="eco-bar-item">
+        <div class="eco-bar-label"><span>🛍️ Thương mại – Dịch vụ</span><span>20%</span></div>
+        <div class="eco-bar-track"><div class="eco-bar-fill" style="width:20%;background:linear-gradient(90deg,#F39C12,#F8C471);"></div></div>
+      </div>
+    </div>
+    <div class="eco-projects">
+      <div class="eco-project">
+        <strong>🌊 Công viên bờ sông Sài Gòn</strong>
+        Dự án phát triển tuyến công viên xanh dọc bờ sông Sài Gòn phía Bình Trưng dài hàng km, kết hợp bến thuyền du lịch, nhà hàng ven sông và khu thể thao ngoài trời.
+      </div>
+      <div class="eco-project">
+        <strong>🏗️ Khu đô thị ven sông phía Đông</strong>
+        Nhiều dự án căn hộ cao cấp và biệt thự ven sông đang triển khai, khai thác lợi thế cảnh quan sông nước đặc trưng và vị trí chiến lược gần cảng Cát Lái.
+      </div>
+      <div class="eco-project">
+        <strong>🛣️ Cầu Phú Mỹ – Kết nối cảng Cát Lái</strong>
+        Cầu Phú Mỹ kết nối Bình Trưng với Quận 7, Quận 4. Cùng với cao tốc Tp.HCM – Long Thành, đây là hành lang vận tải chiến lược cho logistics cảng Cát Lái.
+      </div>
+      <div class="eco-project">
+        <strong>🏭 Hạ tầng Logistics hỗ trợ cảng</strong>
+        Phường có nhiều kho bãi, trung tâm phân phối, dịch vụ hải quan phục vụ cảng Cát Lái. Ngành logistics đang tăng trưởng mạnh, tạo ra hàng nghìn việc làm kỹ thuật cao.
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-section">
+    <h2>📚 Nguồn tham khảo</h2>
+    <ul class="source-list">
+      <li>Nghị quyết 1685/NQ-UBTVQH15 ngày 16/06/2025 – Ủy ban Thường vụ Quốc hội</li>
+      <li>GHTK Blog – Phường Bình Trưng sau sáp nhập: Hợp nhất Bình Trưng Đông, Bình Trưng Tây</li>
+      <li>Thuvienphapluat.vn – Bình Trưng Đông, Bình Trưng Tây TP Thủ Đức sáp nhập thành phường gì?</li>
+      <li>FPT Shop – Phường Bình Trưng TP HCM sau sáp nhập: Cơ cấu hành chính mới</li>
+      <li>Arental.vn – Sáp nhập phường TP Thủ Đức 2025</li>
+      <li>Tinhthanhvn.com – Phường Bình Trưng, TP Hồ Chí Minh mới sáp nhập</li>
+    </ul>
+    <div class="copyright">📌 Infographic thuộc bản quyền thầy Bảo - Trường THCS Nguyễn Thái Bình - TP Hồ Chí Minh</div>
+  </div>
+
+</div>
+</body>
+</html>
